@@ -1,1 +1,2 @@
-# proj831-hal
+# PROJ831 - Extraction de publications et bibliométrie
+
