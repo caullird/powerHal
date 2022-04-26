@@ -1,0 +1,4446 @@
+{
+    "meta": {
+        "count": 62,
+        "db_response_time_ms": 10,
+        "page": 1,
+        "per_page": 25
+    },
+    "results": [
+        {
+            "id": "https://openalex.org/A166706192",
+            "display_name": "Kave Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 2915.8584,
+            "orcid": "https://orcid.org/0000-0001-5557-9134",
+            "works_count": 130,
+            "cited_by_count": 3600,
+            "ids": {
+                "openalex": "https://openalex.org/A166706192",
+                "orcid": "https://orcid.org/0000-0001-5557-9134",
+                "mag": "166706192"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I70900168",
+                "ror": "https://ror.org/04gqg1a07",
+                "display_name": "Universit\u00e9 Savoie Mont Blanc",
+                "country_code": "FR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2022,
+                    "works_count": 0,
+                    "cited_by_count": 14
+                },
+                {
+                    "year": 2021,
+                    "works_count": 5,
+                    "cited_by_count": 159
+                },
+                {
+                    "year": 2020,
+                    "works_count": 8,
+                    "cited_by_count": 180
+                },
+                {
+                    "year": 2019,
+                    "works_count": 5,
+                    "cited_by_count": 174
+                },
+                {
+                    "year": 2018,
+                    "works_count": 6,
+                    "cited_by_count": 223
+                },
+                {
+                    "year": 2017,
+                    "works_count": 6,
+                    "cited_by_count": 193
+                },
+                {
+                    "year": 2016,
+                    "works_count": 6,
+                    "cited_by_count": 218
+                },
+                {
+                    "year": 2015,
+                    "works_count": 2,
+                    "cited_by_count": 247
+                },
+                {
+                    "year": 2014,
+                    "works_count": 7,
+                    "cited_by_count": 275
+                },
+                {
+                    "year": 2013,
+                    "works_count": 14,
+                    "cited_by_count": 253
+                },
+                {
+                    "year": 2012,
+                    "works_count": 10,
+                    "cited_by_count": 218
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 50.8,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 50.8,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 41.5,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 26.9,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q75",
+                    "display_name": "The Internet",
+                    "score": 26.2,
+                    "id": "https://openalex.org/C110875604",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 24.6,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 23.8,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "score": 20.8,
+                    "id": "https://openalex.org/C121332964",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A166706192",
+            "updated_date": "2022-03-09",
+            "created_date": "2016-06-24"
+        },
+        {
+            "id": "https://openalex.org/A1272851299",
+            "display_name": "Salman Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 990.0092,
+            "orcid": "https://orcid.org/0000-0002-3773-8442",
+            "works_count": 47,
+            "cited_by_count": 415,
+            "ids": {
+                "openalex": "https://openalex.org/A1272851299",
+                "orcid": "https://orcid.org/0000-0002-3773-8442",
+                "mag": "1272851299"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I63966007",
+                "ror": "https://ror.org/042nb2s44",
+                "display_name": "Massachusetts Institute of Technology",
+                "country_code": "US",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2022,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2021,
+                    "works_count": 4,
+                    "cited_by_count": 109
+                },
+                {
+                    "year": 2020,
+                    "works_count": 11,
+                    "cited_by_count": 101
+                },
+                {
+                    "year": 2019,
+                    "works_count": 11,
+                    "cited_by_count": 59
+                },
+                {
+                    "year": 2018,
+                    "works_count": 7,
+                    "cited_by_count": 43
+                },
+                {
+                    "year": 2017,
+                    "works_count": 5,
+                    "cited_by_count": 38
+                },
+                {
+                    "year": 2016,
+                    "works_count": 3,
+                    "cited_by_count": 24
+                },
+                {
+                    "year": 2015,
+                    "works_count": 2,
+                    "cited_by_count": 22
+                },
+                {
+                    "year": 2014,
+                    "works_count": 3,
+                    "cited_by_count": 12
+                },
+                {
+                    "year": 2013,
+                    "works_count": 1,
+                    "cited_by_count": 3
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 93.6,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 72.3,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 63.8,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 57.4,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 42.6,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+                    "display_name": "Computer security",
+                    "score": 42.6,
+                    "id": "https://openalex.org/C38652104",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 40.4,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 31.9,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2539",
+                    "display_name": "Machine learning",
+                    "score": 31.9,
+                    "id": "https://openalex.org/C119857082",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 29.8,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Pattern recognition",
+                    "score": 29.8,
+                    "id": "https://openalex.org/C178980831",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "score": 21.3,
+                    "id": "https://openalex.org/C121332964",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43035",
+                    "display_name": "Electrical engineering",
+                    "score": 21.3,
+                    "id": "https://openalex.org/C119599485",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q34749",
+                    "display_name": "Social science",
+                    "score": 21.3,
+                    "id": "https://openalex.org/C36289849",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21201",
+                    "display_name": "Sociology",
+                    "score": 21.3,
+                    "id": "https://openalex.org/C144024400",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5140297",
+                    "display_name": "Coding (social sciences)",
+                    "score": 21.3,
+                    "id": "https://openalex.org/C179518139",
+                    "level": 2
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A1272851299",
+            "updated_date": "2022-02-28",
+            "created_date": "2016-06-24"
+        },
+        {
+            "id": "https://openalex.org/A2662824908",
+            "display_name": "Kave Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 410.655,
+            "orcid": null,
+            "works_count": 5,
+            "cited_by_count": 70,
+            "ids": {
+                "openalex": "https://openalex.org/A2662824908",
+                "mag": "2662824908"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I5124864",
+                "ror": "https://ror.org/02s376052",
+                "display_name": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+                "country_code": "CH",
+                "type": "facility"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2017,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2015,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2014,
+                    "works_count": 0,
+                    "cited_by_count": 5
+                },
+                {
+                    "year": 2013,
+                    "works_count": 0,
+                    "cited_by_count": 5
+                },
+                {
+                    "year": 2012,
+                    "works_count": 0,
+                    "cited_by_count": 9
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 80.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+                    "display_name": "Computer security",
+                    "score": 60.0,
+                    "id": "https://openalex.org/C38652104",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 60.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2572354",
+                    "display_name": "Epidemic model",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C1627819",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+                    "display_name": "Population",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C2908647359",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q214111",
+                    "display_name": "Network packet",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C158379750",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11375",
+                    "display_name": "Wireless network",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C108037233",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q249",
+                    "display_name": "Wireless",
+                    "score": 40.0,
+                    "id": "https://openalex.org/C555944384",
+                    "level": 2
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2662824908",
+            "updated_date": "2017-06-30",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2661652403",
+            "display_name": "M.R. Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 363.66287,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 56,
+            "ids": {
+                "openalex": "https://openalex.org/A2661652403",
+                "mag": "2661652403"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2019,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2017,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2015,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2014,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2013,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2012,
+                    "works_count": 0,
+                    "cited_by_count": 5
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q23373",
+                    "display_name": "Cognitive psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C180747234",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9418",
+                    "display_name": "Psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C15744967",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21201",
+                    "display_name": "Sociology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C144024400",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q34749",
+                    "display_name": "Social science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C36289849",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q18653",
+                    "display_name": "Encoding (memory)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C125411270",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q207011",
+                    "display_name": "Neuroscience",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C169760540",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q214111",
+                    "display_name": "Network packet",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C158379750",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5140297",
+                    "display_name": "Coding (social sciences)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C179518139",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+                    "display_name": "Computer security",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C38652104",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43035",
+                    "display_name": "Electrical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C119599485",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q118093",
+                    "display_name": "Transmission (telecommunications)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C761482",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1089578",
+                    "display_name": "Linear network coding",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C138293262",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q576722",
+                    "display_name": "Decoding methods",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C57273362",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2878974",
+                    "display_name": "Theoretical computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C80444323",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2661652403",
+            "updated_date": "2017-06-30",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2630310976",
+            "display_name": "Kav\u00e9 Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 240.45494,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 24,
+            "ids": {
+                "openalex": "https://openalex.org/A2630310976",
+                "mag": "2630310976"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2020,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2018,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2017,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2015,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2014,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2013,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2012,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q75",
+                    "display_name": "The Internet",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C110875604",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q175975",
+                    "display_name": "Internet privacy",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C108827166",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q23404",
+                    "display_name": "Anthropology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C19165224",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21201",
+                    "display_name": "Sociology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C144024400",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q36442",
+                    "display_name": "Political science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C17744445",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q161272",
+                    "display_name": "Social psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C77805123",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q202833",
+                    "display_name": "Social media",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C518677369",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3264987",
+                    "display_name": "Reciprocity (cultural anthropology)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C169903001",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q6576792",
+                    "display_name": "Online community",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778165684",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q579716",
+                    "display_name": "User-generated content",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C101293273",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q17164759",
+                    "display_name": "Social network (sociolinguistics)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C4727928",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q34749",
+                    "display_name": "Social science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C36289849",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9418",
+                    "display_name": "Psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C15744967",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7748",
+                    "display_name": "Law",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C199539241",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2630310976",
+            "updated_date": "2017-06-30",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2682108959",
+            "display_name": "S. Amin Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 235.56766,
+            "orcid": null,
+            "works_count": 6,
+            "cited_by_count": 32,
+            "ids": {
+                "openalex": "https://openalex.org/A2682108959",
+                "mag": "2682108959"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I158248296",
+                "ror": "https://ror.org/04gzbav43",
+                "display_name": "Amirkabir University of Technology",
+                "country_code": "IR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2022,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 5
+                },
+                {
+                    "year": 2020,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2019,
+                    "works_count": 1,
+                    "cited_by_count": 5
+                },
+                {
+                    "year": 2018,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2017,
+                    "works_count": 1,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2016,
+                    "works_count": 1,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2015,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2014,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2013,
+                    "works_count": 1,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2012,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 83.3,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 83.3,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1071",
+                    "display_name": "Geography",
+                    "score": 83.3,
+                    "id": "https://openalex.org/C205649164",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q335297",
+                    "display_name": "Pier",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C157892014",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1349130",
+                    "display_name": "Geotechnical engineering",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C187320778",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q309",
+                    "display_name": "History",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C95457728",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q77590",
+                    "display_name": "Civil engineering",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C147176958",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q633538",
+                    "display_name": "Structural engineering",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C66938386",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1069",
+                    "display_name": "Geology",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C127313418",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q23498",
+                    "display_name": "Archaeology",
+                    "score": 66.7,
+                    "id": "https://openalex.org/C166957645",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11180",
+                    "display_name": "Internal medicine",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C126322002",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2532492",
+                    "display_name": "Bridge (graph theory)",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C100776233",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q514",
+                    "display_name": "Anatomy",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C105702510",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q40821",
+                    "display_name": "Surgery",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C141071460",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2599292",
+                    "display_name": "Probabilistic logic",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C49937458",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q4966469",
+                    "display_name": "Bridge scour",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C43315350",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9471",
+                    "display_name": "Epistemology",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C111472728",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7205",
+                    "display_name": "Paleontology",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C151730666",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5891",
+                    "display_name": "Philosophy",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C138885662",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2539",
+                    "display_name": "Machine learning",
+                    "score": 33.3,
+                    "id": "https://openalex.org/C119857082",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2682108959",
+            "updated_date": "2022-02-28",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2696049820",
+            "display_name": "Kav\u00e9 Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 227.93777,
+            "orcid": null,
+            "works_count": 4,
+            "cited_by_count": 22,
+            "ids": {
+                "openalex": "https://openalex.org/A2696049820",
+                "mag": "2696049820"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2022,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 5
+                },
+                {
+                    "year": 2020,
+                    "works_count": 0,
+                    "cited_by_count": 6
+                },
+                {
+                    "year": 2019,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2018,
+                    "works_count": 0,
+                    "cited_by_count": 4
+                },
+                {
+                    "year": 2017,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2015,
+                    "works_count": 3,
+                    "cited_by_count": 0
+                },
+                {
+                    "year": 2014,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7748",
+                    "display_name": "Law",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C199539241",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q189833",
+                    "display_name": "Economic growth",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C50522688",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8134",
+                    "display_name": "Economics",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C162324750",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q36442",
+                    "display_name": "Political science",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C17744445",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q121176",
+                    "display_name": "Nursing",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C159110408",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21201",
+                    "display_name": "Sociology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C144024400",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9418",
+                    "display_name": "Psychology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C15744967",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1519812",
+                    "display_name": "Health policy",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C47344431",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1851928",
+                    "display_name": "Health promotion",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C185618831",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q31207",
+                    "display_name": "Health care",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C160735492",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q189603",
+                    "display_name": "Public health",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C138816342",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3045352",
+                    "display_name": "Social determinants of health",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C78491826",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7208",
+                    "display_name": "Pathology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C142724271",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+                    "display_name": "Business",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C144133560",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q160398",
+                    "display_name": "Crystallography",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C8010536",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5276090",
+                    "display_name": "Digital health",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2780433410",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q75",
+                    "display_name": "The Internet",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C110875604",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+                    "display_name": "Population",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2908647359",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q202833",
+                    "display_name": "Social media",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C518677369",
+                    "level": 2
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Algebra",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C125565743",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1512929",
+                    "display_name": "Health equity",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2250968",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q34749",
+                    "display_name": "Social science",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C36289849",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3291156",
+                    "display_name": "Population health",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2778149918",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q207137",
+                    "display_name": "Curriculum",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C47177190",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5635796",
+                    "display_name": "HRHIS",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C147268084",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7922",
+                    "display_name": "Pedagogy",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C19417346",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q17164759",
+                    "display_name": "Social network (sociolinguistics)",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C4727928",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q4353774",
+                    "display_name": "Health communication",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2778080475",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2329",
+                    "display_name": "Chemistry",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C185592680",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5062222",
+                    "display_name": "Center (category theory)",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2779463800",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q133080",
+                    "display_name": "Public relations",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C39549134",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2725393",
+                    "display_name": "Global health",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C46578552",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11024",
+                    "display_name": "Communication",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C46312422",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q60894",
+                    "display_name": "Health education",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C113807197",
+                    "level": 3
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Topology",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C126794175",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2696049820",
+            "updated_date": "2022-01-30",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2690112088",
+            "display_name": "V. Sharifi-Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 161.28215,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 15,
+            "ids": {
+                "openalex": "https://openalex.org/A2690112088",
+                "mag": "2690112088"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2015,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2012,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q324634",
+                    "display_name": "Mammography",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2780472235",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7162",
+                    "display_name": "Genetics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C54355233",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11180",
+                    "display_name": "Internal medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126322002",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q128581",
+                    "display_name": "Breast cancer",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C530470458",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12078",
+                    "display_name": "Cancer",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C121608353",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2690112088",
+            "updated_date": "2022-02-17",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2892795491",
+            "display_name": "Kav\u00e9 Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 161.17635,
+            "orcid": null,
+            "works_count": 2,
+            "cited_by_count": 11,
+            "ids": {
+                "openalex": "https://openalex.org/A2892795491",
+                "mag": "2892795491"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2012,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9143",
+                    "display_name": "Programming language",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C199360897",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q205663",
+                    "display_name": "Process (computing)",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C98045186",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8162",
+                    "display_name": "Linguistics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C41895202",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1130160",
+                    "display_name": "Estimator",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C185429906",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q965330",
+                    "display_name": "Estimation",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C96250715",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q75",
+                    "display_name": "The Internet",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C110875604",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2920921",
+                    "display_name": "Management",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C187736073",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q855395",
+                    "display_name": "Interpretation (philosophy)",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C527412718",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8134",
+                    "display_name": "Economics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C162324750",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5891",
+                    "display_name": "Philosophy",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C138885662",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3536440",
+                    "display_name": "Internet traffic",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C63969886",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q682496",
+                    "display_name": "Systems engineering",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C201995342",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2892795491",
+            "updated_date": "2018-10-05",
+            "created_date": "2018-10-05"
+        },
+        {
+            "id": "https://openalex.org/A2997721536",
+            "display_name": "Bahar Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 161.17635,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 11,
+            "ids": {
+                "openalex": "https://openalex.org/A2997721536",
+                "mag": "2997721536"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I133529467",
+                "ror": "https://ror.org/024c2fq17",
+                "display_name": "Sharif University of Technology",
+                "country_code": "IR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 11
+                },
+                {
+                    "year": 2019,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7162",
+                    "display_name": "Genetics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C54355233",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q265799",
+                    "display_name": "Human genetics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C47042493",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q896177",
+                    "display_name": "Protein\u2013protein interaction",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C11804247",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q471857",
+                    "display_name": "Proteomics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C46111723",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q177005",
+                    "display_name": "Computational biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C70721500",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7867",
+                    "display_name": "Psychiatry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C118552586",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q128570",
+                    "display_name": "Bioinformatics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C60644358",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q591745",
+                    "display_name": "DNA microarray",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C95371953",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q101929",
+                    "display_name": "Immunology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C203014093",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7141",
+                    "display_name": "Cell biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C95444343",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q26972",
+                    "display_name": "Gene expression",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C150194340",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7187",
+                    "display_name": "Gene",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C104317684",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8277",
+                    "display_name": "Multiple sclerosis",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2780640218",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7094",
+                    "display_name": "Biochemistry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C55493867",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1502169",
+                    "display_name": "Gene expression profiling",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C18431079",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9418",
+                    "display_name": "Psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C15744967",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2329",
+                    "display_name": "Chemistry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C185592680",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q411391",
+                    "display_name": "Regulation of gene expression",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C165864922",
+                    "level": 3
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2997721536",
+            "updated_date": "2022-01-02",
+            "created_date": "2020-01-10"
+        },
+        {
+            "id": "https://openalex.org/A2669775848",
+            "display_name": "V\u00e9nus Sharifi\u2010Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 159.68266,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 15,
+            "ids": {
+                "openalex": "https://openalex.org/A2669775848",
+                "mag": "2669775848"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2014,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2013,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q77590",
+                    "display_name": "Civil engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C147176958",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5591926",
+                    "display_name": "Grading (engineering)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2777286243",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1440020",
+                    "display_name": "Geostatistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C125572338",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q162555",
+                    "display_name": "Oncology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C143998085",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7150",
+                    "display_name": "Ecology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C18903297",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7208",
+                    "display_name": "Pathology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C142724271",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11180",
+                    "display_name": "Internal medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126322002",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q33525",
+                    "display_name": "Carcinoma",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2777546739",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7162",
+                    "display_name": "Genetics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C54355233",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q128581",
+                    "display_name": "Breast cancer",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C530470458",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7574086",
+                    "display_name": "Spatial variability",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C94747663",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12078",
+                    "display_name": "Cancer",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C121608353",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q128581",
+                    "display_name": "Breast carcinoma",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C3018521938",
+                    "level": 4
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2669775848",
+            "updated_date": "2022-01-02",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2979645333",
+            "display_name": "Iman Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 155.213,
+            "orcid": "https://orcid.org/0000-0001-9855-3583",
+            "works_count": 4,
+            "cited_by_count": 10,
+            "ids": {
+                "openalex": "https://openalex.org/A2979645333",
+                "orcid": "https://orcid.org/0000-0001-9855-3583",
+                "mag": "2979645333"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I1336229394",
+                "ror": "https://ror.org/011xesh37",
+                "display_name": "Razi Vaccine and Serum Research Institute",
+                "country_code": "IR",
+                "type": "company"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 10
+                },
+                {
+                    "year": 2020,
+                    "works_count": 2,
+                    "cited_by_count": 0
+                },
+                {
+                    "year": 2019,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                },
+                {
+                    "year": 2014,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7162",
+                    "display_name": "Genetics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C54355233",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q101929",
+                    "display_name": "Immunology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C203014093",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7208",
+                    "display_name": "Pathology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C142724271",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q170201",
+                    "display_name": "Veterinary medicine",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C42972112",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q808",
+                    "display_name": "Virus",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C2522874641",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7150",
+                    "display_name": "Ecology",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C18903297",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7215",
+                    "display_name": "Virology",
+                    "score": 75.0,
+                    "id": "https://openalex.org/C159047783",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q192995",
+                    "display_name": "Vaccination",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C22070199",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q79460",
+                    "display_name": "Antibody",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C159654299",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q327082",
+                    "display_name": "Newcastle disease",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C2778116459",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1069",
+                    "display_name": "Geology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C127313418",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7193",
+                    "display_name": "Microbiology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C89423630",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7205",
+                    "display_name": "Paleontology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C151730666",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q120997",
+                    "display_name": "Flock",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C134215735",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3241045",
+                    "display_name": "Outbreak",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C116675565",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q502159",
+                    "display_name": "Serology",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C45189115",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q10435",
+                    "display_name": "Musca",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C182049041",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q932068",
+                    "display_name": "Environmental health",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C99454951",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q804206",
+                    "display_name": "Parasite hosting",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C71928629",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q861182",
+                    "display_name": "Poultry farming",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C66914385",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q431",
+                    "display_name": "Zoology",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C90856448",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q38112",
+                    "display_name": "Forestry",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C97137747",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1071",
+                    "display_name": "Geography",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C205649164",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q803874",
+                    "display_name": "Biosecurity",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2781368420",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q160122",
+                    "display_name": "Influenza A virus subtype H5N1",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C519248777",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2329",
+                    "display_name": "Chemistry",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C185592680",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7618757",
+                    "display_name": "Stomoxys",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2777707652",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5370234",
+                    "display_name": "Embryonated",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C129470801",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q48803",
+                    "display_name": "Horticulture",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C144027150",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1664296",
+                    "display_name": "Inoculation",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C180032290",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7094",
+                    "display_name": "Biochemistry",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C55493867",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q848328",
+                    "display_name": "Serotype",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C10389963",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q221681",
+                    "display_name": "In vitro",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C202751555",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3511357",
+                    "display_name": "Seroprevalence",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2778494684",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q129270",
+                    "display_name": "Larva",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C173758957",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q527224",
+                    "display_name": "Muscidae",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2780039072",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1662346",
+                    "display_name": "Infectivity",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C106358424",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q598609",
+                    "display_name": "Stable fly",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2778022221",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7061684",
+                    "display_name": "Veterinary pathology",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C2777225262",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q441",
+                    "display_name": "Botany",
+                    "score": 25.0,
+                    "id": "https://openalex.org/C59822182",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2979645333",
+            "updated_date": "2022-01-30",
+            "created_date": "2019-10-18"
+        },
+        {
+            "id": "https://openalex.org/A2643548152",
+            "display_name": "K. Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 137.45178,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 8,
+            "ids": {
+                "openalex": "https://openalex.org/A2643548152",
+                "mag": "2643548152"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I1294671590",
+                "ror": "https://ror.org/02feahw73",
+                "display_name": "French National Centre for Scientific Research",
+                "country_code": "FR",
+                "type": "government"
+            },
+            "counts_by_year": [],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1062658",
+                    "display_name": "Node (physics)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C62611344",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q118093",
+                    "display_name": "Transmission (telecommunications)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C761482",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7754",
+                    "display_name": "Mathematical analysis",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C134306372",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q25342",
+                    "display_name": "Power (physics)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C163258240",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1155772",
+                    "display_name": "Scheme (mathematics)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C77618280",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11473",
+                    "display_name": "Thermodynamics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C97355855",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q82811",
+                    "display_name": "Acoustics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C24890656",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q633538",
+                    "display_name": "Structural engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C66938386",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q249",
+                    "display_name": "Wireless",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C555944384",
+                    "level": 2
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Algebra",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C125565743",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C121332964",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q174053",
+                    "display_name": "Relay",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778156585",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7310895",
+                    "display_name": "Relay channel",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C46257984",
+                    "level": 4
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Topology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126794175",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q944",
+                    "display_name": "Quantum mechanics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C62520636",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q16858953",
+                    "display_name": "Channel (broadcasting)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127162648",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43035",
+                    "display_name": "Electrical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C119599485",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11375",
+                    "display_name": "Wireless network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C108037233",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2643548152",
+            "updated_date": "2017-06-30",
+            "created_date": "2017-06-30"
+        },
+        {
+            "id": "https://openalex.org/A2476223723",
+            "display_name": "Kav\u00e9 Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 137.45178,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 8,
+            "ids": {
+                "openalex": "https://openalex.org/A2476223723",
+                "mag": "2476223723"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2017,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 3
+                },
+                {
+                    "year": 2014,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9418",
+                    "display_name": "Psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C15744967",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3988",
+                    "display_name": "Real-time computing",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C79403827",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q172491",
+                    "display_name": "Data mining",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C124101348",
+                    "level": 1
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Pattern recognition",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C178980831",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+                    "display_name": "Computer security",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C38652104",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C121332964",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q944",
+                    "display_name": "Quantum mechanics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C62520636",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q567560",
+                    "display_name": "Anomaly (physics)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C12997251",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q214781",
+                    "display_name": "Condensed matter physics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C26873012",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7148389",
+                    "display_name": "Pattern recognition (psychology)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C153180895",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1026626",
+                    "display_name": "Feature extraction",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C52622490",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q844240",
+                    "display_name": "Computer vision",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31972630",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q745881",
+                    "display_name": "Intrusion detection system",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C35525427",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3560506",
+                    "display_name": "Anomaly detection",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C739882",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q23373",
+                    "display_name": "Cognitive psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C180747234",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2476223723",
+            "updated_date": "2016-08-23",
+            "created_date": "2016-08-23"
+        },
+        {
+            "id": "https://openalex.org/A2806059673",
+            "display_name": "Loqman Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 128.57727,
+            "orcid": null,
+            "works_count": 7,
+            "cited_by_count": 7,
+            "ids": {
+                "openalex": "https://openalex.org/A2806059673",
+                "mag": "2806059673"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I78577930",
+                "ror": "https://ror.org/00hj8s172",
+                "display_name": "Columbia University",
+                "country_code": "US",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 2,
+                    "cited_by_count": 5
+                },
+                {
+                    "year": 2020,
+                    "works_count": 3,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2019,
+                    "works_count": 1,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2018,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q36442",
+                    "display_name": "Political science",
+                    "score": 71.4,
+                    "id": "https://openalex.org/C17744445",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1071",
+                    "display_name": "Geography",
+                    "score": 57.1,
+                    "id": "https://openalex.org/C205649164",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q159385",
+                    "display_name": "Geopolitics",
+                    "score": 42.9,
+                    "id": "https://openalex.org/C201960208",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7163",
+                    "display_name": "Politics",
+                    "score": 42.9,
+                    "id": "https://openalex.org/C94625758",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7748",
+                    "display_name": "Law",
+                    "score": 42.9,
+                    "id": "https://openalex.org/C199539241",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 42.9,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q159810",
+                    "display_name": "Economy",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C136264566",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21201",
+                    "display_name": "Sociology",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C144024400",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8134",
+                    "display_name": "Economics",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C162324750",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q75",
+                    "display_name": "The Internet",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C110875604",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q735",
+                    "display_name": "Art",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C142362112",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q80083",
+                    "display_name": "Humanities",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C15708023",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5891",
+                    "display_name": "Philosophy",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C138885662",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q309",
+                    "display_name": "History",
+                    "score": 28.6,
+                    "id": "https://openalex.org/C95457728",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2806059673",
+            "updated_date": "2018-06-13",
+            "created_date": "2018-06-13"
+        },
+        {
+            "id": "https://openalex.org/A2933240038",
+            "display_name": "K. Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 128.57425,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 7,
+            "ids": {
+                "openalex": "https://openalex.org/A2933240038",
+                "mag": "2933240038"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I1326498283",
+                "ror": "https://ror.org/02kvxyf05",
+                "display_name": "French Institute for Research in Computer Science and Automation",
+                "country_code": "FR",
+                "type": "government"
+            },
+            "counts_by_year": [],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43035",
+                    "display_name": "Electrical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C119599485",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+                    "display_name": "Computer security",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C38652104",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q180634",
+                    "display_name": "Distributed computing",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C120314980",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q899288",
+                    "display_name": "Multicast",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C32295351",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q118093",
+                    "display_name": "Transmission (telecommunications)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C761482",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2933240038",
+            "updated_date": "2021-12-23",
+            "created_date": "2019-04-11"
+        },
+        {
+            "id": "https://openalex.org/A1042614865",
+            "display_name": "Kav\u00e9 Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 119.036736,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 6,
+            "ids": {
+                "openalex": "https://openalex.org/A1042614865",
+                "mag": "1042614865"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q466",
+                    "display_name": "World Wide Web",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C136764020",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q75",
+                    "display_name": "The Internet",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C110875604",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q131765",
+                    "display_name": "Multimedia",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C49774154",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A1042614865",
+            "updated_date": "2016-06-24",
+            "created_date": "2016-06-24"
+        },
+        {
+            "id": "https://openalex.org/A2603523314",
+            "display_name": "M. Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 84.1716,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 3,
+            "ids": {
+                "openalex": "https://openalex.org/A2603523314",
+                "mag": "2603523314"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I158248296",
+                "ror": "https://ror.org/04gzbav43",
+                "display_name": "Amirkabir University of Technology",
+                "country_code": "IR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2020,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2019,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2013,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q6452175",
+                    "display_name": "Abutment",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C48777230",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1069",
+                    "display_name": "Geology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127313418",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q23498",
+                    "display_name": "Archaeology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C166957645",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8134",
+                    "display_name": "Economics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C162324750",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7205",
+                    "display_name": "Paleontology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C151730666",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q309",
+                    "display_name": "History",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C95457728",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q77590",
+                    "display_name": "Civil engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C147176958",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q42515",
+                    "display_name": "Cartography",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C58640448",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q40821",
+                    "display_name": "Surgery",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C141071460",
+                    "level": 1
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Hydrology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C37037264",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3433064",
+                    "display_name": "Riprap",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2777610993",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43015",
+                    "display_name": "Finance",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C10138342",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1349130",
+                    "display_name": "Geotechnical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C187320778",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2532492",
+                    "display_name": "Bridge (graph theory)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C100776233",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1071",
+                    "display_name": "Geography",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C205649164",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q52109",
+                    "display_name": "Geomorphology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C114793014",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q180184",
+                    "display_name": "Sediment",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2816523",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q633538",
+                    "display_name": "Structural engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C66938386",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11180",
+                    "display_name": "Internal medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126322002",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1108904",
+                    "display_name": "Collar",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2781448223",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q335297",
+                    "display_name": "Pier",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C157892014",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q514",
+                    "display_name": "Anatomy",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C105702510",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q101333",
+                    "display_name": "Mechanical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C78519656",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+                    "display_name": "Business",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C144133560",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2603523314",
+            "updated_date": "2017-04-07",
+            "created_date": "2017-04-07"
+        },
+        {
+            "id": "https://openalex.org/A42504940",
+            "display_name": "Mohammad Reza Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 73.970955,
+            "orcid": null,
+            "works_count": 2,
+            "cited_by_count": 3,
+            "ids": {
+                "openalex": "https://openalex.org/A42504940",
+                "mag": "42504940"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q870845",
+                    "display_name": "Channel capacity",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C97744766",
+                    "level": 3
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Communication channel",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C156996364",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q864142",
+                    "display_name": "Binary erasure channel",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C149862233",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9143",
+                    "display_name": "Programming language",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C199360897",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q16858953",
+                    "display_name": "Channel (broadcasting)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127162648",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43035",
+                    "display_name": "Electrical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C119599485",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q484885",
+                    "display_name": "Erasure",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778790127",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Algebra",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C125565743",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5385031",
+                    "display_name": "Erasure code",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C137529215",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q576722",
+                    "display_name": "Decoding methods",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C57273362",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q174053",
+                    "display_name": "Relay",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C2778156585",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7825049",
+                    "display_name": "Topology (electrical circuits)",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C184720557",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C121332964",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q131222",
+                    "display_name": "Information theory",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C52622258",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q76592",
+                    "display_name": "Combinatorics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C114614502",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11473",
+                    "display_name": "Thermodynamics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C97355855",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q944",
+                    "display_name": "Quantum mechanics",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C62520636",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2878974",
+                    "display_name": "Theoretical computer science",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C80444323",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5072511",
+                    "display_name": "Channel state information",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C148063708",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7310895",
+                    "display_name": "Relay channel",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C46257984",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q25342",
+                    "display_name": "Power (physics)",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C163258240",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q249",
+                    "display_name": "Wireless",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C555944384",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1196572",
+                    "display_name": "Fading",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C81978471",
+                    "level": 3
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A42504940",
+            "updated_date": "2016-06-24",
+            "created_date": "2016-06-24"
+        },
+        {
+            "id": "https://openalex.org/A3181125926",
+            "display_name": "Kave Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 71.18842,
+            "orcid": null,
+            "works_count": 2,
+            "cited_by_count": 2,
+            "ids": {
+                "openalex": "https://openalex.org/A3181125926",
+                "mag": "3181125926"
+            },
+            "last_known_institution": null,
+            "counts_by_year": [
+                {
+                    "year": 2016,
+                    "works_count": 0,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2014,
+                    "works_count": 2,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1446839",
+                    "display_name": "Routing (electronic design automation)",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C74172769",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q126095",
+                    "display_name": "Electronic engineering",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C24326235",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q5473302",
+                    "display_name": "Forwarding plane",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C10597312",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q193040",
+                    "display_name": "Embedded system",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C149635348",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9143",
+                    "display_name": "Programming language",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C199360897",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q844240",
+                    "display_name": "Computer vision",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C31972630",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q290066",
+                    "display_name": "Routing table",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C184896649",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q885373",
+                    "display_name": "Bloom filter",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C147224247",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q214111",
+                    "display_name": "Network packet",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C158379750",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2493",
+                    "display_name": "Data compression",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C78548338",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+                    "display_name": "Computer security",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C38652104",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1648707",
+                    "display_name": "Routing protocol",
+                    "score": 50.0,
+                    "id": "https://openalex.org/C104954878",
+                    "level": 3
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A3181125926",
+            "updated_date": "2021-07-19",
+            "created_date": "2021-07-19"
+        },
+        {
+            "id": "https://openalex.org/A3215446449",
+            "display_name": "K. Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 68.72744,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 2,
+            "ids": {
+                "openalex": "https://openalex.org/A3215446449",
+                "mag": "3215446449"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I39804081",
+                "ror": "https://ror.org/02en5vm52",
+                "display_name": "Sorbonne University",
+                "country_code": "FR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2012,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": null,
+                    "display_name": "Algebra",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C125565743",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127413603",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418",
+                    "display_name": "Telecommunications",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C76155785",
+                    "level": 1
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Communication channel",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C156996364",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7754",
+                    "display_name": "Mathematical analysis",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C134306372",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9143",
+                    "display_name": "Programming language",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C199360897",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q13222579",
+                    "display_name": "Upper and lower bounds",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C77553402",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q43035",
+                    "display_name": "Electrical engineering",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C119599485",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q864142",
+                    "display_name": "Binary erasure channel",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C149862233",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q16858953",
+                    "display_name": "Channel (broadcasting)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C127162648",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q484885",
+                    "display_name": "Erasure",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778790127",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q8366",
+                    "display_name": "Algorithm",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C11413529",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q576722",
+                    "display_name": "Decoding methods",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C57273362",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q3518405",
+                    "display_name": "Terminal (telecommunication)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2779664074",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1301371",
+                    "display_name": "Computer network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C31258907",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q870845",
+                    "display_name": "Channel capacity",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C97744766",
+                    "level": 3
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Topology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126794175",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A3215446449",
+            "updated_date": "2021-12-06",
+            "created_date": "2021-12-06"
+        },
+        {
+            "id": "https://openalex.org/A2978119651",
+            "display_name": "Mojtaba Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 50.337814,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 1,
+            "ids": {
+                "openalex": "https://openalex.org/A2978119651",
+                "mag": "2978119651"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I38476204",
+                "ror": "https://ror.org/032fk0x53",
+                "display_name": "Urmia University",
+                "country_code": "IR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2019,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q917447",
+                    "display_name": "Inflammatory bowel disease",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778260677",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12136",
+                    "display_name": "Disease",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2779134260",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2453464",
+                    "display_name": "Colitis",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2775862500",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q771035",
+                    "display_name": "Traditional medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C556039675",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420012",
+                    "display_name": "Myeloperoxidase",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C203565725",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11180",
+                    "display_name": "Internal medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126322002",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q581996",
+                    "display_name": "Anti-inflammatory",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2779703632",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q120569",
+                    "display_name": "Gastroenterology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C90924648",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q418661",
+                    "display_name": "Malondialdehyde",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778401633",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q898814",
+                    "display_name": "Oxidative stress",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2776151105",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q128406",
+                    "display_name": "Pharmacology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C98274493",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q162606",
+                    "display_name": "Endocrinology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C134018914",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11351",
+                    "display_name": "Organic chemistry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C178790620",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q101991",
+                    "display_name": "Inflammation",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2776914184",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q101929",
+                    "display_name": "Immunology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C203014093",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7208",
+                    "display_name": "Pathology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C142724271",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q133948",
+                    "display_name": "Antioxidant",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778004101",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7094",
+                    "display_name": "Biochemistry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C55493867",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2329",
+                    "display_name": "Chemistry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C185592680",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1477",
+                    "display_name": "Ulcerative colitis",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2780479503",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1259977",
+                    "display_name": "Aqueous extract",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2993907526",
+                    "level": 2
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2978119651",
+            "updated_date": "2019-10-10",
+            "created_date": "2019-10-10"
+        },
+        {
+            "id": "https://openalex.org/A3105742739",
+            "display_name": "Asma Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 48.59764,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 1,
+            "ids": {
+                "openalex": "https://openalex.org/A3105742739",
+                "mag": "3105742739"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I80543232",
+                "ror": "https://ror.org/0433abe34",
+                "display_name": "K.N.Toosi University of Technology",
+                "country_code": "IR",
+                "type": "education"
+            },
+            "counts_by_year": [
+                {
+                    "year": 2021,
+                    "works_count": 0,
+                    "cited_by_count": 1
+                },
+                {
+                    "year": 2020,
+                    "works_count": 1,
+                    "cited_by_count": 0
+                }
+            ],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q21198",
+                    "display_name": "Computer science",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C41008148",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q23373",
+                    "display_name": "Cognitive psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C180747234",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7867",
+                    "display_name": "Psychiatry",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C118552586",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9418",
+                    "display_name": "Psychology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C15744967",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7148389",
+                    "display_name": "Pattern recognition (psychology)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C153180895",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q192776",
+                    "display_name": "Artificial neural network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C50644808",
+                    "level": 2
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Sleep in non-human animals",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C112749745",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q197536",
+                    "display_name": "Deep learning",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C108583219",
+                    "level": 2
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Pattern recognition",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C178980831",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9135",
+                    "display_name": "Operating system",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C111919701",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q207011",
+                    "display_name": "Neuroscience",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C169760540",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q35831",
+                    "display_name": "Sleep Stages",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2910364982",
+                    "level": 4
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11660",
+                    "display_name": "Artificial intelligence",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C154945302",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1754874",
+                    "display_name": "Polysomnography",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2778205975",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q9143",
+                    "display_name": "Programming language",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C199360897",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q4683692",
+                    "display_name": "Sleep (system call)",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C2775841894",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q2539",
+                    "display_name": "Machine learning",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C119857082",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q17084460",
+                    "display_name": "Convolutional neural network",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C81363708",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A3105742739",
+            "updated_date": "2020-11-23",
+            "created_date": "2020-11-23"
+        },
+        {
+            "id": "https://openalex.org/A2464555626",
+            "display_name": "Mohammad-Reza Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 41.23111,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 1,
+            "ids": {
+                "openalex": "https://openalex.org/A2464555626",
+                "mag": "2464555626"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I102197404",
+                "ror": "https://ror.org/028rypz17",
+                "display_name": "University of Paris-Sud",
+                "country_code": "FR",
+                "type": "education"
+            },
+            "counts_by_year": [],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11473",
+                    "display_name": "Thermodynamics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C97355855",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q944",
+                    "display_name": "Quantum mechanics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C62520636",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q163214",
+                    "display_name": "Diffusion",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C69357855",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C121332964",
+                    "level": 0
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A2464555626",
+            "updated_date": "2016-07-22",
+            "created_date": "2016-07-22"
+        },
+        {
+            "id": "https://openalex.org/A780500904",
+            "display_name": "V. Sharifi-Salamatian",
+            "display_name_alternatives": [],
+            "relevance_score": 41.23111,
+            "orcid": null,
+            "works_count": 1,
+            "cited_by_count": 1,
+            "ids": {
+                "openalex": "https://openalex.org/A780500904",
+                "mag": "780500904"
+            },
+            "last_known_institution": {
+                "id": "https://openalex.org/I204730241",
+                "ror": "https://ror.org/05f82e368",
+                "display_name": "University of Paris",
+                "country_code": "FR",
+                "type": "education"
+            },
+            "counts_by_year": [],
+            "x_concepts": [
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12483",
+                    "display_name": "Statistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C105795698",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11180",
+                    "display_name": "Internal medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126322002",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q12078",
+                    "display_name": "Cancer",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C121608353",
+                    "level": 2
+                },
+                {
+                    "wikidata": null,
+                    "display_name": "Topology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C126794175",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q11190",
+                    "display_name": "Medicine",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C71924100",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q128581",
+                    "display_name": "Breast cancer",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C530470458",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q420",
+                    "display_name": "Biology",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C86803240",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1412452",
+                    "display_name": "Fractal dimension",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C26546657",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7574086",
+                    "display_name": "Spatial variability",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C94747663",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q81392",
+                    "display_name": "Fractal",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C40636538",
+                    "level": 2
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q395",
+                    "display_name": "Mathematics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C33923547",
+                    "level": 0
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q1440020",
+                    "display_name": "Geostatistics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C125572338",
+                    "level": 3
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7754",
+                    "display_name": "Mathematical analysis",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C134306372",
+                    "level": 1
+                },
+                {
+                    "wikidata": "https://www.wikidata.org/wiki/Q7162",
+                    "display_name": "Genetics",
+                    "score": 100.0,
+                    "id": "https://openalex.org/C54355233",
+                    "level": 1
+                }
+            ],
+            "works_api_url": "https://api.openalex.org/works?filter=author.id:A780500904",
+            "updated_date": "2016-06-24",
+            "created_date": "2016-06-24"
+        }
+    ],
+    "group_by": []
+}
