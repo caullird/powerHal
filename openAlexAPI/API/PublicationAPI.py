@@ -14,33 +14,55 @@ class PublicationAPI():
         self.dataBase = dataBase
         self.filter = filter
         
-        self.publications = self.getPublications()
+        self.publications = self.addPublicationInformations()
 
 
-    def getPublications(self):
+    def addPublicationInformations(self):
         publications = []
         for id in self.idsAuthor:
 
             results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=' + self.filter + ':A' + id).text)
-            for article in results['results']:
-                publications.append(article) 
+            for publication in results['results']:
+                publications.append(publication) 
 
-                unPublication = Publication(
-                    article['id'],
-                    article['doi'],
-                    article['title'],
-                    article['display_name'],
-                    article['ids']['mag'],
-                    article['type'],
-                    article['publication_year'],
-                    article['publication_date'],
-                    article['updated_date'],
-                    article['created_date']
-                )  
+                # Insertion de l'ensemble des publications dans notre base de donnée
+                self.addPublication(publication)
 
-                unPublication.setDataBase(self.dataBase)
-                unPublication.checkIfExistsOrInsert()
-
+                # Insertion de l'ensemble des concepts dans notre base de donnée
+                self.addConcepts(publication)
 
         print("INFO | " + str(len(publications)) + " publications trouvées")
 
+
+    # Insertion de l'ensemble des concepts dans notre base de donnée
+    def addConcepts(self,publication):
+        for concept in publication['concepts']:
+            unConcept = Concept(
+                concept['id'],
+                concept['wikidata'],
+                concept['display_name'],
+                concept['level'],
+                concept['score']
+            )
+
+            unConcept.setDataBase(self.dataBase)
+            unConcept.checkIfExistsOrInsert()
+
+
+    # Insertion de l'ensemble des publications dans notre base de donnée
+    def addPublication(self, publication):
+        unPublication = Publication(
+            publication['id'],
+            publication['doi'],
+            publication['title'],
+            publication['display_name'],
+            publication['ids']['mag'],
+            publication['type'],
+            publication['publication_year'],
+            publication['publication_date'],
+            publication['updated_date'],
+            publication['created_date']
+        )  
+
+        unPublication.setDataBase(self.dataBase)
+        unPublication.checkIfExistsOrInsert()

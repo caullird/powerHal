@@ -74,7 +74,7 @@ class DB():
         fieldsValues = self.getObjectFields(object, type = "values")
 
         sql = 'INSERT INTO ' + str(className) + '(' + ", ".join(fieldsNames) + ') VALUES ("' + '", "'.join(fieldsValues) + '")'
-        
+
         self.cursor.execute(sql)
 
         print("INFO | Une nouvelle " + str(className) + " a été ajouté sur votre base de données")
@@ -86,14 +86,12 @@ class DB():
 
         for field in inspect.getmembers(object):
             if not field[0].startswith('_') and not inspect.ismethod(field[1]) and not field[0] == "database":
-
                 if(type == "names"):
                     fields.append(field[0])
                 elif(type == "values"):
                     fields.append(str(field[1]))
                 elif(type == "all"):
                     fields.append(field)
-
         return fields
 
 

@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS institution;
 DROP TABLE IF EXISTS publication;
+DROP TABLE IF EXISTS concept;
 
 CREATE TABLE IF NOT EXISTS institution (
     id_institution int(11) NOT NULL AUTO_INCREMENT,
@@ -25,5 +26,16 @@ CREATE TABLE IF NOT EXISTS publication (
     updated_date varchar(100),
     created_date varchar(100),
     PRIMARY KEY (id_publication)
-)
+);
+
+
+CREATE TABLE IF NOT EXISTS concept (
+    id_concept int(11) NOT NULL AUTO_INCREMENT,
+    idAlex_concept varchar(100),
+    wikidata varchar(100),
+    display_name varchar(500),
+    level_concept varchar(100),
+    score varchar(100),
+    PRIMARY KEY (id_concept)
+);
 
