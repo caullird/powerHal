@@ -8,7 +8,7 @@ class openAlex():
 
     ## En attendant d'avoir le lien entre le site web et le programme python
 
-    research = "Kave SALAMATIAN"
+    research = "Sorana CIMPAN"
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     
