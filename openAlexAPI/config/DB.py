@@ -73,11 +73,8 @@ class DB():
         fieldsNames = self.getObjectFields(object, type = "names")
         fieldsValues = self.getObjectFields(object, type = "values")
 
-        print(fieldsValues)
-        #sql = "INSERT INTO " + str(className) + "(" + ', '.join(fieldsNames) + ") VALUES ('" + "', '".join(fieldsValues) + "')"
         sql = 'INSERT INTO ' + str(className) + '(' + ", ".join(fieldsNames) + ') VALUES ("' + '", "'.join(fieldsValues) + '")'
-
-        print(sql)
+        
         self.cursor.execute(sql)
 
         print("INFO | Une nouvelle " + str(className) + " a été ajouté sur votre base de données")
