@@ -1,7 +1,6 @@
 -- Création des tables primaires
 DROP TABLE IF EXISTS institution;
 DROP TABLE IF EXISTS publication;
-DROP TABLE IF EXISTS conceptpublication;
 DROP TABLE IF EXISTS conceptauthor;
 DROP TABLE IF EXISTS author;
 
@@ -35,22 +34,12 @@ CREATE TABLE IF NOT EXISTS publication (
     PRIMARY KEY (id_publication)
 );
 
-CREATE TABLE IF NOT EXISTS conceptpublication (
-    id_conceptpublication int(11) NOT NULL AUTO_INCREMENT,
-    idAlex_conceptpublication varchar(100),
+CREATE TABLE IF NOT EXISTS concept(
+    id_concept int(11) NOT NULL AUTO_INCREMENT,
+    idAlex_concept varchar(100),
     wikidata varchar(100),
     display_name varchar(500),
-    level_concept varchar(100),
-    score varchar(100),
-    PRIMARY KEY (id_conceptpublication)
-);
-
-CREATE TABLE IF NOT EXISTS conceptauthor (
-    id_conceptauthor int(11) NOT NULL AUTO_INCREMENT,
-    idAlex_conceptauthor varchar(100),
-    wikidata varchar(100),
-    display_name varchar(500),
-    PRIMARY KEY (id_conceptauthor)
+    PRIMARY KEY (id_concept)
 );
 
 CREATE TABLE IF NOT EXISTS author (

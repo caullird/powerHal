@@ -1,4 +1,3 @@
-from tokenize import String
 from config.DB import DB
 from config.AlexAPI import AlexAPI
 from API.AuthorAPI import AuthorAPI

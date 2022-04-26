@@ -1,7 +1,7 @@
 from turtle import pu
 import requests
 import json
-from model.ConceptPublication import ConceptPublication
+from model.Concept import Concept
 from model.Publication import Publication
 from model.Author import Author
 from model.AuthorPublication import AuthorPublication
@@ -47,19 +47,17 @@ class PublicationAPI():
     # Insertion de l'ensemble des concepts dans notre base de donnée
     def addConcepts(self,publication, idAuthorMySQL):
         for concept in publication['concepts']:
-            unConcept = ConceptPublication(
+            unConcept = Concept(
                 concept['id'],
                 concept['wikidata'],
-                concept['display_name'],
-                concept['level'],
-                concept['score']
+                concept['display_name']
             )
 
             unConcept.setDataBase(self.dataBase)
             unConcept.checkIfExistsOrInsert()
 
             # Ajout de la relation entre le concept et la publication
-            
+
 
     # Insertion de l'ensemble des publications dans notre base de donnée
     def addPublication(self, publication, idAuthorMySQL):

@@ -3,7 +3,7 @@ import json
 from config.ResearchInitializer import ResearchInitializer
 from model.Institution import Institution
 from model.Author import Author
-from model.ConceptAuthor import ConceptAuthor
+from model.Concept import Concept
 from model.AuthorInstitution import AuthorInstitution
 
 class AuthorAPI():
@@ -63,14 +63,14 @@ class AuthorAPI():
     # Permet de récupérer les concepts relatifs à l'auteur
     def addConceptsAuthor(self, result):
         for concept in result['x_concepts']:
-            unConceptAuthor = ConceptAuthor(
+            unConcept = Concept(
                 concept['id'],
                 concept['wikidata'],
                 concept['display_name']
             )
 
-            unConceptAuthor.setDataBase(self.dataBase)
-            unConceptAuthor.checkIfExistsOrInsert()    
+            unConcept.setDataBase(self.dataBase)
+            unConcept.checkIfExistsOrInsert()    
 
 
     # Permet de récupérer et d'ajouter les informations propre à l'auteur
