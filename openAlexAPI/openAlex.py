@@ -1,26 +1,26 @@
 from tokenize import String
 from config.DB import DB
-from AlexAPI import AlexAPI
-
+from config.AlexAPI import AlexAPI
+from model.Author import Author
 
 class openAlex():
 
 
     ## En attendant d'avoir le lien entre le site web et le programme python
 
-    research = "Kavé Salamatian"
+    research = "Sorana CIMPAN"
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     
-    DB = DB().getCursor()
+    dbCursor = DB().getCursor()
 
     ## Récupération des id AlexAPI en fonction du nom de l'utilisateur
 
-    API = AlexAPI(research)
+    API = AlexAPI()
 
     ## On prend les informations de l'auteurs en fonction du profil avec le plus d'interaction
 
-    API.getAuthors()
+    Author = Author(research, API, dbCursor, filter_by = "display_name")
 
     ## On compare avec nos données dans notre database 
 
