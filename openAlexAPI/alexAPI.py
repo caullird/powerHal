@@ -1,11 +1,32 @@
+import configparser
 import requests
-import json
-response_API = requests.get('https://api.openalex.org/authors?filter=display_name.search:kavé-salamatian')
-#print(response_API.status_code)
-data = response_API.text
-parse_json = json.loads(data)
 
-for result in parse_json['results']:
-    print(result['ids'])
+class AlexAPI():
+    def __init__(self, research):
+        self.initial_research = research
+        self.intializedResearch = self.initializeResearch()
+        self.config = self.getConfig()
+        self.urlAPI = self.getUrlAPI()
 
-https://api.openalex.org/works?filter=authorships.author.id:A166706192
+    def initializeResearch(self):
+        specialChars = "!#$%^&*()" 
+
+        result = self.initial_research
+
+        for specialChar in specialChars:
+            result = result.replace(specialChar, '')
+
+        result = result.replace(' ', '-')
+
+        return result.lower()
+
+    def getConfig(self):
+        config = configparser.ConfigParser()
+        config.read('./config.ini')
+        return config
+
+    def getUrlAPI(self):
+        return self.config['OPENALEX']['URL']
+
+
+    
