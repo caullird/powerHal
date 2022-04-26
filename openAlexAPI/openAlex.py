@@ -2,14 +2,14 @@ from tokenize import String
 from config.DB import DB
 from config.AlexAPI import AlexAPI
 from API.Author import Author
-from API.Article import Article
+from API.Publication import Publication
 
 class openAlex():
 
 
     ## En attendant d'avoir le lien entre le site web et le programme python
 
-    research = "CIMPAN Sorana"
+    research = "SORANA Cimpan"
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     
@@ -26,5 +26,7 @@ class openAlex():
     ## Récupération des articles en fonction des id AlexAPI
 
     publications = Publication(author.getArrayAuthorIDs(), API, dataBase)
+
+    publications.insertPublications()
 
     ## Création des liens avec les autres autheurs + création des auteurs dans notre database
