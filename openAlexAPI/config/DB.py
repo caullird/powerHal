@@ -39,8 +39,11 @@ class DB():
         self.connector.commit()
 
     # Permet de verifier si la ligne existe déjà
-    def checkIfExists(self, table, values):
-        print(values)
+    def checkIfExists(self, table, constraint):
+        self.cursor.execute(str("SELECT * FROM " + table + " WHERE " + constraint))
+        if self.cursor.fetchone(): return False 
+        else: return True
+        
 
     # Permet de vérifier la bonne connexion a la base de données
     def logConnect(self):
