@@ -3,8 +3,8 @@ import requests
 import json
 from model.Concept import Concept
 from model.Publication import Publication
-from model.Author import Author
 from model.AuthorPublication import AuthorPublication
+from model.AuthorPublicationConcept import AuthorPublicationConcept
 
 class PublicationAPI():
 
@@ -29,23 +29,23 @@ class PublicationAPI():
                 publications.append(publication) 
 
                 # Insertion de l'ensemble des publications dans notre base de donnée
-                self.addPublication(publication, idAuthorMySQL)
+                idPublication = self.addPublication(publication, idAuthorMySQL)
 
                 # Insertion de l'ensemble des concepts dans notre base de donnée
-                self.addConcepts(publication, idAuthorMySQL)
+                self.addConcepts(publication, idAuthorMySQL, idPublication)
 
                 # Insert de l'ensemble des co-auteur des publications dans notre base de donnée
-                self.addCoAuthors(publication, idAuthorMySQL)
+                self.addCoAuthors(publication, idAuthorMySQL, idPublication)
 
         print("INFO | " + str(len(publications)) + " publications trouvées")
 
     
     # Insert de l'ensemble des co-auteur des publications dans notre base de donnée
-    def addCoAuthors(self,publication, idAuthorMySQL):
+    def addCoAuthors(self,publication, idAuthorMySQL, idPublication):
         pass
 
     # Insertion de l'ensemble des concepts dans notre base de donnée
-    def addConcepts(self,publication, idAuthorMySQL):
+    def addConcepts(self,publication, idAuthorMySQL, idPublication):
         for concept in publication['concepts']:
             unConcept = Concept(
                 concept['id'],
@@ -54,9 +54,18 @@ class PublicationAPI():
             )
 
             unConcept.setDataBase(self.dataBase)
-            unConcept.checkIfExistsOrInsert()
+            idConcept = unConcept.checkIfExistsOrInsert()
 
             # Ajout de la relation entre le concept et la publication
+
+            unAuthorPublicationConcept = AuthorPublicationConcept(
+                str(idAuthorMySQL),
+                str(idConcept),
+                str(idPublication),
+            )
+
+            unAuthorPublicationConcept.setDataBase(self.dataBase)
+            unAuthorPublicationConcept.checkIfExistsOrInsert()
 
 
     # Insertion de l'ensemble des publications dans notre base de donnée
@@ -80,4 +89,4 @@ class PublicationAPI():
         # Ajout de la relation entre la publication et l'auteur
         unAuthorPublication = AuthorPublication(str(idAuthorMySQL),str(idPublication))
         unAuthorPublication.setDataBase(self.dataBase)
-        unAuthorPublication.checkIfExistsOrInsert()
+        return unAuthorPublication.checkIfExistsOrInsert()

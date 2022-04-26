@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS author;
 -- Création des relations entre les tables
 DROP TABLE IF EXISTS authorinstitution;
 DROP TABLE IF EXISTS authorpublication;
+DROP TABLE IF EXISTS authorpublicationconcept;
 
 CREATE TABLE IF NOT EXISTS institution (
     id_institution int(11) NOT NULL AUTO_INCREMENT,
@@ -72,4 +73,14 @@ CREATE TABLE IF NOT EXISTS authorpublication (
 );
 
 
+CREATE TABLE IF NOT EXISTS authorpublicationconcept (
+    id_authorpublicationconcept int(11) NOT NULL AUTO_INCREMENT,
+    id_author int(11),
+    id_publication int(11),
+    id_concept int(11) NOT NULL,
+    PRIMARY KEY (id_authorpublicationconcept),
+    FOREIGN KEY (id_author) REFERENCES author(id_author),
+    FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
+    FOREIGN KEY (id_concept) REFERENCES concept(id_concept)
+);
 
