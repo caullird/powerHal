@@ -3,7 +3,7 @@ import json
 from config.ResearchInitializer import ResearchInitializer
 from model.Institution import Institution
 
-class Author():
+class AuthorAPI():
 
     def __init__(self, research, halAPI, dataBase, filter_by):
         # Paramètre de recherche depuis notre solution
@@ -38,7 +38,7 @@ class Author():
                 )
 
                 unInstitution.setDataBase(self.dataBase)
-                unInstitution.checkIfExists()
+                unInstitution.checkIfExistsOrInsert()
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
     def getGlobalResponseAuthor(self):
