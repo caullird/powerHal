@@ -17,4 +17,4 @@ class Institution():
 
     # Permet de vérifier si l'objet institution existe dans la base de données et l'ajouter dans le cas échéant
     def checkIfExistsOrInsert(self):
-        self.database.checkIfExistsOrInsert(self, fieldsComparable = ["idAlex_institution", "display_name"])
+        return self.database.checkIfExistsOrInsert(self, fieldsComparable = ["idAlex_institution", "display_name"])

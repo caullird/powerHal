@@ -11,7 +11,7 @@ class ConceptAuthor():
 
     # Permet de vérifier si l'objet concept existe dans la base de données et l'ajouter dans le cas échéant
     def checkIfExistsOrInsert(self):
-        self.database.checkIfExistsOrInsert(self, fieldsComparable = ["idAlex_conceptauthor", "display_name"])
+        return self.database.checkIfExistsOrInsert(self, fieldsComparable = ["idAlex_conceptauthor", "display_name"])
 
 
 

@@ -39,8 +39,21 @@ class DB():
         return config
 
 
+    # Permet de vérifier la bonne connexion a la base de données
+    def logConnect(self):
+
+        self.cursor.execute("SELECT VERSION()")
+
+        results = self.cursor.fetchone()
+
+        if results:
+            print("INFO | Connexion effectuée avec votre base de donnée")
+        else:
+            print("ERROR | Problème avec la connexion de votre base de donnée")
+
+
     # Permet de verifier si la ligne existe déjà, et de l'insérer sinon
-    def checkIfExistsOrInsert(self, object, fieldsComparable):
+    def checkIfExistsOrInsert(self, object, fieldsComparable, needToInsert = True):
 
         fields = self.sortByFieldName(self.getObjectFields(object, type = "all"), fieldsComparable)
 
@@ -51,8 +64,11 @@ class DB():
 
         self.cursor.execute(sql[:-4])
 
-        if (self.cursor.fetchone()) == None: 
-            self.autoInsert(object)
+        row = self.cursor.fetchone()
+        if row == None: 
+            return self.autoInsert(object)
+        else:
+            return row[0]
 
 
     # Permet de filtrer en fonction des champs de recherche 
@@ -78,6 +94,8 @@ class DB():
         self.cursor.execute(sql)
 
         print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
+        
+        return self.cursor.lastrowid
 
 
     # Permet de récupérer les champs d'un objet, que ce soit des noms ou des values
@@ -95,22 +113,15 @@ class DB():
         return fields
 
 
+    def findIdAuthorByIDAlex(self, id, fieldsComparable):
+        self.cursor.execute("SELECT id_author FROM author WHERE " + str(fieldsComparable) + " LIKE '%" + str(id) + "%'")
+
+        return self.cursor.fetchone()[0]
+
+
     # Permet de récupérer le nom de la classe actuelle
     def getClassName(self,object):
         return type(object).__name__
-
-
-    # Permet de vérifier la bonne connexion a la base de données
-    def logConnect(self):
-
-        self.cursor.execute("SELECT VERSION()")
-
-        results = self.cursor.fetchone()
-
-        if results:
-            print("INFO | Connexion effectuée avec votre base de donnée")
-        else:
-            print("ERROR | Problème avec la connexion de votre base de donnée")
 
 
     # Permet de fermer la connexion a la base de données

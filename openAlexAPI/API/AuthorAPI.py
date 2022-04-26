@@ -4,6 +4,7 @@ from config.ResearchInitializer import ResearchInitializer
 from model.Institution import Institution
 from model.Author import Author
 from model.ConceptAuthor import ConceptAuthor
+from model.AuthorInstitution import AuthorInstitution
 
 class AuthorAPI():
 
@@ -24,9 +25,11 @@ class AuthorAPI():
         self.dataBase = dataBase
 
         # Ajout des informations relative à l'auteur pour
+
+        self.idAuthor = self.addAuthorInformations()
+
         self.addAdditionalAuthorInformations()
 
-        self.addAuthorInformations()
 
     # Permet de récupérer et d'ajouter les informations relative a l'auteur (en dehors de lui même)
     def addAdditionalAuthorInformations(self):
@@ -36,6 +39,26 @@ class AuthorAPI():
 
             # Ajout de l'ensemble des concepts relatifs à l'auteur
             self.addConceptsAuthor(result)  
+
+
+    # Permet d'ajouter l'ensemble des Institutions
+    def addInstitutions(self, result):
+        if(result['last_known_institution'] != None):  
+            unInstitution = Institution(
+                result['last_known_institution']['id'],
+                result['last_known_institution']['ror'],
+                result['last_known_institution']['display_name'],
+                result['last_known_institution']['country_code'],
+                result['last_known_institution']['type']
+            )
+
+            unInstitution.setDataBase(self.dataBase)
+            idInstitution = unInstitution.checkIfExistsOrInsert()
+
+            unAuthorInstitution = AuthorInstitution(str(self.idAuthor),str(idInstitution))
+            unAuthorInstitution.setDataBase(self.dataBase)
+            unAuthorInstitution.checkIfExistsOrInsert()
+
 
     # Permet de récupérer les concepts relatifs à l'auteur
     def addConceptsAuthor(self, result):
@@ -91,26 +114,13 @@ class AuthorAPI():
         )
 
         unAuthor.setDataBase(self.dataBase)
-        unAuthor.checkIfExistsOrInsert()
-
-    # Permet d'ajouter l'ensemble des Institutions
-    def addInstitutions(self, result):
-        if(result['last_known_institution'] != None):  
-            unInstitution = Institution(
-                result['last_known_institution']['id'],
-                result['last_known_institution']['ror'],
-                result['last_known_institution']['display_name'],
-                result['last_known_institution']['country_code'],
-                result['last_known_institution']['type']
-            )
-
-            unInstitution.setDataBase(self.dataBase)
-            unInstitution.checkIfExistsOrInsert()
+        return unAuthor.checkIfExistsOrInsert()
 
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
     def getGlobalResponseAuthor(self):
         return json.loads(requests.get(self.halAPI.getUrlAPI() + 'authors?filter=' + self.filter_by + '.search:' + self.intializedResearch).text)
+
 
     # Permet de récupérer l'ensemble des IDS relatifs à notre paramètre
     def getHalAuthorIDs(self):
@@ -122,6 +132,12 @@ class AuthorAPI():
         print("INFO | " + str(len(halIDs)) + " profil d'auteur valide trouvé pour le nom " + str(self.initial_research))
         return halIDs
 
+
     # Permet de récupérer la liste des auteurs
     def getArrayAuthorIDs(self):
         return self.halAuthorIDs
+
+
+    # Permet de récupérer l'id de l'auteur trouvé
+    def getIdAuthor(self):
+        return self.idAuthor
