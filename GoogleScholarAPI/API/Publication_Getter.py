@@ -1,7 +1,7 @@
 from scholarly import scholarly
 import requests
 import os
-from model import Publication
+from model.Publication import Publication
 
 class Publication_Getter():
 
@@ -9,7 +9,7 @@ class Publication_Getter():
         self.author = scholarly.fill(next(scholarly.search_author(author_name)))
         self.publications = []
 
-    def get_pdf(self, publication):
+    def get_pdf(self, publication, author):
         author_pub_id = publication["author_pub_id"]
         publication_filled = scholarly.fill(publication)
         user = author_pub_id.split(":")[0]
@@ -19,7 +19,8 @@ class Publication_Getter():
         #Scrap the url and date
         pdf_url = response.split('<div class="gsc_oci_title_ggi"><a href="')[1].split('"')[0]
         date = response.split('<div class="gsc_oci_value">')[2].split("</div>")[0]
-        print(date)
+        description = response.split('Description</div><div class="gsc_oci_value" id="gsc_oci_descr"><div class="gsh_small">  <div class="gsh_csp">')[1].split("</div")[0]
+        authors = response.split('Authors</div><div class="gsc_oci_value">')[1].split("</div>")[0]
         pdf = requests.get(pdf_url)
         try:
             f = open("pdf/" + user+"/" + author_pub_id.replace(":","_")+".pdf", 'wb')
@@ -29,16 +30,17 @@ class Publication_Getter():
         f.write(pdf.content)
         f.close()
 
-        return Publication(publication_filled['bib']['title'], date, description,autheur,affiliation, pdf_lien)
+        title = publication_filled['bib']['title']
+        return Publication(title, date, description,authors, "coucou", "pdf/" + user+"/" + author_pub_id.replace(":","_")+".pdf")
 
     def get_all_pdf(self):
         for i in self.author['publications'][0:1]:
             try:
-                self.get_pdf(i)
+                print(self.get_pdf(i, self.author).get_infos())
             except: 
-                print("fail" + i["author_pub_id"])
+                print("fail " + i["author_pub_id"])
         
     
-pub = Publication_Getter('Sorana Cimpan')
+pub = Publication_Getter('Sebastien Monnet')
 
 pub.get_all_pdf()
