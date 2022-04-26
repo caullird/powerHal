@@ -2,10 +2,13 @@ import requests
 import json
 from config.ResearchInitializer import ResearchInitializer
 from model.Institution import Institution
+from model.Author import Author
+from model.ConceptAuthor import ConceptAuthor
 
 class AuthorAPI():
 
     def __init__(self, research, halAPI, dataBase, filter_by):
+        
         # Paramètre de recherche depuis notre solution
         self.initial_research = research
         self.intializedResearch = ResearchInitializer(research).getInitializeResearch()
@@ -20,25 +23,90 @@ class AuthorAPI():
         # Lien avec nos données sur la base mysql
         self.dataBase = dataBase
 
-
         # Ajout des informations relative à l'auteur pour
-        self.institutions = self.getInstitutions()
+        self.addAdditionalAuthorInformations()
 
-    # Permet de récupérer et d'ajouter les institution relative a l'auteur
-    def getInstitutions(self):
+        self.addAuthorInformations()
+
+    # Permet de récupérer et d'ajouter les informations relative a l'auteur (en dehors de lui même)
+    def addAdditionalAuthorInformations(self):
         for result in self.globalResponseAuthor['results']:
-            if(result['last_known_institution'] != None):
-                    
-                unInstitution = Institution(
-                    result['last_known_institution']['id'],
-                    result['last_known_institution']['ror'],
-                    result['last_known_institution']['display_name'],
-                    result['last_known_institution']['country_code'],
-                    result['last_known_institution']['type']
-                )
+            # Ajout de l'ensemble des institutions
+            self.addInstitutions(result) 
 
-                unInstitution.setDataBase(self.dataBase)
-                unInstitution.checkIfExistsOrInsert()
+            # Ajout de l'ensemble des concepts relatifs à l'auteur
+            self.addConceptsAuthor(result)  
+
+    # Permet de récupérer les concepts relatifs à l'auteur
+    def addConceptsAuthor(self, result):
+        for concept in result['x_concepts']:
+            unConceptAuthor = ConceptAuthor(
+                concept['id'],
+                concept['wikidata'],
+                concept['display_name']
+            )
+
+            unConceptAuthor.setDataBase(self.dataBase)
+            unConceptAuthor.checkIfExistsOrInsert()    
+
+
+    # Permet de récupérer et d'ajouter les informations propre à l'auteur
+    def addAuthorInformations(self):
+
+        # Instantiation du tableau de résultat
+        resultsValues = {
+            'alex_ids' : [],
+            'orcid_ids' : [],
+            'display_name' : '',
+            'names_alternatives' : [],
+            'works_count' : 0,
+            'cited_by_count' : 0
+        }
+
+        # Parcours de l'ensemble des données pour compiler l'ensemble des informations
+        for result in self.globalResponseAuthor['results']:
+            if(result['id'] != None): resultsValues['alex_ids'].append(result['id'])
+
+            if(result['orcid'] != None): resultsValues['orcid_ids'].append(result['orcid'])
+
+            if(resultsValues['display_name'] == ""):
+                resultsValues['display_name'] = result['display_name']
+            else:
+                resultsValues['names_alternatives'].append(result['display_name'])
+
+            if(result['display_name_alternatives'] != None): resultsValues['names_alternatives'].append(result['display_name'])
+            
+            if(result['works_count'] != None): resultsValues['works_count'] += result['works_count']
+            
+            if(result['cited_by_count'] != None): resultsValues['cited_by_count'] += result['cited_by_count']
+        
+        # Création du modèle et enregistrement dans la base de donnée
+        unAuthor = Author(
+            resultsValues['alex_ids'],
+            resultsValues['orcid_ids'],
+            resultsValues['display_name'],
+            resultsValues['names_alternatives'],
+            resultsValues['works_count'],
+            resultsValues['cited_by_count']
+        )
+
+        unAuthor.setDataBase(self.dataBase)
+        unAuthor.checkIfExistsOrInsert()
+
+    # Permet d'ajouter l'ensemble des Institutions
+    def addInstitutions(self, result):
+        if(result['last_known_institution'] != None):  
+            unInstitution = Institution(
+                result['last_known_institution']['id'],
+                result['last_known_institution']['ror'],
+                result['last_known_institution']['display_name'],
+                result['last_known_institution']['country_code'],
+                result['last_known_institution']['type']
+            )
+
+            unInstitution.setDataBase(self.dataBase)
+            unInstitution.checkIfExistsOrInsert()
+
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
     def getGlobalResponseAuthor(self):

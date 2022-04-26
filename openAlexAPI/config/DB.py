@@ -77,7 +77,7 @@ class DB():
 
         self.cursor.execute(sql)
 
-        print("INFO | Une nouvelle " + str(className) + " a été ajouté sur votre base de données")
+        print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
 
 
     # Permet de récupérer les champs d'un objet, que ce soit des noms ou des values

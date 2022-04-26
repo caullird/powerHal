@@ -1,9 +1,6 @@
 import requests
 import json
-from config.ResearchInitializer import ResearchInitializer
-from model.Institution import Institution
-from model.Concept import Concept
-from model.Author import Author
+from model.ConceptPublication import ConceptPublication
 from model.Publication import Publication
 
 class PublicationAPI():
@@ -17,10 +14,10 @@ class PublicationAPI():
         self.publications = self.addPublicationInformations()
 
 
+    # Permet de récupérer et d'ajouter les informations relative à la publication
     def addPublicationInformations(self):
         publications = []
         for id in self.idsAuthor:
-
             results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=' + self.filter + ':A' + id).text)
             for publication in results['results']:
                 publications.append(publication) 
@@ -37,7 +34,7 @@ class PublicationAPI():
     # Insertion de l'ensemble des concepts dans notre base de donnée
     def addConcepts(self,publication):
         for concept in publication['concepts']:
-            unConcept = Concept(
+            unConcept = ConceptPublication(
                 concept['id'],
                 concept['wikidata'],
                 concept['display_name'],
