@@ -19,28 +19,28 @@
   
   
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico;jsessionid=2F36E1AB7970D8527619B0E493935C8E" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" />
   
-  <link rel="search" title="CiteSeerX" type="application/opensearchdescription+xml" href="/search_plugins/citeseerx_general.xml;jsessionid=2F36E1AB7970D8527619B0E493935C8E" />
-  <link rel="search" title="CiteSeerX Author" type="application/opensearchdescription+xml" href="/search_plugins/citeseerx_author.xml;jsessionid=2F36E1AB7970D8527619B0E493935C8E" />
-  <link rel="search" title="CiteSeerX Title" type="application/opensearchdescription+xml" href="/search_plugins/citeseerx_title.xml;jsessionid=2F36E1AB7970D8527619B0E493935C8E" />
+  <link rel="search" title="CiteSeerX" type="application/opensearchdescription+xml" href="/search_plugins/citeseerx_general.xml;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" />
+  <link rel="search" title="CiteSeerX Author" type="application/opensearchdescription+xml" href="/search_plugins/citeseerx_author.xml;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" />
+  <link rel="search" title="CiteSeerX Title" type="application/opensearchdescription+xml" href="/search_plugins/citeseerx_title.xml;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" />
     
     
-	<link rel="alternate" type="application/atom+xml" title="CiteSeerX Search Results - Atom" href="/search;jsessionid=2F36E1AB7970D8527619B0E493935C8E?" />
-	<link rel="alternate" type="application/rss+xml" title="CiteSeerX Search Results - RSS" href="/search;jsessionid=2F36E1AB7970D8527619B0E493935C8E?" />
+	<link rel="alternate" type="application/atom+xml" title="CiteSeerX Search Results - Atom" href="/search;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B?" />
+	<link rel="alternate" type="application/rss+xml" title="CiteSeerX Search Results - RSS" href="/search;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B?" />
 
 	
-	<link type="text/css" rel="stylesheet" href="/css/main.css;jsessionid=2F36E1AB7970D8527619B0E493935C8E" />
-	<script type="text/javascript" src="/js/jquery-1.4.2.min.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-  <script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/jquery.idTabs.min.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/metacart.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/topnav.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/citeseerx.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/correctionutils.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/checkboxes.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/ga.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
-	<script type="text/javascript" src="/js/s2button.js;jsessionid=2F36E1AB7970D8527619B0E493935C8E"></script>
+	<link type="text/css" rel="stylesheet" href="/css/main.css;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" />
+	<script type="text/javascript" src="/js/jquery-1.4.2.min.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+  <script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/jquery.idTabs.min.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/metacart.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/topnav.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/citeseerx.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/correctionutils.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/checkboxes.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/ga.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
+	<script type="text/javascript" src="/js/s2button.js;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B"></script>
 	
 	
 </head>
@@ -69,10 +69,10 @@
     
     <ul id="toptools">
   		
-        <li><a href="/myciteseer/login;jsessionid=2F36E1AB7970D8527619B0E493935C8E">Log in</a></li>
-        <li><a href="/mcsutils/newAccount;jsessionid=2F36E1AB7970D8527619B0E493935C8E">Sign up</a></li>
+        <li><a href="/myciteseer/login;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B">Log in</a></li>
+        <li><a href="/mcsutils/newAccount;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B">Sign up</a></li>
       
-        <li><a href="/metacart;jsessionid=2F36E1AB7970D8527619B0E493935C8E">MetaCart</a></li>
+        <li><a href="/metacart;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B">MetaCart</a></li>
 		<li><a href="https://www.psu.edu/copyright-information/" target="_blank">DMCA</a></li>
 
         <li><a href="http://www.givenow.psu.edu/CiteseerxFund"><font color="#045FB4">Donate</font></a></li>
@@ -81,7 +81,7 @@
 </div>
 
 	  <div id="header">
-			<h1 id="title"><a href="/;jsessionid=2F36E1AB7970D8527619B0E493935C8E" title="CiteSeerX"><img src="/images/csx_logo.png;jsessionid=2F36E1AB7970D8527619B0E493935C8E" alt="CiteSeerX logo" height="50%" width="50%"/></a></h1>
+			<h1 id="title"><a href="/;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" title="CiteSeerX"><img src="/images/csx_logo.png;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" alt="CiteSeerX logo" height="50%" width="50%"/></a></h1>
 		</div>
 
   <div id="center_content" class="clearfix"> <!-- Contains header div -->
@@ -101,7 +101,7 @@
   	<div id="sponsors">
         
         Powered by:
-  	<a href="http://lucene.apache.org/solr/"><img src="/images/solrlogo1.png;jsessionid=2F36E1AB7970D8527619B0E493935C8E" alt="Apache Solr" height="8%" width="8%"/></a>
+  	<a href="http://lucene.apache.org/solr/"><img src="/images/solrlogo1.png;jsessionid=787A0BCA4A12B8270148EC935EAE8A4B" alt="Apache Solr" height="8%" width="8%"/></a>
   	</div>
     <ul class="links">
       <li><a href="http://csxstatic.ist.psu.edu/home" target="_blank">About CiteSeerX</a></li>
