@@ -7,7 +7,7 @@ from API.PublicationAPI import PublicationAPI
 class openAlex():
 
     ## En attendant d'avoir le lien entre le site web et le programme python
-    research = "Sorana CIMPAN"
+    research = "Cave Jonathan"
 
     initialize = ResearchInitializer(research)
 

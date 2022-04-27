@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS publication (
     idDoi_publication varchar(100),
     title varchar(500),
     display_name varchar(500),
-    mag varchar(100),
     type_publication varchar(100),
     publication_year varchar(100),
     publication_date varchar(100),

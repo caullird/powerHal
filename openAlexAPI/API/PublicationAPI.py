@@ -104,7 +104,6 @@ class PublicationAPI():
             publication['doi'],
             publication['title'],
             publication['display_name'],
-            publication['ids']['mag'],
             publication['type'],
             publication['publication_year'],
             publication['publication_date'],

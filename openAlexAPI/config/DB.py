@@ -57,8 +57,7 @@ class DB():
             sql += field[0] + ' = "' + field[1] + '" AND '
 
         self.cursor.execute(sql[:-4])
-
-        print(sql[:-4])
+        
         row = self.cursor.fetchone()
         if row == None: 
             return self.autoInsert(object)
