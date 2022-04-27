@@ -5,7 +5,7 @@ class Publication():
 
     # Permet de créer un objet de type publication
     def __init__(self, doi, title, display_name, type, publication_year, publication_date, updated_date, created_date):
-        self.idDoi_publication = doi
+        self.id_doi = doi
         self.title = title
         self.display_name = display_name
         self.type_publication = type

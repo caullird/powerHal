@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS institution (
 
 CREATE TABLE IF NOT EXISTS publication (
     id_publication int(11) NOT NULL AUTO_INCREMENT,
-    idDoi_publication varchar(500),
+    id_doi varchar(500),
     title varchar(500),
     display_name varchar(500),
     type_publication varchar(100),
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS sourcePublication(
     id_sourcePublication int(11) NOT NULL AUTO_INCREMENT,
     id_publication int(11) NOT NULL,
     id_source int(11) NOT NULL,
-    specificId varchar(600),
+    specificId varchar(5000),
     PRIMARY KEY (id_sourcePublication),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS sourceAuthor(
     id_sourceAuthor int(11) NOT NULL AUTO_INCREMENT,
     id_author int(11) NOT NULL,
     id_source int(11) NOT NULL,
-    specificId varchar(600),
+    specificId varchar(5000),
     PRIMARY KEY (id_sourceAuthor),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
