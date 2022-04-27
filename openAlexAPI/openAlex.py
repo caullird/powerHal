@@ -14,19 +14,19 @@ class openAlex():
     sortResearch = initialize.getSortResearch()
     prepareResearch = initialize.getPrepareResearch()
 
-    ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
+    ## Connexion avec laclea base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     dataBase = DB()
 
     ## Récupération des id AlexAPI en fonction du nom de l'utilisateur
     API = AlexAPI()
 
     ## On prend les informations de l'auteurs en fonction du profil avec le plus d'interaction
-    author = AuthorAPI(sortResearch, prepareResearch, API, dataBase, filter_by = "display_name")
+    authors = AuthorAPI(sortResearch, prepareResearch, API, dataBase, filter_by = "display_name")
 
     ## Récupération des articles en fonction des id AlexAPI
     ## Création des liens avec les autres autheurs + création des auteurs dans notre database
 
-    publications = PublicationAPI(author.getArrayAuthorIDs(), API, dataBase)
+    publications = PublicationAPI(authors.getArrayAuthorIDs(), API, dataBase)
 
     # Fermeture de la connexion avec la base de donnée
     dataBase.close()

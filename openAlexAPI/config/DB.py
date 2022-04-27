@@ -47,7 +47,7 @@ class DB():
 
 
     # Permet de verifier si la ligne existe déjà, et de l'insérer sinon
-    def checkIfExistsOrInsert(self, object, fieldsComparable):
+    def checkIfExistsOrInsert(self, object, fieldsComparable, autoUpdate = False):
 
         fields = self.sortByFieldName(self.getObjectFields(object, type = "all"), fieldsComparable)
 
@@ -58,11 +58,39 @@ class DB():
 
         self.cursor.execute(sql[:-4])
 
+        print(sql[:-4])
         row = self.cursor.fetchone()
         if row == None: 
             return self.autoInsert(object)
         else:
+            if(autoUpdate):
+                return self.autoUpdate(object,row)
             return row[0]
+
+
+
+    # Permet de mettre à jour le modèle en fonction de la demande
+    def autoUpdate(self, object, mySQLObject):
+        
+        className = self.getClassName(object)
+
+        # fieldsAll = self.getObjectFields(object, type = "all")
+        # merged_list = tuple(zip(self.cursor.column_names, mySQLObject))
+
+        objectFields = dict((x, y) for x, y in self.getObjectFields(object, type = "all"))
+        mySQLFields = dict((x, y) for x, y in tuple(zip(self.cursor.column_names, mySQLObject)))
+        del mySQLFields["id_" + str(className).lower()]
+
+        for mySQLField in mySQLFields:
+            print(mySQLField)
+            
+
+        sql = 'UPDATE ' + str(className) + ' SET '
+
+
+        return id
+
+
 
 
     # Permet de filtrer en fonction des champs de recherche 

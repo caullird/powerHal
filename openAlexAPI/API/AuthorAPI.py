@@ -27,6 +27,7 @@ class AuthorAPI():
 
         # Ajout des informations relative à l'auteur pour
         self.idAuthor = self.addAuthorInformations()
+
         self.addAdditionalAuthorInformations()
 
 
