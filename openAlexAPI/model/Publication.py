@@ -1,12 +1,10 @@
 from pydoc import classname
 from config.DB import DB
-import inspect
 
 class Publication():
 
     # Permet de créer un objet de type publication
-    def __init__(self, alexID, doi, title, display_name, type, publication_year, publication_date, updated_date, created_date):
-        self.idAlex_publication = alexID
+    def __init__(self, doi, title, display_name, type, publication_year, publication_date, updated_date, created_date):
         self.idDoi_publication = doi
         self.title = title
         self.display_name = display_name
@@ -22,5 +20,5 @@ class Publication():
 
     # Permet de vérifier si l'objet publication existe dans la base de données et l'ajouter dans le cas échéant
     def checkIfExistsOrInsert(self):
-        return self.database.checkIfExistsOrInsert(self, fieldsComparable = ["idAlex_publication", "display_name"])
+        return self.database.checkIfExistsOrInsert(self, fieldsComparable = ["publication_year", "display_name"])
 

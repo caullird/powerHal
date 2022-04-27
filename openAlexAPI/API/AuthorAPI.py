@@ -6,10 +6,11 @@ from model.Author import Author
 from model.Concept import Concept
 from model.AuthorInstitution import AuthorInstitution
 from model.AuthorPublicationConcept import AuthorPublicationConcept
+from model.SourceAuthor import SourceAuthor
 
 class AuthorAPI():
 
-    def __init__(self, intitial_research,initializedResearch, halAPI, dataBase, filter_by):
+    def __init__(self, intitial_research,initializedResearch, halAPI, dataBase, sourceID, filter_by):
         
         # Paramètre de recherche depuis notre solution
         self.initial_research = intitial_research
@@ -24,12 +25,12 @@ class AuthorAPI():
 
         # Lien avec nos données sur la base mysql
         self.dataBase = dataBase
+        self.sourceID = sourceID
 
         # Ajout des informations relative à l'auteur pour
         self.idAuthor = self.addAuthorInformations()
 
         self.addAdditionalAuthorInformations()
-
 
     # Permet de récupérer et d'ajouter les informations relative a l'auteur (en dehors de lui même)
     def addAdditionalAuthorInformations(self):
@@ -73,9 +74,9 @@ class AuthorAPI():
             idConcept = unConcept.checkIfExistsOrInsert()    
 
             unAuthorPublicationConcept = AuthorPublicationConcept(
-                str(self.idAuthor),
+                self.idAuthor,
                 "NULL",
-                str(idConcept),
+                idConcept,
                 concept['level'],
                 concept['score']
             )
@@ -108,11 +109,6 @@ class AuthorAPI():
 
             resultsValues['display_name'] = self.initial_research
 
-            # if(resultsValues['display_name'] == ""):
-            #     resultsValues['display_name'] = result['display_name']
-            # else:
-            #     resultsValues['names_alternatives'].append(result['display_name'])
-
             if(result['display_name_alternatives'] != []): 
                 resultsValues['names_alternatives'].append(result['display_name_alternatives'])
             
@@ -124,16 +120,18 @@ class AuthorAPI():
         
         # Création du modèle et enregistrement dans la base de donnée
         unAuthor = Author(
-            resultsValues['alex_ids'],
             resultsValues['orcid_ids'],
             resultsValues['display_name'],
-            resultsValues['names_alternatives'],
-            resultsValues['works_count'],
-            resultsValues['cited_by_count']
+            resultsValues['names_alternatives']
         )
-
         unAuthor.setDataBase(self.dataBase)
-        return unAuthor.checkIfExistsOrInsert()
+        AuthorID = unAuthor.checkIfExistsOrInsert()
+    
+        unSourceAuthor = SourceAuthor(AuthorID, self.sourceID, resultsValues['alex_ids'])
+        unSourceAuthor.setDataBase(self.dataBase)
+        unSourceAuthor.checkIfExistsOrInsert()
+    
+        return AuthorID
 
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
@@ -159,3 +157,9 @@ class AuthorAPI():
     # Permet de récupérer l'id de l'auteur trouvé
     def getIdAuthor(self):
         return self.idAuthor
+    
+    # Permet de récupérer l'id de la source
+    def getIdSource(self):
+        self.sourceID
+        
+        

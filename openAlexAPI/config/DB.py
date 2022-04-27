@@ -11,6 +11,7 @@ class DB():
         self.cursor = self.getCursor()
         self.logConnect()
 
+
     # Permet la récupération du curseur depuis l'ensemble du projet
     def getCursor(self):
         return self.connector.cursor(buffered=True)
@@ -18,11 +19,19 @@ class DB():
 
     # Permet de connecter depuis les informations du fichier de configuration
     def getConnector(self):
+        
+        # return  mysql.connector.connect(
+        #     host = self.config['DATABASE']['host'],
+        #     user = self.config['DATABASE']['user'],
+        #     password = self.config['DATABASE']['password'],
+        #     database = self.config['DATABASE']['dbname']
+        # )
+
         return  mysql.connector.connect(
-            host = self.config['DATABASE']['host'],
-            user = self.config['DATABASE']['user'],
-            password = self.config['DATABASE']['password'],
-            database = self.config['DATABASE']['dbname']
+            host = "127.0.0.1",
+            user = "root",
+            password = "",
+            database = "proj831"
         )
 
 
@@ -54,7 +63,7 @@ class DB():
         sql = 'SELECT * FROM ' + self.getClassName(object) + ' WHERE '
 
         for field in fields:
-            sql += field[0] + ' = "' + field[1] + '" AND '
+            sql += field[0] + ' = "' + str(field[1]) + '" AND '
 
         self.cursor.execute(sql[:-4])
         
@@ -65,7 +74,6 @@ class DB():
             if(autoUpdate):
                 return self.autoUpdate(object,row)
             return row[0]
-
 
 
     # Permet de mettre à jour le modèle en fonction de la demande
@@ -88,8 +96,6 @@ class DB():
 
 
         return id
-
-
 
 
     # Permet de filtrer en fonction des champs de recherche 
@@ -133,6 +139,7 @@ class DB():
                     fields.append(field)
         return fields
 
+
     # Permet de faire une recherche LIKE dans un champ spécifique
     def findIdMySQLWithLike(self, id, entity, fieldsComparable):
         self.cursor.execute("SELECT " + str("id_" + entity) + " FROM "+ entity +" WHERE " + str(fieldsComparable) + " LIKE '%" + str(id) + "%'")
@@ -142,6 +149,12 @@ class DB():
     # Permet de récupérer le nom de la classe actuelle
     def getClassName(self,object):
         return type(object).__name__
+
+
+    # Permet de récupérer l'ID de la source actuelle
+    def getSourceID(self, className):
+        self.cursor.execute("SELECT DISTINCT id_source FROM source WHERE display_name = '" + str(className) + "'")
+        return self.cursor.fetchone()[0]
 
 
     # Permet de fermer la connexion a la base de données

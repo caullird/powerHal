@@ -6,16 +6,19 @@ from model.Author import Author
 from model.Publication import Publication
 from model.AuthorPublication import AuthorPublication
 from model.AuthorPublicationConcept import AuthorPublicationConcept
+from model.SourcePublication import SourcePublication
+from model.SourceAuthor import SourceAuthor
 from config.ResearchInitializer import ResearchInitializer
-
 
 class PublicationAPI():
 
-    def __init__(self, idsAuthor, halAPI, dataBase, filter = "authorships.author.id"):
+    def __init__(self, idsAuthor, halAPI, dataBase, sourceID, authorID, filter = "authorships.author.id"):
         self.idsAuthor = idsAuthor
         self.halAPI = halAPI
         self.dataBase = dataBase
         self.filter = filter
+        self.sourceID = sourceID
+        self.authorID = authorID
         
         self.publications = self.addPublicationInformations()
 
@@ -25,7 +28,8 @@ class PublicationAPI():
         publications = []
         for id in self.idsAuthor:
 
-            idAuthorMySQL = self.dataBase.findIdMySQLWithLike(id, entity = "author", fieldsComparable = "idsAlex_author")
+            #idAuthorMySQL = self.dataBase.findIdMySQLWithLike(id, entity = "author", fieldsComparable = "display_name")
+            idAuthorMySQL = self.authorID
 
             results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=' + self.filter + ':A' + id).text)
             for publication in results['results']:
@@ -47,25 +51,22 @@ class PublicationAPI():
     def addCoAuthors(self,publication, idPublicationMySQL):
         for author in publication['authorships']:
 
-            sortResearch = ResearchInitializer(author['author']['display_name']).getSortResearch()
+            display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
             
             unAuthor = Author(
-                author['author']['id'],
                 author['author']['orcid'],
-                sortResearch,
-                "NULL", 0, 0
+                display_name,
+                "NULL"
             )
-
             unAuthor.setDataBase(self.dataBase)
             idNewAuthor = unAuthor.checkIfExistsOrInsert()
+            
+            unSourceAuthor = SourceAuthor(idNewAuthor, self.sourceID, author['author']['id'])
+            unSourceAuthor.setDataBase(self.dataBase)
+            unSourceAuthor.checkIfExistsOrInsert()
 
             # Permet d'ajouter le lien entre l'auteur et la publication
-            unAuthorPublication = AuthorPublication(
-                str(idNewAuthor),
-                str(idPublicationMySQL),
-                author['author_position']
-            )
-
+            unAuthorPublication = AuthorPublication(idNewAuthor, idPublicationMySQL, author['author_position'])
             unAuthorPublication.setDataBase(self.dataBase)
             unAuthorPublication.checkIfExistsOrInsert()
 
@@ -87,8 +88,8 @@ class PublicationAPI():
 
             unAuthorPublicationConcept = AuthorPublicationConcept(
                 "NULL",
-                str(idConceptMySQL),
-                str(idPublicationMySQL),
+                idConceptMySQL,
+                idPublicationMySQL,
                 concept['level'],
                 concept['score']
             )
@@ -100,7 +101,6 @@ class PublicationAPI():
     # Insertion de l'ensemble des publications dans notre base de donnée
     def addPublication(self, publication, idAuthorMySQL):
         unPublication = Publication(
-            publication['id'],
             publication['doi'],
             publication['title'],
             publication['display_name'],
@@ -114,8 +114,13 @@ class PublicationAPI():
         unPublication.setDataBase(self.dataBase)
         idPublicationMySQL = unPublication.checkIfExistsOrInsert()
         
+        # Aujout de la relation entre la publication et la source 
+        unSourcePublication = SourcePublication(idPublicationMySQL,self.sourceID,publication['id'])
+        unSourcePublication.setDataBase(self.dataBase)
+        unSourcePublication.checkIfExistsOrInsert()
+        
         # Ajout de la relation entre la publication et l'auteur
-        unAuthorPublication = AuthorPublication(str(idAuthorMySQL),str(idPublicationMySQL),"first")
+        unAuthorPublication = AuthorPublication(idAuthorMySQL,idPublicationMySQL,"first")
         unAuthorPublication.setDataBase(self.dataBase)
         unAuthorPublication.checkIfExistsOrInsert()
 
