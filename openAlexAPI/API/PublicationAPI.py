@@ -59,9 +59,11 @@ class PublicationAPI():
             # Ajout de la relation entre le concept et la publication
 
             unAuthorPublicationConcept = AuthorPublicationConcept(
-                str(idAuthorMySQL),
+                "NULL",
                 str(idConcept),
                 str(idPublication),
+                concept['level'],
+                concept['score']
             )
 
             unAuthorPublicationConcept.setDataBase(self.dataBase)
@@ -89,4 +91,6 @@ class PublicationAPI():
         # Ajout de la relation entre la publication et l'auteur
         unAuthorPublication = AuthorPublication(str(idAuthorMySQL),str(idPublication))
         unAuthorPublication.setDataBase(self.dataBase)
-        return unAuthorPublication.checkIfExistsOrInsert()
+        unAuthorPublication.checkIfExistsOrInsert()
+
+        return idPublication

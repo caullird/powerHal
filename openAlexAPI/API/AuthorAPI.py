@@ -5,6 +5,7 @@ from model.Institution import Institution
 from model.Author import Author
 from model.Concept import Concept
 from model.AuthorInstitution import AuthorInstitution
+from model.AuthorPublicationConcept import AuthorPublicationConcept
 
 class AuthorAPI():
 
@@ -25,9 +26,7 @@ class AuthorAPI():
         self.dataBase = dataBase
 
         # Ajout des informations relative à l'auteur pour
-
         self.idAuthor = self.addAuthorInformations()
-
         self.addAdditionalAuthorInformations()
 
 
@@ -70,7 +69,18 @@ class AuthorAPI():
             )
 
             unConcept.setDataBase(self.dataBase)
-            unConcept.checkIfExistsOrInsert()    
+            idConcept = unConcept.checkIfExistsOrInsert()    
+
+            unAuthorPublicationConcept = AuthorPublicationConcept(
+                str(self.idAuthor),
+                "NULL",
+                str(idConcept),
+                concept['level'],
+                concept['score']
+            )
+
+            unAuthorPublicationConcept.setDataBase(self.dataBase)
+            unAuthorPublicationConcept.checkIfExistsOrInsert()
 
 
     # Permet de récupérer et d'ajouter les informations propre à l'auteur
@@ -97,7 +107,7 @@ class AuthorAPI():
             else:
                 resultsValues['names_alternatives'].append(result['display_name'])
 
-            if(result['display_name_alternatives'] != None): resultsValues['names_alternatives'].append(result['display_name'])
+            if(result['display_name_alternatives'] != None): resultsValues['names_alternatives'].append(result['display_name_alternatives'])
             
             if(result['works_count'] != None): resultsValues['works_count'] += result['works_count']
             
@@ -136,7 +146,6 @@ class AuthorAPI():
     # Permet de récupérer la liste des auteurs
     def getArrayAuthorIDs(self):
         return self.halAuthorIDs
-
 
     # Permet de récupérer l'id de l'auteur trouvé
     def getIdAuthor(self):

@@ -75,9 +75,11 @@ CREATE TABLE IF NOT EXISTS authorpublication (
 
 CREATE TABLE IF NOT EXISTS authorpublicationconcept (
     id_authorpublicationconcept int(11) NOT NULL AUTO_INCREMENT,
-    id_author int(11),
-    id_publication int(11),
-    id_concept int(11) NOT NULL,
+    id_author varchar(11),
+    id_publication varchar(11),
+    id_concept varchar(11) NOT NULL,
+    level_concept varchar(11),
+    score_concept varchar(11),
     PRIMARY KEY (id_authorpublicationconcept),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
