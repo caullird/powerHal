@@ -11,12 +11,6 @@ class DB():
         self.cursor = self.getCursor()
         self.logConnect()
 
-
-    # Permet la récupération du connector depuis l'ensemble du projet
-    def getConnector(self):
-        return self.connector
-
-
     # Permet la récupération du curseur depuis l'ensemble du projet
     def getCursor(self):
         return self.connector.cursor(buffered=True)
@@ -53,7 +47,7 @@ class DB():
 
 
     # Permet de verifier si la ligne existe déjà, et de l'insérer sinon
-    def checkIfExistsOrInsert(self, object, fieldsComparable, needToInsert = True):
+    def checkIfExistsOrInsert(self, object, fieldsComparable):
 
         fields = self.sortByFieldName(self.getObjectFields(object, type = "all"), fieldsComparable)
 
@@ -90,7 +84,7 @@ class DB():
         fieldsValues = self.getObjectFields(object, type = "values")
 
         sql = 'INSERT INTO ' + str(className) + '(' + ", ".join(fieldsNames) + ') VALUES ("' + '", "'.join(fieldsValues) + '")'
-
+        
         self.cursor.execute(sql)
 
         print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
@@ -112,10 +106,9 @@ class DB():
                     fields.append(field)
         return fields
 
-
-    def findIdAuthorByIDAlex(self, id, fieldsComparable):
-        self.cursor.execute("SELECT id_author FROM author WHERE " + str(fieldsComparable) + " LIKE '%" + str(id) + "%'")
-
+    # Permet de faire une recherche LIKE dans un champ spécifique
+    def findIdMySQLWithLike(self, id, entity, fieldsComparable):
+        self.cursor.execute("SELECT " + str("id_" + entity) + " FROM "+ entity +" WHERE " + str(fieldsComparable) + " LIKE '%" + str(id) + "%'")
         return self.cursor.fetchone()[0]
 
 

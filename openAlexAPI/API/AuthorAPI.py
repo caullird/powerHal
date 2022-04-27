@@ -9,11 +9,11 @@ from model.AuthorPublicationConcept import AuthorPublicationConcept
 
 class AuthorAPI():
 
-    def __init__(self, research, halAPI, dataBase, filter_by):
+    def __init__(self, intitial_research,initializedResearch, halAPI, dataBase, filter_by):
         
         # Paramètre de recherche depuis notre solution
-        self.initial_research = research
-        self.intializedResearch = ResearchInitializer(research).getInitializeResearch()
+        self.initial_research = intitial_research
+        self.intializedResearch = initializedResearch
 
         # Lien avec l'API de HAL
         self.halAPI = halAPI 
@@ -98,20 +98,28 @@ class AuthorAPI():
 
         # Parcours de l'ensemble des données pour compiler l'ensemble des informations
         for result in self.globalResponseAuthor['results']:
-            if(result['id'] != None): resultsValues['alex_ids'].append(result['id'])
+            if(result['id'] != None): 
+                resultsValues['alex_ids'].append(result['id'])
 
-            if(result['orcid'] != None): resultsValues['orcid_ids'].append(result['orcid'])
+            if(result['orcid'] != None): 
+                resultsValues['orcid_ids'].append(result['orcid'])
 
-            if(resultsValues['display_name'] == ""):
-                resultsValues['display_name'] = result['display_name']
-            else:
-                resultsValues['names_alternatives'].append(result['display_name'])
 
-            if(result['display_name_alternatives'] != None): resultsValues['names_alternatives'].append(result['display_name_alternatives'])
+            resultsValues['display_name'] = self.initial_research
+
+            # if(resultsValues['display_name'] == ""):
+            #     resultsValues['display_name'] = result['display_name']
+            # else:
+            #     resultsValues['names_alternatives'].append(result['display_name'])
+
+            if(result['display_name_alternatives'] != []): 
+                resultsValues['names_alternatives'].append(result['display_name_alternatives'])
             
-            if(result['works_count'] != None): resultsValues['works_count'] += result['works_count']
+            if(result['works_count'] != None): 
+                resultsValues['works_count'] += result['works_count']
             
-            if(result['cited_by_count'] != None): resultsValues['cited_by_count'] += result['cited_by_count']
+            if(result['cited_by_count'] != None): 
+                resultsValues['cited_by_count'] += result['cited_by_count']
         
         # Création du modèle et enregistrement dans la base de donnée
         unAuthor = Author(

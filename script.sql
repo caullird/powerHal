@@ -1,7 +1,7 @@
 -- Création des tables primaires
 DROP TABLE IF EXISTS institution;
 DROP TABLE IF EXISTS publication;
-DROP TABLE IF EXISTS conceptauthor;
+DROP TABLE IF EXISTS concept;
 DROP TABLE IF EXISTS author;
 
 -- Création des relations entre les tables
@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS institution (
     idRor_insitution varchar(100),
     PRIMARY KEY (id_institution)
 );
-
 
 CREATE TABLE IF NOT EXISTS publication (
     id_publication int(11) NOT NULL AUTO_INCREMENT,
@@ -67,6 +66,7 @@ CREATE TABLE IF NOT EXISTS authorpublication (
     id_authorpublication int(11) NOT NULL AUTO_INCREMENT,
     id_author int(11) NOT NULL,
     id_publication int(11) NOT NULL,
+    author_position varchar(100) NOT NULL,
     PRIMARY KEY (id_authorpublication),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication)

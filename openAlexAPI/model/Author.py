@@ -8,7 +8,6 @@ class Author():
         self.works_count = works_count
         self.cited_by_count = cited_by_count
 
-
     # Permet d'ajouter l'objet database à l'objet Author
     def setDataBase(self, database):
         self.database = database
