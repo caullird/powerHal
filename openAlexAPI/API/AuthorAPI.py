@@ -5,14 +5,15 @@ from model.Institution import Institution
 from model.Author import Author
 from model.Concept import Concept
 from model.AuthorInstitution import AuthorInstitution
+from model.AuthorPublicationConcept import AuthorPublicationConcept
 
 class AuthorAPI():
 
-    def __init__(self, research, halAPI, dataBase, filter_by):
+    def __init__(self, intitial_research,initializedResearch, halAPI, dataBase, filter_by):
         
         # Paramètre de recherche depuis notre solution
-        self.initial_research = research
-        self.intializedResearch = ResearchInitializer(research).getInitializeResearch()
+        self.initial_research = intitial_research
+        self.intializedResearch = initializedResearch
 
         # Lien avec l'API de HAL
         self.halAPI = halAPI 
@@ -25,7 +26,6 @@ class AuthorAPI():
         self.dataBase = dataBase
 
         # Ajout des informations relative à l'auteur pour
-
         self.idAuthor = self.addAuthorInformations()
 
         self.addAdditionalAuthorInformations()
@@ -70,7 +70,18 @@ class AuthorAPI():
             )
 
             unConcept.setDataBase(self.dataBase)
-            unConcept.checkIfExistsOrInsert()    
+            idConcept = unConcept.checkIfExistsOrInsert()    
+
+            unAuthorPublicationConcept = AuthorPublicationConcept(
+                str(self.idAuthor),
+                "NULL",
+                str(idConcept),
+                concept['level'],
+                concept['score']
+            )
+
+            unAuthorPublicationConcept.setDataBase(self.dataBase)
+            unAuthorPublicationConcept.checkIfExistsOrInsert()
 
 
     # Permet de récupérer et d'ajouter les informations propre à l'auteur
@@ -88,20 +99,28 @@ class AuthorAPI():
 
         # Parcours de l'ensemble des données pour compiler l'ensemble des informations
         for result in self.globalResponseAuthor['results']:
-            if(result['id'] != None): resultsValues['alex_ids'].append(result['id'])
+            if(result['id'] != None): 
+                resultsValues['alex_ids'].append(result['id'])
 
-            if(result['orcid'] != None): resultsValues['orcid_ids'].append(result['orcid'])
+            if(result['orcid'] != None): 
+                resultsValues['orcid_ids'].append(result['orcid'])
 
-            if(resultsValues['display_name'] == ""):
-                resultsValues['display_name'] = result['display_name']
-            else:
-                resultsValues['names_alternatives'].append(result['display_name'])
 
-            if(result['display_name_alternatives'] != None): resultsValues['names_alternatives'].append(result['display_name'])
+            resultsValues['display_name'] = self.initial_research
+
+            # if(resultsValues['display_name'] == ""):
+            #     resultsValues['display_name'] = result['display_name']
+            # else:
+            #     resultsValues['names_alternatives'].append(result['display_name'])
+
+            if(result['display_name_alternatives'] != []): 
+                resultsValues['names_alternatives'].append(result['display_name_alternatives'])
             
-            if(result['works_count'] != None): resultsValues['works_count'] += result['works_count']
+            if(result['works_count'] != None): 
+                resultsValues['works_count'] += result['works_count']
             
-            if(result['cited_by_count'] != None): resultsValues['cited_by_count'] += result['cited_by_count']
+            if(result['cited_by_count'] != None): 
+                resultsValues['cited_by_count'] += result['cited_by_count']
         
         # Création du modèle et enregistrement dans la base de donnée
         unAuthor = Author(
@@ -136,7 +155,6 @@ class AuthorAPI():
     # Permet de récupérer la liste des auteurs
     def getArrayAuthorIDs(self):
         return self.halAuthorIDs
-
 
     # Permet de récupérer l'id de l'auteur trouvé
     def getIdAuthor(self):

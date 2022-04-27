@@ -5,12 +5,11 @@ import inspect
 class Publication():
 
     # Permet de créer un objet de type publication
-    def __init__(self, alexID, doi, title, display_name, mag, type, publication_year, publication_date, updated_date, created_date):
+    def __init__(self, alexID, doi, title, display_name, type, publication_year, publication_date, updated_date, created_date):
         self.idAlex_publication = alexID
         self.idDoi_publication = doi
         self.title = title
         self.display_name = display_name
-        self.mag = mag 
         self.type_publication = type
         self.publication_year = publication_year
         self.publication_date = publication_date

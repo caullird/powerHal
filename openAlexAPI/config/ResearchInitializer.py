@@ -1,19 +1,24 @@
+from itertools import combinations
 
 class ResearchInitializer():
 
     def __init__(self,research : str):
         self.initial_research = research
-        self.intializedResearch = self.initializeResearch()
-    
-    # Permet de récupérer le résultat de l'Initializer
-    def getInitializeResearch(self):
-        return self.intializedResearch
+
+        self.sortResearch = self.sortResearch()
+        self.prepareResearch = self.prepareResearch()
+
+    # Permet de généré l'ensemble des possibilités du couple {nom, prénom}
+    def sortResearch(self):
+        values = self.initial_research.split()
+        values.sort()
+        return ' '.join(values)
 
     # Permet de mettre en forme la recherche en paramètre
-    def initializeResearch(self):
+    def prepareResearch(self):
         specialChars = "!#$%^&*()" 
 
-        result = self.initial_research
+        result = self.sortResearch
 
         for specialChar in specialChars:
             result = result.replace(specialChar, '')
@@ -21,3 +26,10 @@ class ResearchInitializer():
         result = result.replace(' ', '-')
 
         return result.lower()
+
+    
+    def getSortResearch(self):
+        return self.sortResearch
+
+    def getPrepareResearch(self):
+        return self.prepareResearch

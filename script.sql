@@ -1,7 +1,7 @@
 -- Création des tables primaires
 DROP TABLE IF EXISTS institution;
 DROP TABLE IF EXISTS publication;
-DROP TABLE IF EXISTS conceptauthor;
+DROP TABLE IF EXISTS concept;
 DROP TABLE IF EXISTS author;
 
 -- Création des relations entre les tables
@@ -19,14 +19,12 @@ CREATE TABLE IF NOT EXISTS institution (
     PRIMARY KEY (id_institution)
 );
 
-
 CREATE TABLE IF NOT EXISTS publication (
     id_publication int(11) NOT NULL AUTO_INCREMENT,
     idAlex_publication varchar(100),
     idDoi_publication varchar(100),
     title varchar(500),
     display_name varchar(500),
-    mag varchar(100),
     type_publication varchar(100),
     publication_year varchar(100),
     publication_date varchar(100),
@@ -67,6 +65,7 @@ CREATE TABLE IF NOT EXISTS authorpublication (
     id_authorpublication int(11) NOT NULL AUTO_INCREMENT,
     id_author int(11) NOT NULL,
     id_publication int(11) NOT NULL,
+    author_position varchar(100) NOT NULL,
     PRIMARY KEY (id_authorpublication),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication)
@@ -75,9 +74,11 @@ CREATE TABLE IF NOT EXISTS authorpublication (
 
 CREATE TABLE IF NOT EXISTS authorpublicationconcept (
     id_authorpublicationconcept int(11) NOT NULL AUTO_INCREMENT,
-    id_author int(11),
-    id_publication int(11),
-    id_concept int(11) NOT NULL,
+    id_author varchar(11),
+    id_publication varchar(11),
+    id_concept varchar(11) NOT NULL,
+    level_concept varchar(11),
+    score_concept varchar(11),
     PRIMARY KEY (id_authorpublicationconcept),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
