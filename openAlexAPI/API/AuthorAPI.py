@@ -31,9 +31,10 @@ class AuthorAPI():
         self.dataBase = dataBase
         self.sourceID = sourceID
 
-        # Ajout des informations relative à l'auteur pour
+        # Ajout des informations relative à l'auteur
         self.idAuthor = self.addAuthorInformations()
 
+        # Ajout des informatiosn externes à l'auteur
         self.addAdditionalAuthorInformations()
 
     # Permet de récupérer et d'ajouter les informations relative a l'auteur (en dehors de lui même)

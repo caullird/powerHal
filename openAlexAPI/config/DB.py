@@ -1,11 +1,14 @@
 import mysql.connector
 import configparser
 import inspect
+import time
+import datetime
 
 class DB():
 
     # Initialisation des informations de la base de données
     def __init__(self, debug):
+        print(datetime.datetime.now())
         self.config = self.getConfig()
         self.connector = self.getConnector()
         self.cursor = self.getCursor()
@@ -20,19 +23,11 @@ class DB():
 
     # Permet de connecter depuis les informations du fichier de configuration
     def getConnector(self):
-        
-        # return  mysql.connector.connect(
-        #     host = self.config['DATABASE']['host'],
-        #     user = self.config['DATABASE']['user'],
-        #     password = self.config['DATABASE']['password'],
-        #     database = self.config['DATABASE']['dbname']
-        # )
-
         return  mysql.connector.connect(
-            host = "127.0.0.1",
-            user = "root",
-            password = "",
-            database = "proj831"
+            host = self.config['DATABASE']['host'],
+            user = self.config['DATABASE']['user'],
+            password = self.config['DATABASE']['password'],
+            database = self.config['DATABASE']['dbname']
         )
 
 
@@ -82,21 +77,30 @@ class DB():
         
         className = self.getClassName(object)
 
-        # fieldsAll = self.getObjectFields(object, type = "all")
-        # merged_list = tuple(zip(self.cursor.column_names, mySQLObject))
-
         objectFields = dict((x, y) for x, y in self.getObjectFields(object, type = "all"))
         mySQLFields = dict((x, y) for x, y in tuple(zip(self.cursor.column_names, mySQLObject)))
-        del mySQLFields["id_" + str(className).lower()]
 
-        for mySQLField in mySQLFields:
-            print(mySQLField)
-            
+        removeFields = ["id_" + str(className).lower(),"created_at","updated_at","deleted_at"]
+        for removeField in removeFields:
+            del mySQLFields[removeField]
 
-        sql = 'UPDATE ' + str(className) + ' SET '
+        for key, value in objectFields.items():
+            objectFields[key] = str(value)
+        
+        objectFieldsSorted = sorted(mySQLFields.items(), key=lambda t: t[0])
 
+        if(objectFieldsSorted != sorted(objectFields.items(), key=lambda t: t[0])):
+            sql = 'UPDATE ' + str(className) + ' SET '
+            for key, value in objectFields.items():
+                sql += key + ' = "' + str(value) + '", '
+            sql = sql[:-2] + ' WHERE id_' + str(className).lower() + ' = ' + str(mySQLObject[0])
 
-        return id
+            self.cursor.execute(sql)
+            print("INFO | Un(e) " + str(className) + " a été mis à jour sur votre base de données")
+
+            self.addActionAt(className, mySQLObject[0], "updated")
+
+        return mySQLObject[0]
 
 
     # Permet de filtrer en fonction des champs de recherche 
@@ -123,7 +127,11 @@ class DB():
 
         print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
         
-        return self.cursor.lastrowid
+        insertId = self.cursor.lastrowid
+
+        self.addActionAt(className, insertId, "created")
+
+        return insertId
 
 
     # Permet de récupérer les champs d'un objet, que ce soit des noms ou des values
@@ -156,3 +164,6 @@ class DB():
     def close(self):
         self.cursor.close()
         self.connector.close()
+
+    def addActionAt(self, classname, id, action):
+        self.cursor.execute("UPDATE " + str(classname) + " SET " + action + "_at = NOW() WHERE id_" + str(classname).lower() + " = " + str(id))
