@@ -30,11 +30,11 @@ class PublicationAPI():
         publications = []
         for id in self.idsAuthor:
 
-            #idAuthorMySQL = self.dataBase.findIdMySQLWithLike(id, entity = "author", fieldsComparable = "display_name")
             idAuthorMySQL = self.authorID
 
             results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=authorships.author.id:A' + id).text)
             for publication in results['results']:
+                
                 publications.append(publication) 
 
                 # Insertion de l'ensemble des publications dans notre base de donnée
@@ -56,8 +56,14 @@ class PublicationAPI():
             # Permet d'uniformiser le nom de l'auteur
             display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
             
+            display_name_alternatives = []
+            orcid_id = []
+
+            if author['author']['orcid'] != None:
+                orcid_id.append(author['author']['orcid'])
+
             # Permet d'enregistrer le co-auteur en tant que auteur dans notre BDD
-            unAuthor = Author(author['author']['orcid'],display_name,"NULL")
+            unAuthor = Author(orcid_id,display_name,display_name_alternatives)
             unAuthor.setDataBase(self.dataBase)
             idNewAuthor = unAuthor.checkIfExistsOrInsert()
             

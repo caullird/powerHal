@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS proj831;
+CREATE DATABASE proj831 CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE proj831;
+
 -- Création des tables primaires
 DROP TABLE IF EXISTS institution;
 DROP TABLE IF EXISTS publication;

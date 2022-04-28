@@ -3,23 +3,23 @@ import configparser
 import inspect
 import time
 import datetime
+import json
 
 class DB():
 
     # Initialisation des informations de la base de données
-    def __init__(self, debug):
+    def __init__(self):
         print(datetime.datetime.now())
         self.config = self.getConfig()
         self.connector = self.getConnector()
         self.cursor = self.getCursor()
         self.logConnect()
-        self.debug = debug
 
 
     # Permet la récupération du curseur depuis l'ensemble du projet
     def getCursor(self):
         return self.connector.cursor(buffered=True)
-    
+
 
     # Permet de connecter depuis les informations du fichier de configuration
     def getConnector(self):
@@ -86,17 +86,17 @@ class DB():
 
         for key, value in objectFields.items():
             objectFields[key] = str(value)
-        
-        objectFieldsSorted = sorted(mySQLFields.items(), key=lambda t: t[0])
 
-        if(objectFieldsSorted != sorted(objectFields.items(), key=lambda t: t[0])):
+
+        if(sorted(mySQLFields.items(), key=lambda t: t[0]) != sorted(objectFields.items(), key=lambda t: t[0])):
             sql = 'UPDATE ' + str(className) + ' SET '
             for key, value in objectFields.items():
-                sql += key + ' = "' + str(value) + '", '
+                if value not in ["","[]","{}","()","NULL","None"]:
+                    sql += key + ' = "' + str(value) + '", '
             sql = sql[:-2] + ' WHERE id_' + str(className).lower() + ' = ' + str(mySQLObject[0])
 
             self.cursor.execute(sql)
-            print("INFO | Un(e) " + str(className) + " a été mis à jour sur votre base de données")
+            #print("INFO | Un(e) " + str(className) + " a été mis à jour sur votre base de données")
 
             self.addActionAt(className, mySQLObject[0], "updated")
 
@@ -125,7 +125,7 @@ class DB():
         
         self.cursor.execute(sql)
 
-        print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
+        #print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
         
         insertId = self.cursor.lastrowid
 
@@ -165,5 +165,6 @@ class DB():
         self.cursor.close()
         self.connector.close()
 
+    # Permet d'ajouter ou de modifier le statut d'un objet
     def addActionAt(self, classname, id, action):
         self.cursor.execute("UPDATE " + str(classname) + " SET " + action + "_at = NOW() WHERE id_" + str(classname).lower() + " = " + str(id))

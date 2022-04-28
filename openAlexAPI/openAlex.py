@@ -8,18 +8,23 @@ from config.Source import Source
 from API.AuthorAPI import AuthorAPI
 from API.PublicationAPI import PublicationAPI
 
+# Importation des modèles de données
+from model.Author import Author
+from model.Concept import Concept 
+from model.AuthorPublicationConcept import AuthorPublicationConcept
+
+# Importation des méthodes d'analyse de données
+from analyze.WordCloud import WordCloud
+
 class openAlex():
     
-    # Permet d'activer ou non le mode DEBUG 
-    debug = True
-    
     ## En attendant d'avoir le lien entre le site web et le programme python
-    research = "Cave Jonathan"
+    research = "Kave SALAMATIAN"
     
     initialize = ResearchInitializer(research)
     
     ## Connexion avec laclea base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
-    dataBase = DB(debug)
+    dataBase = DB()
     
     ## Permet de récupérer les informations relative à la source (id_source)
     sourceID = Source("openAlex", dataBase).getMySQLID()
@@ -32,6 +37,7 @@ class openAlex():
 
     ## Récupération des articles en fonction des id AlexAPI & création des liens avec les autres autheurs + création des auteurs dans notre database
     publications = PublicationAPI(authors.getArrayAuthorIDs(), API, dataBase, sourceID, authors.getIdAuthor())
+
 
     # Fermeture de la connexion avec la base de donnée
     dataBase.close()
