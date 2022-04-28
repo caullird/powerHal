@@ -1,15 +1,11 @@
 import mysql.connector
 import configparser
 import inspect
-import time
-import datetime
-import json
 
 class DB():
 
     # Initialisation des informations de la base de données
     def __init__(self):
-        print(datetime.datetime.now())
         self.config = self.getConfig()
         self.connector = self.getConnector()
         self.cursor = self.getCursor()
@@ -168,3 +164,11 @@ class DB():
     # Permet d'ajouter ou de modifier le statut d'un objet
     def addActionAt(self, classname, id, action):
         self.cursor.execute("UPDATE " + str(classname) + " SET " + action + "_at = NOW() WHERE id_" + str(classname).lower() + " = " + str(id))
+
+    def getFieldsWithId(self, id, table, searchField, getField, quantity):
+        self.cursor.execute('SELECT ' + getField + ' FROM ' + table + ' WHERE ' + searchField + ' = ' + str(id))
+
+        if(quantity == "many"):
+            return [item[0] for item in self.cursor.fetchall()]
+        
+        return self.cursor.fetchone()[0]

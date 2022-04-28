@@ -1,4 +1,5 @@
 # Importation des classes pour la configuration
+from pyparsing import Word
 from config.DB import DB
 from config.AlexAPI import AlexAPI
 from config.ResearchInitializer import ResearchInitializer
@@ -14,12 +15,13 @@ from model.Concept import Concept
 from model.AuthorPublicationConcept import AuthorPublicationConcept
 
 # Importation des méthodes d'analyse de données
-from analyze.WordCloud import WordCloud
+from analyze.PowerCloud import PowerCloud
+from analyze.PowerGraph import PowerGraph
 
 class openAlex():
     
     ## En attendant d'avoir le lien entre le site web et le programme python
-    research = "Kave SALAMATIAN"
+    research = "Sorana CIMPAN"
     
     initialize = ResearchInitializer(research)
     
@@ -38,6 +40,11 @@ class openAlex():
     ## Récupération des articles en fonction des id AlexAPI & création des liens avec les autres autheurs + création des auteurs dans notre database
     publications = PublicationAPI(authors.getArrayAuthorIDs(), API, dataBase, sourceID, authors.getIdAuthor())
 
+
+    ## Différentes méthodes d'affichages de donénes
+    unWordCloud = PowerCloud(dataBase)
+    unWordCloud.generatePublicationConcept(authors.getIdAuthor())
+    unWordCloud.generatePublicationCoAuthors(authors.getIdAuthor())
 
     # Fermeture de la connexion avec la base de donnée
     dataBase.close()
