@@ -3,14 +3,14 @@ import requests
 import json
 
 # Importation des modèles pour la création des objets
-from model.Institution import Institution
-from model.Author import Author
-from model.Concept import Concept
-from model.AuthorInstitution import AuthorInstitution
-from model.AuthorPublicationConcept import AuthorPublicationConcept
-from model.SourceAuthor import SourceAuthor
-from model.SourceInstitution import SourceInstitution
-from model.SourceConcept import SourceConcept
+from model.entities.Institution import Institution
+from model.entities.Author import Author
+from model.entities.Concept import Concept
+from model.relations.AuthorInstitution import AuthorInstitution
+from model.relations.AuthorPublicationConcept import AuthorPublicationConcept
+from model.relations.SourceAuthor import SourceAuthor
+from model.relations.SourceInstitution import SourceInstitution
+from model.relations.SourceConcept import SourceConcept
 
 class AuthorAPI():
 

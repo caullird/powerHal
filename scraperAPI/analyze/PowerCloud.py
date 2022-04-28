@@ -11,9 +11,9 @@ import numpy as np
 
 class PowerCloud():
 
-    def __init__(self, DB):
+    def __init__(self, DB, fileName):
         self.DB = DB
-        self.url = "././scraperAPI/openAlexAPI/data/"
+        self.url = "././scraperAPI/specific/" +  fileName + "/data/"
         self.mask = self.url + "cloud.PNG"
 
 

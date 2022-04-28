@@ -4,14 +4,14 @@ import json
 from config.ResearchInitializer import ResearchInitializer
 
 # Importation des modèles pour la création des objets
-from model.Concept import Concept
-from model.Author import Author
-from model.Publication import Publication
-from model.AuthorPublication import AuthorPublication
-from model.AuthorPublicationConcept import AuthorPublicationConcept
-from model.SourcePublication import SourcePublication
-from model.SourceAuthor import SourceAuthor
-from model.SourceConcept import SourceConcept
+from model.entities.Concept import Concept
+from model.entities.Author import Author
+from model.entities.Publication import Publication
+from model.relations.AuthorPublication import AuthorPublication
+from model.relations.AuthorPublicationConcept import AuthorPublicationConcept
+from model.relations.SourcePublication import SourcePublication
+from model.relations.SourceAuthor import SourceAuthor
+from model.relations.SourceConcept import SourceConcept
 
 class PublicationAPI():
 
