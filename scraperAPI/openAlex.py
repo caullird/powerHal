@@ -46,3 +46,5 @@ class openAlex():
 
         # Fermeture de la connexion avec la base de donnée
         dataBase.close()
+
+        return authors.getIdAuthor()
