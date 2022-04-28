@@ -5,11 +5,12 @@ import inspect
 class DB():
 
     # Initialisation des informations de la base de données
-    def __init__(self):
+    def __init__(self, debug):
         self.config = self.getConfig()
         self.connector = self.getConnector()
         self.cursor = self.getCursor()
         self.logConnect()
+        self.debug = debug
 
 
     # Permet la récupération du curseur depuis l'ensemble du projet
@@ -138,12 +139,6 @@ class DB():
                 elif(type == "all"):
                     fields.append(field)
         return fields
-
-
-    # Permet de faire une recherche LIKE dans un champ spécifique
-    def findIdMySQLWithLike(self, id, entity, fieldsComparable):
-        self.cursor.execute("SELECT " + str("id_" + entity) + " FROM "+ entity +" WHERE " + str(fieldsComparable) + " LIKE '%" + str(id) + "%'")
-        return self.cursor.fetchone()[0]
 
 
     # Permet de récupérer le nom de la classe actuelle

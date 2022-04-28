@@ -1,6 +1,9 @@
-from turtle import pu
+# Importation des librairies/classes de configuration
 import requests
 import json
+from config.ResearchInitializer import ResearchInitializer
+
+# Importation des modèles pour la création des objets
 from model.Concept import Concept
 from model.Author import Author
 from model.Publication import Publication
@@ -8,15 +11,14 @@ from model.AuthorPublication import AuthorPublication
 from model.AuthorPublicationConcept import AuthorPublicationConcept
 from model.SourcePublication import SourcePublication
 from model.SourceAuthor import SourceAuthor
-from config.ResearchInitializer import ResearchInitializer
+from model.SourceConcept import SourceConcept
 
 class PublicationAPI():
 
-    def __init__(self, idsAuthor, halAPI, dataBase, sourceID, authorID, filter = "authorships.author.id"):
+    def __init__(self, idsAuthor, halAPI, dataBase, sourceID, authorID):
         self.idsAuthor = idsAuthor
         self.halAPI = halAPI
         self.dataBase = dataBase
-        self.filter = filter
         self.sourceID = sourceID
         self.authorID = authorID
         
@@ -31,7 +33,7 @@ class PublicationAPI():
             #idAuthorMySQL = self.dataBase.findIdMySQLWithLike(id, entity = "author", fieldsComparable = "display_name")
             idAuthorMySQL = self.authorID
 
-            results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=' + self.filter + ':A' + id).text)
+            results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=authorships.author.id:A' + id).text)
             for publication in results['results']:
                 publications.append(publication) 
 
@@ -51,17 +53,19 @@ class PublicationAPI():
     def addCoAuthors(self,publication, idPublicationMySQL):
         for author in publication['authorships']:
 
+            # Permet d'uniformiser le nom de l'auteur
             display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
             
-            unAuthor = Author(
-                author['author']['orcid'],
-                display_name,
-                "NULL"
-            )
+            # Permet d'enregistrer le co-auteur en tant que auteur dans notre BDD
+            unAuthor = Author(author['author']['orcid'],display_name,"NULL")
             unAuthor.setDataBase(self.dataBase)
             idNewAuthor = unAuthor.checkIfExistsOrInsert()
             
-            unSourceAuthor = SourceAuthor(idNewAuthor, self.sourceID, author['author']['id'])
+            # TODO : Enregistrer des informations spécifiques propre a la source
+            specificInformation = {}
+            
+            # Permet d'ajouter le lien entre l'auteur et la source
+            unSourceAuthor = SourceAuthor(idNewAuthor, self.sourceID, author['author']['id'], specificInformation)
             unSourceAuthor.setDataBase(self.dataBase)
             unSourceAuthor.checkIfExistsOrInsert()
 
@@ -76,24 +80,28 @@ class PublicationAPI():
         for concept in publication['concepts']:
 
             unConcept = Concept(
-                concept['id'],
                 concept['wikidata'],
                 concept['display_name']
             )
-
             unConcept.setDataBase(self.dataBase)
-            idConceptMySQL = unConcept.checkIfExistsOrInsert()
+            idConcept = unConcept.checkIfExistsOrInsert()
+            
+            # TODO : Enregistrer des informations spécifiques propre a la source
+            specificInformation = {}
+            
+            # Permet de faire le lien entre la source et le concept              
+            unSourceConcept = SourceConcept(idConcept,self.sourceID,concept['id'], specificInformation)
+            unSourceConcept.setDataBase(self.dataBase)
+            unSourceConcept.checkIfExistsOrInsert()
 
             # Ajout de la relation entre le concept et la publication
-
             unAuthorPublicationConcept = AuthorPublicationConcept(
                 "NULL",
-                idConceptMySQL,
+                idConcept,
                 idPublicationMySQL,
                 concept['level'],
                 concept['score']
             )
-
             unAuthorPublicationConcept.setDataBase(self.dataBase)
             unAuthorPublicationConcept.checkIfExistsOrInsert()
 
@@ -108,14 +116,18 @@ class PublicationAPI():
             publication['publication_year'],
             publication['publication_date'],
             publication['updated_date'],
-            publication['created_date']
+            publication['created_date'],
+            self.sourceID
         )  
 
         unPublication.setDataBase(self.dataBase)
         idPublicationMySQL = unPublication.checkIfExistsOrInsert()
         
+        # TODO : Enregistrer des informations spécifiques propre a la source
+        specificInformation = {}
+        
         # Aujout de la relation entre la publication et la source 
-        unSourcePublication = SourcePublication(idPublicationMySQL,self.sourceID,publication['id'])
+        unSourcePublication = SourcePublication(idPublicationMySQL,self.sourceID,publication['id'], specificInformation)
         unSourcePublication.setDataBase(self.dataBase)
         unSourcePublication.checkIfExistsOrInsert()
         

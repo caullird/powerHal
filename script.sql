@@ -13,29 +13,8 @@ DROP TABLE IF EXISTS authorPublicationConcept;
 -- Lien entre la source et les différentes éléménts
 DROP TABLE IF EXISTS sourcePublication;
 DROP TABLE IF EXISTS sourceAuthor;
-
-CREATE TABLE IF NOT EXISTS institution (
-    id_institution int(11) NOT NULL AUTO_INCREMENT,
-    idAlex_institution varchar(100),
-    display_name varchar(100),
-    country_code varchar(100),
-    type_institution varchar(100),
-    idRor_insitution varchar(100),
-    PRIMARY KEY (id_institution)
-);
-
-CREATE TABLE IF NOT EXISTS publication (
-    id_publication int(11) NOT NULL AUTO_INCREMENT,
-    id_doi varchar(500),
-    title varchar(500),
-    display_name varchar(500),
-    type_publication varchar(100),
-    publication_year varchar(100),
-    publication_date varchar(100),
-    updated_date varchar(100),
-    created_date varchar(100),
-    PRIMARY KEY (id_publication)
-);
+DROP TABLE IF EXISTS sourceInstitution;
+DROP TABLE IF EXISTS sourceConcept;
 
 CREATE TABLE IF NOT EXISTS source(
     id_source int(11) NOT NULL AUTO_INCREMENT,
@@ -48,11 +27,47 @@ INSERT INTO source (id_source,display_name,website_url) VALUES
 (1, "OpenAlex", "https://openalex.org/"),
 (2, "GoogleScholar", "https://scholar.google.com/");
 
+
+CREATE TABLE IF NOT EXISTS institution (
+    id_institution int(11) NOT NULL AUTO_INCREMENT,
+    display_name varchar(100),
+    country_code varchar(100),
+    type_institution varchar(100),
+    PRIMARY KEY (id_institution)
+);
+
+CREATE TABLE IF NOT EXISTS sourceInstitution(
+    id_sourceInstitution int(11) NOT NULL AUTO_INCREMENT,
+    id_institution int(11) NOT NULL,
+    id_source int(11) NOT NULL,
+    specificId varchar(5000),
+    specificInformation varchar(5000),
+    PRIMARY KEY (id_sourceInstitution),
+    FOREIGN KEY (id_institution) REFERENCES institution(id_institution),
+    FOREIGN KEY (id_source) REFERENCES source(id_source)
+);
+
+CREATE TABLE IF NOT EXISTS publication (
+    id_publication int(11) NOT NULL AUTO_INCREMENT,
+    id_doi varchar(500),
+    title varchar(500),
+    display_name varchar(500),
+    type_publication varchar(100),
+    publication_year varchar(100),
+    publication_date varchar(100),
+    updated_date varchar(100),
+    created_date varchar(100),
+    id_source int(11) NOT NULL,
+    PRIMARY KEY (id_publication),
+    FOREIGN KEY (id_source) REFERENCES source(id_source)
+);
+
 CREATE TABLE IF NOT EXISTS sourcePublication(
     id_sourcePublication int(11) NOT NULL AUTO_INCREMENT,
     id_publication int(11) NOT NULL,
     id_source int(11) NOT NULL,
     specificId varchar(5000),
+    specificInformation varchar(5000),
     PRIMARY KEY (id_sourcePublication),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
@@ -66,13 +81,22 @@ CREATE TABLE IF NOT EXISTS concept(
     PRIMARY KEY (id_concept)
 );
 
+CREATE TABLE IF NOT EXISTS sourceConcept(
+    id_sourceConcept int(11) NOT NULL AUTO_INCREMENT,
+    id_concept int(11) NOT NULL,
+    id_source int(11) NOT NULL,
+    specificId varchar(5000),
+    specificInformation varchar(5000),
+    PRIMARY KEY (id_sourceConcept),
+    FOREIGN KEY (id_concept) REFERENCES concept(id_concept),
+    FOREIGN KEY (id_source) REFERENCES source(id_source)
+);
+
 CREATE TABLE IF NOT EXISTS author (
     id_author int(11) NOT NULL AUTO_INCREMENT,
     orcid_id varchar(2000),
     display_name varchar(2000),
     display_name_alternatives varchar(2000),
-    -- works_count varchar(500),
-    -- cited_by_count varchar(500),
     PRIMARY KEY (id_author)
 );
 
@@ -81,6 +105,7 @@ CREATE TABLE IF NOT EXISTS sourceAuthor(
     id_author int(11) NOT NULL,
     id_source int(11) NOT NULL,
     specificId varchar(5000),
+    specificInformation varchar(5000),
     PRIMARY KEY (id_sourceAuthor),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_source) REFERENCES source(id_source)

@@ -1,7 +1,7 @@
-class SourceAuthor():
+class SourceInstitution():
 
-    def __init__(self,id_author,id_source,specificId, specificInformation):
-        self.id_author = id_author
+    def __init__(self,id_institution,id_source,specificId,specificInformation):
+        self.id_institution = id_institution
         self.id_source = id_source
         self.specificId = specificId
         # Ranger les informations sous forme d'un mini json
@@ -12,5 +12,5 @@ class SourceAuthor():
 
     # Permet de vérifier si l'objet concept existe dans la base de données et l'ajouter dans le cas échéant
     def checkIfExistsOrInsert(self):
-        return self.database.checkIfExistsOrInsert(self, fieldsComparable = ['id_author','id_source'])
+        return self.database.checkIfExistsOrInsert(self, fieldsComparable = ['id_institution','id_source'])
 

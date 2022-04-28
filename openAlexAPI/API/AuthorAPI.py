@@ -1,12 +1,16 @@
+# Importation des librairies/classes de configuration
 import requests
 import json
-from config.ResearchInitializer import ResearchInitializer
+
+# Importation des modèles pour la création des objets
 from model.Institution import Institution
 from model.Author import Author
 from model.Concept import Concept
 from model.AuthorInstitution import AuthorInstitution
 from model.AuthorPublicationConcept import AuthorPublicationConcept
 from model.SourceAuthor import SourceAuthor
+from model.SourceInstitution import SourceInstitution
+from model.SourceConcept import SourceConcept
 
 class AuthorAPI():
 
@@ -45,9 +49,9 @@ class AuthorAPI():
     # Permet d'ajouter l'ensemble des Institutions
     def addInstitutions(self, result):
         if(result['last_known_institution'] != None):  
+            
+            # Permet la création et l'ajout d'une Institution
             unInstitution = Institution(
-                result['last_known_institution']['id'],
-                result['last_known_institution']['ror'],
                 result['last_known_institution']['display_name'],
                 result['last_known_institution']['country_code'],
                 result['last_known_institution']['type']
@@ -55,7 +59,21 @@ class AuthorAPI():
 
             unInstitution.setDataBase(self.dataBase)
             idInstitution = unInstitution.checkIfExistsOrInsert()
+    
+            # TODO : Enregistrer des informations spécifiques propre a la source
+            specificInformation = {}
+            
+            # Permet la création du lien entre la source et une institution
+            unSourceInstitution = SourceInstitution(
+                idInstitution,
+                self.sourceID,
+                result['last_known_institution']['id'],
+                specificInformation
+            )
+            unSourceInstitution.setDataBase(self.dataBase)
+            unSourceInstitution.checkIfExistsOrInsert()
 
+            # Permet la création du lien entre l'auteur et une institution
             unAuthorInstitution = AuthorInstitution(str(self.idAuthor),str(idInstitution))
             unAuthorInstitution.setDataBase(self.dataBase)
             unAuthorInstitution.checkIfExistsOrInsert()
@@ -64,15 +82,24 @@ class AuthorAPI():
     # Permet de récupérer les concepts relatifs à l'auteur
     def addConceptsAuthor(self, result):
         for concept in result['x_concepts']:
+            
+            # Ajout d'un concept dans la base de donnée
             unConcept = Concept(
-                concept['id'],
                 concept['wikidata'],
                 concept['display_name']
             )
-
             unConcept.setDataBase(self.dataBase)
             idConcept = unConcept.checkIfExistsOrInsert()    
+            
+            # TODO : Enregistrer des informations spécifiques propre a la source
+            specificInformation = {}
+            
+            # Permet de faire le lien entre la source et le concept              
+            unSourceConcept = SourceConcept(idConcept,self.sourceID,concept['id'], specificInformation)
+            unSourceConcept.setDataBase(self.dataBase)
+            unSourceConcept.checkIfExistsOrInsert()
 
+            # Permet de faire le lien entre l'auteur et le concept
             unAuthorPublicationConcept = AuthorPublicationConcept(
                 self.idAuthor,
                 "NULL",
@@ -80,7 +107,6 @@ class AuthorAPI():
                 concept['level'],
                 concept['score']
             )
-
             unAuthorPublicationConcept.setDataBase(self.dataBase)
             unAuthorPublicationConcept.checkIfExistsOrInsert()
 
@@ -106,7 +132,6 @@ class AuthorAPI():
             if(result['orcid'] != None): 
                 resultsValues['orcid_ids'].append(result['orcid'])
 
-
             resultsValues['display_name'] = self.initial_research
 
             if(result['display_name_alternatives'] != []): 
@@ -126,8 +151,11 @@ class AuthorAPI():
         )
         unAuthor.setDataBase(self.dataBase)
         AuthorID = unAuthor.checkIfExistsOrInsert()
+        
+        # TODO : Enregistrer des informations spécifiques propre a la source
+        specificInformation = {}
     
-        unSourceAuthor = SourceAuthor(AuthorID, self.sourceID, resultsValues['alex_ids'])
+        unSourceAuthor = SourceAuthor(AuthorID, self.sourceID, resultsValues['alex_ids'],specificInformation)
         unSourceAuthor.setDataBase(self.dataBase)
         unSourceAuthor.checkIfExistsOrInsert()
     
