@@ -1,4 +1,5 @@
 import configparser
+
 class AlexAPI():
     def __init__(self):
         self.config = self.getConfig()

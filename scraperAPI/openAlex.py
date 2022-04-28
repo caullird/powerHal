@@ -1,12 +1,14 @@
-# Importation des classes pour la configuration
+# Importation des classes pour la configuration globale au projet
 from config.DB import DB
-from config.AlexAPI import AlexAPI
 from config.ResearchInitializer import ResearchInitializer
 from config.Source import Source
 
-# Importation des classes pour la gestion des sous-ensemble API
-from API.AuthorAPI import AuthorAPI
-from API.PublicationAPI import PublicationAPI
+# Importation des configurations propre à AlexAPI
+from openAlexAPI.config.AlexAPI import AlexAPI
+
+# # Importation des classes pour la gestion des sous-ensemble API
+from openAlexAPI.API.AuthorAPI import AuthorAPI
+from openAlexAPI.API.PublicationAPI import PublicationAPI
 
 # Importation des méthodes d'analyse de données
 from analyze.PowerCloud import PowerCloud

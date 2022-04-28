@@ -13,7 +13,7 @@ class PowerCloud():
 
     def __init__(self, DB):
         self.DB = DB
-        self.url = "././scraperAPI/openAlex/data/"
+        self.url = "././scraperAPI/openAlexAPI/data/"
         self.mask = self.url + "cloud.PNG"
 
 

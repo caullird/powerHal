@@ -1,3 +1,0 @@
-class OpenCitation():
-
-    pass
