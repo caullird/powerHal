@@ -114,8 +114,14 @@ class PublicationAPI():
 
     # Insertion de l'ensemble des publications dans notre base de donnée
     def addPublication(self, publication, idAuthorMySQL):
+
+        if(publication['doi'] != None):
+            id_doi = publication['doi'].replace("https://doi.org/","")
+        else:
+            id_doi = "NULL"
+
         unPublication = Publication(
-            publication['doi'],
+            id_doi,
             publication['title'],
             publication['display_name'],
             publication['type'],

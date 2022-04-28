@@ -30,7 +30,7 @@ class DB():
     # Permet de récupérer la configuration du fichier config.ini
     def getConfig(self):
         config = configparser.ConfigParser()
-        config.read('././config.ini')
+        config.read('./././config.ini')
         return config
 
 

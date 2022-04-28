@@ -13,9 +13,9 @@ from analyze.PowerCloud import PowerCloud
 from analyze.PowerGraph import PowerGraph
 
 class openAlex():
-    
+
     ## En attendant d'avoir le lien entre le site web et le programme python
-    research = "Sorana CIMPAN"
+    research = "Kavé SALAMATIAN"
     
     initialize = ResearchInitializer(research)
     
@@ -33,7 +33,6 @@ class openAlex():
 
     ## Récupération des articles en fonction des id AlexAPI & création des liens avec les autres autheurs + création des auteurs dans notre database
     publications = PublicationAPI(authors.getArrayAuthorIDs(), API, dataBase, sourceID, authors.getIdAuthor())
-
 
     ## Différentes méthodes d'affichages de donénes
     unWordCloud = PowerCloud(dataBase)
