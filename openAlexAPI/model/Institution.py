@@ -1,6 +1,3 @@
-from pydoc import classname
-from config.DB import DB
-
 class Institution():
 
     # Permet de créer un objet de type institution

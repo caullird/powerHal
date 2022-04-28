@@ -1,6 +1,3 @@
-from pydoc import classname
-from config.DB import DB
-
 class Publication():
 
     # Permet de créer un objet de type publication

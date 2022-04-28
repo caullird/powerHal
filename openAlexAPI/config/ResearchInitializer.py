@@ -1,5 +1,3 @@
-from itertools import combinations
-
 class ResearchInitializer():
 
     def __init__(self,research : str):

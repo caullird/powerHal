@@ -1,5 +1,4 @@
 # Importation des classes pour la configuration
-from pyparsing import Word
 from config.DB import DB
 from config.AlexAPI import AlexAPI
 from config.ResearchInitializer import ResearchInitializer
@@ -8,11 +7,6 @@ from config.Source import Source
 # Importation des classes pour la gestion des sous-ensemble API
 from API.AuthorAPI import AuthorAPI
 from API.PublicationAPI import PublicationAPI
-
-# Importation des modèles de données
-from model.Author import Author
-from model.Concept import Concept 
-from model.AuthorPublicationConcept import AuthorPublicationConcept
 
 # Importation des méthodes d'analyse de données
 from analyze.PowerCloud import PowerCloud
