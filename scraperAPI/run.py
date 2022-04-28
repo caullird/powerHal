@@ -1,4 +1,4 @@
-from openAlex import openAlex
+from specific.openAlex.openAlex import openAlex
 
 class Run():
     
