@@ -24,15 +24,13 @@ CREATE TABLE IF NOT EXISTS source(
     id_source int(11) NOT NULL AUTO_INCREMENT,
     display_name varchar(600) NOT NULL,
     website_url varchar(600) NOT NULL,
-    created_at datetime,
-    updated_at datetime,
-    deleted_at datetime,
+    api_url varchar(600),
     PRIMARY KEY (id_source)
 );
 
-INSERT INTO source (id_source,display_name,website_url) VALUES
-(1, "OpenAlex", "https://openalex.org/"),
-(2, "GoogleScholar", "https://scholar.google.com/");
+INSERT INTO source (id_source,display_name,website_url, api_url) VALUES
+(1, "OpenAlex", "https://openalex.org/","https://openalex.org/api/"),
+(2, "GoogleScholar", "https://scholar.google.com/","");
 
 
 CREATE TABLE IF NOT EXISTS institution (
@@ -41,8 +39,11 @@ CREATE TABLE IF NOT EXISTS institution (
     country_code varchar(100),
     type_institution varchar(100),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_institution)
 );
 
@@ -53,8 +54,11 @@ CREATE TABLE IF NOT EXISTS sourceInstitution(
     specificId varchar(5000),
     specificInformation varchar(5000),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_sourceInstitution),
     FOREIGN KEY (id_institution) REFERENCES institution(id_institution),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
@@ -72,8 +76,11 @@ CREATE TABLE IF NOT EXISTS publication (
     created_date varchar(100),
     id_source int(11) NOT NULL,
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_publication),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
 );
@@ -85,8 +92,11 @@ CREATE TABLE IF NOT EXISTS sourcePublication(
     specificId varchar(5000),
     specificInformation varchar(5000),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_sourcePublication),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
@@ -97,8 +107,11 @@ CREATE TABLE IF NOT EXISTS concept(
     wikidata varchar(100),
     display_name varchar(500),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_concept)
 );
 
@@ -109,8 +122,11 @@ CREATE TABLE IF NOT EXISTS sourceConcept(
     specificId varchar(5000),
     specificInformation varchar(5000),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_sourceConcept),
     FOREIGN KEY (id_concept) REFERENCES concept(id_concept),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
@@ -122,8 +138,11 @@ CREATE TABLE IF NOT EXISTS author (
     display_name varchar(2000),
     display_name_alternatives varchar(2000),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_author)
 );
 
@@ -134,8 +153,11 @@ CREATE TABLE IF NOT EXISTS sourceAuthor(
     specificId varchar(5000),
     specificInformation varchar(5000),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_sourceAuthor),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_source) REFERENCES source(id_source)
@@ -147,8 +169,11 @@ CREATE TABLE IF NOT EXISTS authorInstitution (
     id_author int(11) NOT NULL,
     id_institution int(11) NOT NULL,
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_authorInstitution),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_institution) REFERENCES institution(id_institution)
@@ -160,8 +185,11 @@ CREATE TABLE IF NOT EXISTS authorPublication (
     id_publication int(11) NOT NULL,
     author_position varchar(100) NOT NULL,
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_authorPublication),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication)
@@ -176,8 +204,11 @@ CREATE TABLE IF NOT EXISTS authorPublicationConcept (
     level_concept varchar(11),
     score_concept varchar(11),
     created_at datetime,
+    created_by int(11),
     updated_at datetime,
+    updated_by int(11),
     deleted_at datetime,
+    deleted_by int(11),
     PRIMARY KEY (id_authorPublicationConcept),
     FOREIGN KEY (id_author) REFERENCES author(id_author),
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),

@@ -1,8 +1,9 @@
 class Source():
 
-    def __init__(self,display_name,website_url):
+    def __init__(self,display_name,website_url, api_url):
         self.display_name = display_name
         self.website_url = website_url
+        self.api_url = api_url
 
     def setDataBase(self, database):
         self.database = database

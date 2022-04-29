@@ -76,7 +76,7 @@ class DB():
         objectFields = dict((x, y) for x, y in self.getObjectFields(object, type = "all"))
         mySQLFields = dict((x, y) for x, y in tuple(zip(self.cursor.column_names, mySQLObject)))
 
-        removeFields = ["id_" + str(className).lower(),"created_at","updated_at","deleted_at"]
+        removeFields = ["id_" + str(className).lower(),"created_at","updated_at","deleted_at","created_by","updated_by","deleted_by"]
         for removeField in removeFields:
             del mySQLFields[removeField]
 
@@ -165,6 +165,7 @@ class DB():
     def addActionAt(self, classname, id, action):
         self.cursor.execute("UPDATE " + str(classname) + " SET " + action + "_at = NOW() WHERE id_" + str(classname).lower() + " = " + str(id))
 
+    # Permet de récupérer le/les résultats d'une requête simple entre deux tables
     def getFieldsWithId(self, id, table, searchField, getField, quantity):
         self.cursor.execute('SELECT ' + getField + ' FROM ' + table + ' WHERE ' + searchField + ' = ' + str(id))
 
@@ -172,3 +173,11 @@ class DB():
             return [item[0] for item in self.cursor.fetchall()]
         
         return self.cursor.fetchone()[0]
+
+    # Permet de set l'user globale de l'utilisateur connecté
+    def setConnectedUserId(self, id_connected_user):
+        self.id_connected_user = id_connected_user
+
+
+    
+

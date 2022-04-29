@@ -1,4 +1,4 @@
-class Source():
+class ResearchSource():
     def __init__(self, sourceName, DB):
         self.sourceName = sourceName
         self.DB = DB
