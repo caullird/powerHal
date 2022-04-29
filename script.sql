@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS source(
 
 INSERT INTO source (id_source,display_name,website_url, api_url) VALUES
 (1, "OpenAlex", "https://openalex.org/","https://openalex.org/api/"),
-(2, "GoogleScholar", "https://scholar.google.com/","");
+(2, "GoogleScholar", "https://scholar.google.com/",""),
+(3, "OpenCitation", "https://opencitations.net/","https://opencitations.net/index/api/v1/");
 
 
 CREATE TABLE IF NOT EXISTS institution (

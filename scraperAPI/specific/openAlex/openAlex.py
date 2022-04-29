@@ -18,6 +18,7 @@ class openAlex():
 
     def __init__(self,dataBase,research, id_connected_user):
         self.dataBase = dataBase
+        
         self.research = research
         self.id_connected_user = id_connected_user
         self.run()

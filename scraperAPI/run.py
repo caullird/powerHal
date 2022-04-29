@@ -14,7 +14,7 @@ class Run():
     research = "Kavé SALAMATIAN"
 
     # Importation des données depuis OpenAlex et récupération de l'auteur importé
-    idAuthor = openAlex(dataBase, research, id_connected_user)
+    idAuthor = openAlex(dataBase,research, id_connected_user)
 
 
         

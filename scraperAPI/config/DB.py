@@ -1,4 +1,3 @@
-from attr import field
 import mysql.connector
 import configparser
 import inspect
