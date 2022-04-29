@@ -75,6 +75,8 @@ CREATE TABLE IF NOT EXISTS publication (
     publication_date varchar(100),
     updated_date varchar(100),
     created_date varchar(100),
+    citation_count varchar(100),
+    reference_count varchar(100),
     id_source int(11) NOT NULL,
     created_at datetime,
     created_by int(11),

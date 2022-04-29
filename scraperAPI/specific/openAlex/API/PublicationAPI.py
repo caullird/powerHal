@@ -15,9 +15,9 @@ from model.relations.SourceConcept import SourceConcept
 
 class PublicationAPI():
 
-    def __init__(self, idsAuthor, halAPI, dataBase, sourceID, authorID):
+    def __init__(self, idsAuthor, API, dataBase, sourceID, authorID):
         self.idsAuthor = idsAuthor
-        self.halAPI = halAPI
+        self.API = API
         self.dataBase = dataBase
         self.sourceID = sourceID
         self.authorID = authorID
@@ -32,7 +32,7 @@ class PublicationAPI():
 
             idAuthorMySQL = self.authorID
 
-            results = json.loads(requests.get(self.halAPI.getUrlAPI() + 'works?filter=authorships.author.id:A' + id).text)
+            results = json.loads(requests.get(self.API.getUrlAPI() + 'works?filter=authorships.author.id:A' + id).text)
             for publication in results['results']:
                 
                 publications.append(publication) 

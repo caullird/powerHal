@@ -11,6 +11,8 @@ class Publication():
         self.updated_date = updated_date
         self.created_date = created_date
         self.id_source = id_source
+        self.citation_count = 0
+        self.reference_count = 0
 
     # Permet d'ajouter l'objet database à l'objet publication
     def setDataBase(self, database):

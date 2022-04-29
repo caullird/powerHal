@@ -1,3 +1,4 @@
+from operator import ge
 import mysql.connector
 import configparser
 import inspect
@@ -171,12 +172,22 @@ class DB():
 
     # Permet de récupérer le/les résultats d'une requête simple entre deux tables
     def getFieldsWithId(self, id, table, searchField, getField, quantity):
-        self.cursor.execute('SELECT ' + getField + ' FROM ' + table + ' WHERE ' + searchField + ' = ' + str(id))
+        self.cursor.execute('SELECT ' + str(getField) + ' FROM ' + str(table) + ' WHERE ' + str(searchField) + ' = ' + str(id))
 
         if(quantity == "many"):
+            if(getField == "*"):
+                return [item for item in self.cursor.fetchall()]
             return [item[0] for item in self.cursor.fetchall()]
         
+        if(getField == "*"):
+            return self.cursor.fetchone()
         return self.cursor.fetchone()[0]
+
+
+    # Permet de modifier un champ en particulier
+    def updateOneField(self, id, table, field, value):
+        self.cursor.execute('UPDATE ' + str(table) + ' SET ' + str(field) + ' = ' + str(value) + ' WHERE id_' + str(table).lower() + ' = ' + str(id) + ' AND created_by = ' + str(self.id_connected_user))
+
 
     # Permet de set l'user globale de l'utilisateur connecté
     def setConnectedUserId(self, id_connected_user):

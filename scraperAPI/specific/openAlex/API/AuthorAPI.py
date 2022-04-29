@@ -14,14 +14,14 @@ from model.relations.SourceConcept import SourceConcept
 
 class AuthorAPI():
 
-    def __init__(self, intitial_research,initializedResearch, halAPI, dataBase, sourceID, filter_by):
+    def __init__(self, intitial_research,initializedResearch, API, dataBase, sourceID, filter_by):
         
         # Paramètre de recherche depuis notre solution
         self.initial_research = intitial_research
         self.intializedResearch = initializedResearch
 
-        # Lien avec l'API de HAL
-        self.halAPI = halAPI 
+        # Lien avec l'API
+        self.API = API 
         self.filter_by = filter_by
 
         self.globalResponseAuthor = self.getGlobalResponseAuthor()
@@ -165,7 +165,7 @@ class AuthorAPI():
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
     def getGlobalResponseAuthor(self):
-        return json.loads(requests.get(self.halAPI.getUrlAPI() + 'authors?filter=' + self.filter_by + '.search:' + self.intializedResearch).text)
+        return json.loads(requests.get(self.API.getUrlAPI() + 'authors?filter=' + self.filter_by + '.search:' + self.intializedResearch).text)
 
 
     # Permet de récupérer l'ensemble des IDS relatifs à notre paramètre

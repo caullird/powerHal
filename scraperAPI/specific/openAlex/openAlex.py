@@ -3,7 +3,7 @@ from config.DB import DB
 from config.ResearchInitializer import ResearchInitializer
 from config.ResearchSource import ResearchSource
 
-# Importation des configurations propre à AlexAPI
+# Importation des configurations propre à l'API
 from specific.openAlex.config.AlexAPI import AlexAPI
 
 # # Importation des classes pour la gestion des sous-ensemble API

@@ -1,4 +1,5 @@
 from specific.openAlex.openAlex import openAlex
+from specific.openCitation.openCitation import openCitation
 
 from config.DB import DB
 
@@ -11,10 +12,16 @@ class Run():
     dataBase.setConnectedUserId(id_connected_user)    
     
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
-    research = "Kavé SALAMATIAN"
+    research = "Sorana CIMPAN"
 
-    # Importation des données depuis OpenAlex et récupération de l'auteur importé
-    idAuthor = openAlex(dataBase,research, id_connected_user)
+    # Gestion du pont API openAlex
+    openAlex(dataBase,research, id_connected_user)
+
+    # Gestion du pont API openCitation
+    openCitation(dataBase,research, id_connected_user)
+
+
+
 
 
         
