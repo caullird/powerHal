@@ -1,3 +1,4 @@
+from attr import field
 import mysql.connector
 import configparser
 import inspect
@@ -46,9 +47,10 @@ class DB():
         else:
             print("ERROR | Problème avec la connexion de votre base de donnée")
 
-
     # Permet de verifier si la ligne existe déjà, et de l'insérer sinon
     def checkIfExistsOrInsert(self, object, fieldsComparable, autoUpdate = False):
+         
+        self.setCreatedByInObject(object, fieldsComparable)
 
         fields = self.sortByFieldName(self.getObjectFields(object, type = "all"), fieldsComparable)
 
@@ -76,13 +78,15 @@ class DB():
         objectFields = dict((x, y) for x, y in self.getObjectFields(object, type = "all"))
         mySQLFields = dict((x, y) for x, y in tuple(zip(self.cursor.column_names, mySQLObject)))
 
-        removeFields = ["id_" + str(className).lower(),"created_at","updated_at","deleted_at","created_by","updated_by","deleted_by"]
+        removeFields = ["id_" + str(className).lower(),"created_at","updated_at","deleted_at","updated_by","deleted_by"]
         for removeField in removeFields:
             del mySQLFields[removeField]
 
         for key, value in objectFields.items():
             objectFields[key] = str(value)
 
+        for key, value in mySQLFields.items():
+            mySQLFields[key] = str(value)           
 
         if(sorted(mySQLFields.items(), key=lambda t: t[0]) != sorted(objectFields.items(), key=lambda t: t[0])):
             sql = 'UPDATE ' + str(className) + ' SET '
@@ -90,7 +94,7 @@ class DB():
                 if value not in ["","[]","{}","()","NULL","None"]:
                     sql += key + ' = "' + str(value) + '", '
             sql = sql[:-2] + ' WHERE id_' + str(className).lower() + ' = ' + str(mySQLObject[0])
-
+            sql += " AND created_by = " + str(self.id_connected_user) 
             self.cursor.execute(sql)
             #print("INFO | Un(e) " + str(className) + " a été mis à jour sur votre base de données")
 
@@ -164,6 +168,7 @@ class DB():
     # Permet d'ajouter ou de modifier le statut d'un objet
     def addActionAt(self, classname, id, action):
         self.cursor.execute("UPDATE " + str(classname) + " SET " + action + "_at = NOW() WHERE id_" + str(classname).lower() + " = " + str(id))
+        self.cursor.execute("UPDATE " + str(classname) + " SET " + action + "_by = " + str(self.id_connected_user) + " WHERE id_" + str(classname).lower() + " = " + str(id))
 
     # Permet de récupérer le/les résultats d'une requête simple entre deux tables
     def getFieldsWithId(self, id, table, searchField, getField, quantity):
@@ -177,6 +182,11 @@ class DB():
     # Permet de set l'user globale de l'utilisateur connecté
     def setConnectedUserId(self, id_connected_user):
         self.id_connected_user = id_connected_user
+        
+    # Permet d'ajouter automatiquement la notion de createdBy dans l'objet
+    def setCreatedByInObject(self,object, fields):
+        fields.append("created_by")
+        object.created_by = self.id_connected_user
 
 
     

@@ -8,6 +8,7 @@ class Run():
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     dataBase = DB()
+    dataBase.setConnectedUserId(id_connected_user)    
     
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
     research = "Kavé SALAMATIAN"
