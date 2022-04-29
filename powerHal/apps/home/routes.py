@@ -14,7 +14,6 @@ from jinja2 import TemplateNotFound
 def index():
     return render_template('home/dashboard.html', segment='index')
 
-
 @blueprint.route('/<template>')
 @login_required
 def route_template(template):
