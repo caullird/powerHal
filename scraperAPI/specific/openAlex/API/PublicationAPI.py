@@ -7,11 +7,13 @@ from config.ResearchInitializer import ResearchInitializer
 from model.entities.Concept import Concept
 from model.entities.Author import Author
 from model.entities.Publication import Publication
+from model.entities.Document import Document
 from model.relations.AuthorPublication import AuthorPublication
 from model.relations.AuthorPublicationConcept import AuthorPublicationConcept
 from model.relations.SourcePublication import SourcePublication
 from model.relations.SourceAuthor import SourceAuthor
 from model.relations.SourceConcept import SourceConcept
+
 
 class PublicationAPI():
 
@@ -46,39 +48,50 @@ class PublicationAPI():
                 # Insert de l'ensemble des co-auteur des publications dans notre base de donnée
                 self.addCoAuthors(publication, idPublicationMySQL)
 
+                # Insert des documents relatifs à la publication
+                self.addFiles(publication, idPublicationMySQL)
+
         print("INFO | " + str(len(publications)) + " publications trouvées")
 
-    
-    # Insert de l'ensemble des co-auteur des publications dans notre base de donnée
-    def addCoAuthors(self,publication, idPublicationMySQL):
-        for author in publication['authorships']:
 
-            # Permet d'uniformiser le nom de l'auteur
-            display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
-            
-            display_name_alternatives = []
-            orcid_id = []
+    # Insertion de l'ensemble des publications dans notre base de donnée
+    def addPublication(self, publication, idAuthorMySQL):
 
-            if author['author']['orcid'] != None:
-                orcid_id.append(author['author']['orcid'])
+        if(publication['doi'] != None):
+            id_doi = publication['doi'].replace("https://doi.org/","")
+        else:
+            id_doi = "NULL"
 
-            # Permet d'enregistrer le co-auteur en tant que auteur dans notre BDD
-            unAuthor = Author(orcid_id,display_name,display_name_alternatives)
-            unAuthor.setDataBase(self.dataBase)
-            idNewAuthor = unAuthor.checkIfExistsOrInsert()
-            
-            # TODO : Enregistrer des informations spécifiques propre a la source
-            specificInformation = {}
-            
-            # Permet d'ajouter le lien entre l'auteur et la source
-            unSourceAuthor = SourceAuthor(idNewAuthor, self.sourceID, author['author']['id'], specificInformation)
-            unSourceAuthor.setDataBase(self.dataBase)
-            unSourceAuthor.checkIfExistsOrInsert()
+        unPublication = Publication(
+            id_doi,
+            publication['title'],
+            publication['display_name'],
+            publication['type'],
+            publication['publication_year'],
+            publication['publication_date'],
+            publication['updated_date'],
+            publication['created_date'],
+            self.sourceID,
+            publication['cited_by_count']
+        )  
 
-            # Permet d'ajouter le lien entre l'auteur et la publication
-            unAuthorPublication = AuthorPublication(idNewAuthor, idPublicationMySQL, author['author_position'])
-            unAuthorPublication.setDataBase(self.dataBase)
-            unAuthorPublication.checkIfExistsOrInsert()
+        unPublication.setDataBase(self.dataBase)
+        idPublicationMySQL = unPublication.checkIfExistsOrInsert()
+        
+        # TODO : Enregistrer des informations spécifiques propre a la source
+        specificInformation = {}
+        
+        # Aujout de la relation entre la publication et la source 
+        unSourcePublication = SourcePublication(idPublicationMySQL,self.sourceID,publication['id'], specificInformation)
+        unSourcePublication.setDataBase(self.dataBase)
+        unSourcePublication.checkIfExistsOrInsert()
+        
+        # Ajout de la relation entre la publication et l'auteur
+        unAuthorPublication = AuthorPublication(idAuthorMySQL,idPublicationMySQL,"first")
+        unAuthorPublication.setDataBase(self.dataBase)
+        unAuthorPublication.checkIfExistsOrInsert()
+
+        return idPublicationMySQL
 
 
     # Insertion de l'ensemble des concepts dans notre base de donnée
@@ -112,40 +125,53 @@ class PublicationAPI():
             unAuthorPublicationConcept.checkIfExistsOrInsert()
 
 
-    # Insertion de l'ensemble des publications dans notre base de donnée
-    def addPublication(self, publication, idAuthorMySQL):
+    # Insert de l'ensemble des co-auteur des publications dans notre base de donnée
+    def addCoAuthors(self,publication, idPublicationMySQL):
+        for author in publication['authorships']:
 
-        if(publication['doi'] != None):
-            id_doi = publication['doi'].replace("https://doi.org/","")
-        else:
-            id_doi = "NULL"
+            # Permet d'uniformiser le nom de l'auteur
+            display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
+            
+            display_name_alternatives = []
+            orcid_id = []
 
-        unPublication = Publication(
-            id_doi,
-            publication['title'],
-            publication['display_name'],
-            publication['type'],
-            publication['publication_year'],
-            publication['publication_date'],
-            publication['updated_date'],
-            publication['created_date'],
-            self.sourceID
-        )  
+            if author['author']['orcid'] != None:
+                orcid_id.append(author['author']['orcid'])
 
-        unPublication.setDataBase(self.dataBase)
-        idPublicationMySQL = unPublication.checkIfExistsOrInsert()
-        
-        # TODO : Enregistrer des informations spécifiques propre a la source
-        specificInformation = {}
-        
-        # Aujout de la relation entre la publication et la source 
-        unSourcePublication = SourcePublication(idPublicationMySQL,self.sourceID,publication['id'], specificInformation)
-        unSourcePublication.setDataBase(self.dataBase)
-        unSourcePublication.checkIfExistsOrInsert()
-        
-        # Ajout de la relation entre la publication et l'auteur
-        unAuthorPublication = AuthorPublication(idAuthorMySQL,idPublicationMySQL,"first")
-        unAuthorPublication.setDataBase(self.dataBase)
-        unAuthorPublication.checkIfExistsOrInsert()
+            # Permet d'enregistrer le co-auteur en tant que auteur dans notre BDD
+            unAuthor = Author(orcid_id,display_name,display_name_alternatives)
+            unAuthor.setDataBase(self.dataBase)
+            idNewAuthor = unAuthor.checkIfExistsOrInsert()
+            
+            # TODO : Enregistrer des informations spécifiques propre a la source
+            specificInformation = {}
+            
+            # Permet d'ajouter le lien entre l'auteur et la source
+            unSourceAuthor = SourceAuthor(idNewAuthor, self.sourceID, author['author']['id'], specificInformation)
+            unSourceAuthor.setDataBase(self.dataBase)
+            unSourceAuthor.checkIfExistsOrInsert()
 
-        return idPublicationMySQL
+            # Permet d'ajouter le lien entre l'auteur et la publication
+            unAuthorPublication = AuthorPublication(idNewAuthor, idPublicationMySQL, author['author_position'])
+            unAuthorPublication.setDataBase(self.dataBase)
+            unAuthorPublication.checkIfExistsOrInsert()
+
+    
+    # Insert des documents relatifs à la publication
+    def addFiles(self, publication, idPublicationMySQL):
+        if(publication['open_access']['oa_url'] != None):
+            unDocument = Document(idPublicationMySQL,"Publication",publication['open_access']['oa_url'],self.sourceID)  
+            unDocument.setDataBase(self.dataBase)
+            unDocument.checkIfExistsOrInsert()
+
+        if(publication['alternate_host_venues'] != []):
+            for alternate_host_venue in publication['alternate_host_venues']:
+                unDocument = Document(idPublicationMySQL,"Publication",alternate_host_venue['url'],self.sourceID)  
+                unDocument.setDataBase(self.dataBase)
+                unDocument.checkIfExistsOrInsert()
+
+        if(publication['host_venue']['url'] != None):
+            unDocument = Document(idPublicationMySQL,"Publication",publication['host_venue']['url'],self.sourceID)  
+            unDocument.setDataBase(self.dataBase)
+            unDocument.checkIfExistsOrInsert()
+
