@@ -187,7 +187,7 @@ class DB():
     # Permet de modifier un champ en particulier
     def updateOneField(self, id, table, field, value):
         self.cursor.execute('UPDATE ' + str(table) + ' SET ' + str(field) + ' = ' + str(value) + ' WHERE id_' + str(table).lower() + ' = ' + str(id) + ' AND created_by = ' + str(self.id_connected_user))
-
+        self.addActionAt(table, id, "updated")
 
     # Permet de set l'user globale de l'utilisateur connecté
     def setConnectedUserId(self, id_connected_user):

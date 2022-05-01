@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS publication;
 DROP TABLE IF EXISTS concept;
 DROP TABLE IF EXISTS author;
 DROP TABLE IF EXISTS source;
+DROP TABLE IF EXISTS document;
 
 -- Création des relations entre les tables
 DROP TABLE IF EXISTS authorInstitution;
@@ -217,4 +218,21 @@ CREATE TABLE IF NOT EXISTS authorPublicationConcept (
     FOREIGN KEY (id_publication) REFERENCES publication(id_publication),
     FOREIGN KEY (id_concept) REFERENCES concept(id_concept)
 );
+
+CREATE TABLE IF NOT EXISTS document(
+    id_document int(11) NOT NULL AUTO_INCREMENT,
+    id_object int(11) NOT NULL,
+    class_name varchar(100) NOT NULL,
+    document_url varchar(1400) NOT NULL,
+    id_source int(11) NOT NULL,
+    created_at datetime,
+    created_by int(11),
+    updated_at datetime,
+    updated_by int(11),
+    deleted_at datetime,
+    deleted_by int(11),
+    PRIMARY KEY (id_document),
+    FOREIGN KEY (id_source) REFERENCES source(id_source)
+);
+
 

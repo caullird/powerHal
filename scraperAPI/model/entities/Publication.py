@@ -1,7 +1,7 @@
 class Publication():
 
     # Permet de créer un objet de type publication
-    def __init__(self, doi, title, display_name, type, publication_year, publication_date, updated_date, created_date, id_source):
+    def __init__(self, doi, title, display_name, type, publication_year, publication_date, updated_date, created_date, id_source, citation_count):
         self.id_doi = doi
         self.title = title
         self.display_name = display_name
@@ -11,7 +11,7 @@ class Publication():
         self.updated_date = updated_date
         self.created_date = created_date
         self.id_source = id_source
-        self.citation_count = 0
+        self.citation_count = citation_count
         self.reference_count = 0
 
     # Permet d'ajouter l'objet database à l'objet publication

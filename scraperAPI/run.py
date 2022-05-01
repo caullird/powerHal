@@ -12,7 +12,7 @@ class Run():
     dataBase.setConnectedUserId(id_connected_user)    
     
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
-    research = "Sorana CIMPAN"
+    research = "Kavé SALAMATIAN"
 
     # Gestion du pont API openAlex
     openAlex(dataBase,research, id_connected_user)
