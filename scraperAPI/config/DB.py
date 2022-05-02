@@ -69,6 +69,25 @@ class DB():
                 return self.autoUpdate(object,row)
             return row[0]
 
+    # Permet de verifier si la ligne existe déjà
+    def checkIfExists(self, object, fieldsComparable, autoUpdate = False):
+         
+        self.setCreatedByInObject(object, fieldsComparable)
+
+        fields = self.sortByFieldName(self.getObjectFields(object, type = "all"), fieldsComparable)
+
+        sql = 'SELECT * FROM ' + self.getClassName(object) + ' WHERE '
+
+        for field in fields:
+            sql += field[0] + ' = "' + str(field[1]) + '" AND '
+
+        self.cursor.execute(sql[:-4])
+        
+        row = self.cursor.fetchone()
+
+        return row != None
+        
+
 
     # Permet de mettre à jour le modèle en fonction de la demande
     def autoUpdate(self, object, mySQLObject):

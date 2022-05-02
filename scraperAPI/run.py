@@ -1,5 +1,6 @@
 from specific.openAlex.openAlex import openAlex
 from specific.openCitation.openCitation import openCitation
+from specific.googleScholar.googleScholar import googleScholar
 
 from config.DB import DB
 
@@ -15,10 +16,15 @@ class Run():
     research = "Kavé SALAMATIAN"
 
     # Gestion du pont API openAlex
-    openAlex(dataBase,research, id_connected_user)
+    #openAlex(dataBase,research, id_connected_user)
 
     # Gestion du pont API openCitation
-    openCitation(dataBase,research, id_connected_user)
+    #openCitation(dataBase,research, id_connected_user)
+
+    # Gestion du pont API Google Scholar
+    googleScholar(dataBase,"Sebastien Monnet",2)
+
+    print("Bybyeee")
 
 
 
