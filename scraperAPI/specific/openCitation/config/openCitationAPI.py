@@ -11,7 +11,8 @@ class openCitationAPI():
         return config
 
     def getUrlAPI(self):
-        return self.config['OPENCITATION']['URL']
+        #return self.config['OPENCITATION']['URL']
+        return "https://opencitations.net/index/api/v1/"
 
     
 

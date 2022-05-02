@@ -1,12 +1,13 @@
 from specific.openAlex.openAlex import openAlex
 from specific.openCitation.openCitation import openCitation
 from specific.googleScholar.googleScholar import googleScholar
-
+from specific.hal.hal import hal
 from config.DB import DB
 
 class Run():
 
     id_connected_user = 1
+    id_author_as_user = 1
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     dataBase = DB()
@@ -19,13 +20,17 @@ class Run():
     #openAlex(dataBase,research, id_connected_user)
 
     # Gestion du pont API openCitation
+
     #openCitation(dataBase,research, id_connected_user)
 
     # Gestion du pont API Google Scholar
     googleScholar(dataBase,"Sebastien Monnet",2)
 
-    print("Bybyeee")
+    # Gestion du pont avec Open Citation
+    # openCitation(dataBase,research, id_connected_user)
 
+    # Gestion du point avec HAL
+    # hal(dataBase,research, id_connected_user, id_author_as_user)
 
 
 

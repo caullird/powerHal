@@ -11,7 +11,9 @@ class HalAPI():
         return config
 
     def getUrlAPI(self):
-        return self.config['HAL']['URL']
+        #return self.config['HAL']['URL']
+        return "http://api.archives-ouvertes.fr/search/"
+
 
     
 

@@ -11,8 +11,8 @@ class AlexAPI():
         return config
 
     def getUrlAPI(self):
-        return self.config['OPENALEX']['URL']
-
+        #return self.config['OPENALEX']['URL']
+        return "https://api.openalex.org/"
     
 
     

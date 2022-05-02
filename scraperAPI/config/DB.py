@@ -26,6 +26,7 @@ class DB():
             password = self.config['DATABASE']['password'],
             database = self.config['DATABASE']['dbname']
         )
+        
 
 
     # Permet de récupérer la configuration du fichier config.ini
