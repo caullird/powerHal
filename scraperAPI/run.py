@@ -2,6 +2,8 @@ from specific.openAlex.openAlex import openAlex
 from specific.openCitation.openCitation import openCitation
 from specific.googleScholar.googleScholar import googleScholar
 
+from visualization.PowerGraph import PowerGraph
+
 from config.DB import DB
 
 class Run():
@@ -22,8 +24,9 @@ class Run():
     #openCitation(dataBase,research, id_connected_user)
 
     # Gestion du pont API Google Scholar
-    googleScholar(dataBase,"Sebastien Monnet",2)
+    #googleScholar(dataBase,"Sebastien Monnet",2)
 
+    PowerGraph(dataBase, "Sebastien Monnet")
     print("Bybyeee")
 
 
