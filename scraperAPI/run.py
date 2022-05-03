@@ -17,20 +17,16 @@ class Run():
     research = "Kavé SALAMATIAN"
 
     # Gestion du pont API openAlex
-    #openAlex(dataBase,research, id_connected_user)
-
-    # Gestion du pont API openCitation
-
-    #openCitation(dataBase,research, id_connected_user)
+    openAlex(dataBase,research, id_connected_user)
 
     # Gestion du pont API Google Scholar
-    googleScholar(dataBase,"Sebastien Monnet",2)
+    # googleScholar(dataBase,"Sebastien Monnet",2)
 
     # Gestion du pont avec Open Citation
-    # openCitation(dataBase,research, id_connected_user)
+    openCitation(dataBase,research, id_connected_user)
 
     # Gestion du point avec HAL
-    # hal(dataBase,research, id_connected_user, id_author_as_user)
+    hal(dataBase,research, id_connected_user, id_author_as_user)
 
 
 

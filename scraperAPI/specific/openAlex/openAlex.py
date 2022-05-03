@@ -44,5 +44,4 @@ class openAlex():
         unWordCloud.generatePublicationConcept(authors.getIdAuthor())
         unWordCloud.generatePublicationCoAuthors(authors.getIdAuthor())
 
-
         return authors.getIdAuthor()
