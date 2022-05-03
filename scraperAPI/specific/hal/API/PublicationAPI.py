@@ -1,18 +1,10 @@
 # Importation des classes pour la configuration globale au projet
 import requests
 import json
-import os
+import subprocess
 
 # Importation des modèles pour la création des objets
-from model.entities.Institution import Institution
-from model.entities.Author import Author
-from model.entities.Concept import Concept
 from model.entities.Document import Document
-from model.relations.AuthorInstitution import AuthorInstitution
-from model.relations.AuthorPublicationConcept import AuthorPublicationConcept
-from model.relations.SourceAuthor import SourceAuthor
-from model.relations.SourceInstitution import SourceInstitution
-from model.relations.SourceConcept import SourceConcept
 from model.relations.SourcePublication import SourcePublication
 
 class PublicationAPI():
@@ -24,7 +16,8 @@ class PublicationAPI():
         self.sourceID = sourceID
         self.API = API
         
-        self.checkIfInsert()
+        # self.checkIfInsert()
+        self.tryToInsert()
         
     def checkIfInsert(self):
         # Récupération de l'ensemble des publications de l'auteur
@@ -57,24 +50,45 @@ class PublicationAPI():
                         unDocument = Document(getPublication[0],"Publication",element['uri_s'], self.sourceID)
                         unDocument.setDataBase(self.dataBase)
                         unDocument.checkIfExistsOrInsert()
-                        
-                        return True
-                    
+            else : 
                 print("je suis inexistant")
-            
-            
 
-                headers = {
-                    'Packaging': 'http://purl.org/net/sword-types/AOfr',
-                    'Content-Type': 'application/zip',
-                    'Content-Disposition': 'attachment; filename=meta.xml',
-                }
+                # Génération du fichier XML
+                self.generateXML()
 
-                data = "././scraperAPI/specific/hal/data/depot.zip"
+                # Verfication si présence de PDF
+                self.getPublicationPDF()
+                 
+                # Génération de l'archive zip
+                self.generateZIP()
+
+                # Importation du document dans hal
+                self.importDocument()
                 
-                print(os.path.exists(data))
 
-                response = requests.post('https://api-preprod.archives-ouvertes.fr/sword/hal/', headers=headers, data=data, auth=('caullird', 'proj831-hal'))
-                
-                print(response)
-                                    
+    # Fonction qui permet de générer un fichier XML     
+    def generateXML(self):
+        pass
+
+    # Fonction qui permet de récupérer un fichier PDF d'une publication 
+    def getPublicationPDF(self):    
+        pass
+
+    # Fonction qui permet de générer un ZIP
+    def generateZIP(self):
+        pass
+
+    # Fonction qui permet d'importer un document dans HAL
+    def importDocument(self):
+        pass
+
+
+    def tryToInsert(self):
+
+        # TODO : changer la requête curl en une request()
+
+        CurlUrl = 'curl -v -u caullird:proj831-hal https://api.archives-ouvertes.fr/sword/hal/ -H "Packaging:http://purl.org/net/sword-types/AOfr" -X POST -H "Content-Type:application/zip" -H "Content-Disposition: attachment; filename=meta.xml" --data-binary @depot.zip'
+
+        status, output = subprocess.getstatusoutput(CurlUrl)
+
+        

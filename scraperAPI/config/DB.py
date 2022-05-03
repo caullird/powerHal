@@ -28,7 +28,6 @@ class DB():
         )
         
 
-
     # Permet de récupérer la configuration du fichier config.ini
     def getConfig(self):
         config = configparser.ConfigParser()
@@ -72,7 +71,7 @@ class DB():
         self.cursor.execute(sql)
         
         return self.cursor.fetchall()
-        
+
 
     # Permet de verifier si la ligne existe déjà, et de l'insérer sinon
     def checkIfExistsOrInsert(self, object, fieldsComparable, autoUpdate = False):
