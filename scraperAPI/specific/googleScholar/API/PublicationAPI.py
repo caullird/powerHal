@@ -1,4 +1,5 @@
 from scholarly import scholarly
+import requests
 
 # Importation des modèles pour la création des objets
 from model.entities.Concept import Concept
@@ -25,14 +26,37 @@ class PublicationAPI:
             self.checkIfExistOrAdd(publication)
 
     def checkIfExistOrAdd(self, publication):
-        tempPublication = Publication("NULL",publication["bib"]["title"],"NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL")
+        tempPublication = Publication("NULL",publication["bib"]["title"],"NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL","NULL")
         if self.dataBase.checkIfExists(tempPublication, fieldsComparable = ["title"]):
             return True
         else:
             filledPublication = scholarly.fill(publication)
-            unePublication = Publication("NULL", filledPublication["bib"]["title"],filledPublication["bib"]["title"],"NULL", filledPublication["bib"]["pub_year"],"NULL","NULL","NULL",self.sourceID,filledPublication["num_citations"])
+            url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=" + filledPublication["author_pub_id"].split(":")[0] + "&citation_for_view=" + filledPublication["author_pub_id"]
+            html_page = requests.get(url).text
+
+            try:
+                date = html_page.split('<div class="gsc_oci_value">')[2].split("</div>")[0]
+            except:
+                date = "NULL"
+
+            try:
+                volume = filledPublication["bib"]["volume"]
+                pages = filledPublication["bib"]["pages"].split("-")
+            except:
+                volume = "NULL"
+                pages = ["NULL","NULL"]
+
+            unePublication = Publication("NULL", filledPublication["bib"]["title"],filledPublication["bib"]["title"],"NULL", filledPublication["bib"]["pub_year"],date,volume,pages[0],pages[1],"NULL","NULL","NULL", self.sourceID,filledPublication["num_citations"])
             unePublication.setDataBase(self.dataBase)
             self.publicationID = unePublication.checkIfExistsOrInsert()
+
+            try:
+                pdf_url = html_page.split('<div class="gsc_oci_title_ggi"><a href="')[1].split('"')[0]
+                unDocument = Document(self.publicationID,"Publication",pdf_url, self.sourceID)
+                unDocument.setDataBase(self.dataBase)
+                unDocument.checkIfExistsOrInsert()
+            except:
+                print("No pdf found")
 
             unSourcePublication = SourcePublication(self.publicationID,self.sourceID,filledPublication["author_pub_id"], "NULL")
             unSourcePublication.setDataBase(self.dataBase)
@@ -41,6 +65,8 @@ class PublicationAPI:
             unAuthorPublication = AuthorPublication(self.authorID,self.publicationID,"first")
             unAuthorPublication.setDataBase(self.dataBase)
             unAuthorPublication.checkIfExistsOrInsert()
+
+
 
             self.addCoAuthors(filledPublication["bib"]["author"])
 
