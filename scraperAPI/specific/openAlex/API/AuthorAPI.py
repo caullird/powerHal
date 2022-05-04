@@ -118,7 +118,7 @@ class AuthorAPI():
         # Instantiation du tableau de résultat
         resultsValues = {
             'alex_ids' : [],
-            'orcid_ids' : [],
+            'orcid_id' : '',
             'display_name' : '',
             'names_alternatives' : [],
             'works_count' : 0,
@@ -131,7 +131,7 @@ class AuthorAPI():
                 resultsValues['alex_ids'].append(result['id'])
 
             if(result['orcid'] != None): 
-                resultsValues['orcid_ids'].append(result['orcid'])
+                resultsValues['orcid_id'] = result['orcid']
 
             resultsValues['display_name'] = self.initial_research
 
@@ -146,7 +146,7 @@ class AuthorAPI():
         
         # Création du modèle et enregistrement dans la base de donnée
         unAuthor = Author(
-            resultsValues['orcid_ids'],
+            resultsValues['orcid_id'],
             resultsValues['display_name'],
             resultsValues['names_alternatives']
         )

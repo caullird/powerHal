@@ -68,6 +68,8 @@ class DB():
             recentField = entity
         sql += " WHERE " + str(researchFieldRelativeID) + " = " + str(relativeID)
 
+        print(sql)
+
         self.cursor.execute(sql)
         
         return self.cursor.fetchall()
@@ -216,8 +218,10 @@ class DB():
 
     # Permet de récupérer le/les résultats d'une requête simple entre deux tables
     def getFieldsWithId(self, id, table, searchField, getField, quantity):
-        self.cursor.execute('SELECT ' + str(getField) + ' FROM ' + str(table) + ' WHERE ' + str(searchField) + ' = "' + str(id) + '"')
-        
+
+        sql = 'SELECT ' + str(getField) + ' FROM ' + str(table) + ' WHERE ' + str(searchField) + ' = ' + str(id)
+        self.cursor.execute(sql)
+
         if(quantity == "many"):
             if(getField == "*"):
                 return [item for item in self.cursor.fetchall()]

@@ -69,6 +69,10 @@ class PublicationAPI():
             publication['type'],
             publication['publication_year'],
             publication['publication_date'],
+            publication['biblio']['volume'],
+            publication['biblio']['first_page'],
+            publication['biblio']['last_page'],
+            publication['biblio']['issue'],
             publication['updated_date'],
             publication['created_date'],
             self.sourceID,
@@ -133,10 +137,10 @@ class PublicationAPI():
             display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
             
             display_name_alternatives = []
-            orcid_id = []
+            orcid_id = ""
 
             if author['author']['orcid'] != None:
-                orcid_id.append(author['author']['orcid'])
+                orcid_id = author['author']['orcid']
 
             # Permet d'enregistrer le co-auteur en tant que auteur dans notre BDD
             unAuthor = Author(orcid_id,display_name,display_name_alternatives)
