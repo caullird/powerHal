@@ -1,5 +1,5 @@
-from scraperAPI.visualization.PowerCloud import PowerCloud
-from scraperAPI.visualization.PowerGraph import PowerGraph
+from visualization.PowerCloud import PowerCloud
+from visualization.PowerGraph import PowerGraph
 from specific.openAlex.openAlex import openAlex
 from specific.openCitation.openCitation import openCitation
 from specific.googleScholar.googleScholar import googleScholar
@@ -17,13 +17,13 @@ class Run():
     dataBase.setConnectedUserId(id_connected_user)    
     
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
-    research = "Kavé SALAMATIAN"
+    research = "Kave Salamatian"
 
     # Gestion du pont API openAlex
     # openAlex(dataBase,research, id_connected_user)
 
     # Gestion du pont API Google Scholar
-    googleScholar(dataBase,research,5)
+    googleScholar(dataBase,research,1)
 
     # Gestion du pont avec Open Citation
     # openCitation(dataBase,research, id_connected_user)
@@ -32,7 +32,7 @@ class Run():
     # hal(dataBase,research, id_connected_user, id_author_as_user)
 
     # Creation du graph
-    PowerGraph(dataBase, id_connected_user)
+    PowerGraph(dataBase, research)
 
 
 

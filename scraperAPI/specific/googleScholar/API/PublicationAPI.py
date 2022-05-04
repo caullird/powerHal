@@ -21,8 +21,13 @@ class PublicationAPI:
         self.authorID = authorID
         self.sourceID = sourceID
 
-    def addPublications(self, max):
+    def addPublications(self, max = 10000):
+        i=0
+        if max>len(self.publications):
+            max = len(self.publications)
         for publication in self.publications[:max]:
+            print(i)
+            i+=1
             self.checkIfExistOrAdd(publication)
 
     def checkIfExistOrAdd(self, publication):
@@ -34,19 +39,33 @@ class PublicationAPI:
             url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=" + filledPublication["author_pub_id"].split(":")[0] + "&citation_for_view=" + filledPublication["author_pub_id"]
             html_page = requests.get(url).text
 
+            print(url)
             try:
                 date = html_page.split('<div class="gsc_oci_value">')[2].split("</div>")[0]
+                if len(date) > 10:
+                    date = "NULL"
             except:
                 date = "NULL"
 
-            try:
+            if "volume" in filledPublication["bib"]:
                 volume = filledPublication["bib"]["volume"]
-                pages = filledPublication["bib"]["pages"].split("-")
-            except:
+            else:
                 volume = "NULL"
+
+            if "pages" in filledPublication["bib"]:
+                if "-" in filledPublication["bib"]["pages"]:
+                    pages = filledPublication["bib"]["pages"].split("-")
+                else:
+                    pages=[filledPublication["bib"]["pages"],filledPublication["bib"]["pages"]]
+            else:
                 pages = ["NULL","NULL"]
 
-            unePublication = Publication("NULL", filledPublication["bib"]["title"],filledPublication["bib"]["title"],"NULL", filledPublication["bib"]["pub_year"],date,volume,pages[0],pages[1],"NULL","NULL","NULL", self.sourceID,filledPublication["num_citations"])
+            if "pub_year" in filledPublication["bib"]:
+                year = filledPublication["bib"]["pub_year"]
+            else:
+                year = "NULL"
+
+            unePublication = Publication("NULL", filledPublication["bib"]["title"],filledPublication["bib"]["title"],"NULL",year ,date,volume,pages[0],pages[1],"NULL","NULL","NULL", self.sourceID,filledPublication["num_citations"])
             unePublication.setDataBase(self.dataBase)
             self.publicationID = unePublication.checkIfExistsOrInsert()
 
