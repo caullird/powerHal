@@ -26,7 +26,7 @@ class DB():
             password = self.config['DATABASE']['password'],
             database = self.config['DATABASE']['dbname']
         )
-
+        
 
     # Permet de récupérer la configuration du fichier config.ini
     def getConfig(self):
@@ -46,6 +46,32 @@ class DB():
             print("INFO | Connexion effectuée avec votre base de donnée")
         else:
             print("ERROR | Problème avec la connexion de votre base de donnée")
+
+
+    # Permet de faire un autojoinner sur plusieurs classes
+    def autoJoinner(self, relativeID, researchFieldRelativeID, pathEntitiesRelations, fields):
+
+        intialField = pathEntitiesRelations[0]
+        del pathEntitiesRelations[0]
+
+        isEntity = False
+
+        recentField = intialField
+        sql = 'SELECT ' + str(fields) + ' FROM ' + str(recentField)
+        for entity in pathEntitiesRelations:
+            if(isEntity):
+                sql += " JOIN " + str(entity) + " ON " + str(entity) + ".id_" + str(entity) + " = " + str(recentField) + ".id_" + str(entity)
+                isEntity = False
+            else:
+                sql += " JOIN " + str(entity) + " ON " + str(entity) + ".id_" + str(recentField) + " = " + str(recentField) + ".id_" + str(recentField)
+                isEntity = True
+            recentField = entity
+        sql += " WHERE " + str(researchFieldRelativeID) + " = " + str(relativeID)
+
+        self.cursor.execute(sql)
+        
+        return self.cursor.fetchall()
+
 
     # Permet de verifier si la ligne existe déjà, et de l'insérer sinon
     def checkIfExistsOrInsert(self, object, fieldsComparable, autoUpdate = False):
@@ -86,8 +112,7 @@ class DB():
         row = self.cursor.fetchone()
 
         return row != None
-        
-
+    
 
     # Permet de mettre à jour le modèle en fonction de la demande
     def autoUpdate(self, object, mySQLObject):

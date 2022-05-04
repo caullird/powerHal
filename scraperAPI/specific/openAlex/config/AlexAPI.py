@@ -14,5 +14,3 @@ class AlexAPI():
         return self.config['OPENALEX']['URL']
 
     
-
-    

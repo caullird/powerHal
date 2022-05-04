@@ -1,2 +1,2 @@
-def AuthorAPI():
+class AuthorAPI():
     pass

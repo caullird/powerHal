@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS source(
 INSERT INTO source (id_source,display_name,website_url, api_url) VALUES
 (1, "OpenAlex", "https://openalex.org/","https://openalex.org/api/"),
 (2, "GoogleScholar", "https://scholar.google.com/",""),
-(3, "OpenCitation", "https://opencitations.net/","https://opencitations.net/index/api/v1/");
+(3, "OpenCitation", "https://opencitations.net/","https://opencitations.net/index/api/v1/"),
+(4, "Hal", "https://hal.archives-ouvertes.fr","http://api.archives-ouvertes.fr/search/");
 
 
 CREATE TABLE IF NOT EXISTS institution (
@@ -74,6 +75,10 @@ CREATE TABLE IF NOT EXISTS publication (
     type_publication varchar(100),
     publication_year varchar(100),
     publication_date varchar(100),
+    biblio_volume varchar(200),
+    biblio_first_page varchar(200),
+    biblio_last_page varchar(200),
+    biblio_issue varchar(200),
     updated_date varchar(100),
     created_date varchar(100),
     citation_count varchar(100),
