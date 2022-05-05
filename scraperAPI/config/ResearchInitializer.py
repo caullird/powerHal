@@ -12,6 +12,18 @@ class ResearchInitializer():
         values.sort()
         return ' '.join(values)
 
+    # Permet d'essayer de faire une mise en forme depuis un display_name
+    def getNameAndForname(self):
+        arrayName = self.initial_research.split()
+
+        name = arrayName[0]
+        forename = ""
+        del arrayName[0]
+
+        for element in arrayName: forename += element + " "
+
+        return [forename[:-1], name]
+
     # Permet de mettre en forme la recherche en paramètre
     def prepareResearch(self):
         specialChars = "!#$%^&*()" 

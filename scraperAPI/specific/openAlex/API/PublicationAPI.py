@@ -134,20 +134,26 @@ class PublicationAPI():
         for author in publication['authorships']:
 
             # Permet d'uniformiser le nom de l'auteur
-            display_name = ResearchInitializer(author['author']['display_name']).getSortResearch()
-            
-            display_name_alternatives = []
-            orcid_id = ""
+            unResearchInitializer = ResearchInitializer(author['author']['display_name'])
+
+            newDisplay = unResearchInitializer.getNameAndForname()
 
             if author['author']['orcid'] != None:
                 orcid_id = author['author']['orcid']
+            else: 
+                orcid_id = ""
 
             # Permet d'enregistrer le co-auteur en tant que auteur dans notre BDD
-            unAuthor = Author(orcid_id,display_name,display_name_alternatives)
+            unAuthor = Author(
+                orcid_id,
+                newDisplay[0],
+                newDisplay[1],
+                unResearchInitializer.getSortResearch()
+            )
             unAuthor.setDataBase(self.dataBase)
             idNewAuthor = unAuthor.checkIfExistsOrInsert()
             
-            # TODO : Enregistrer des informations spécifiques propre a la source
+            # # TODO : Enregistrer des informations spécifiques propre a la source
             specificInformation = {}
             
             # Permet d'ajouter le lien entre l'auteur et la source
