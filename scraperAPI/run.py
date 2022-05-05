@@ -4,38 +4,43 @@ from specific.openAlex.openAlex import openAlex
 from specific.openCitation.openCitation import openCitation
 from specific.googleScholar.googleScholar import googleScholar
 from specific.hal.hal import hal
+from specific.orcid.orcid import orcid
 from config.DB import DB
 
 
 class Run():
 
-    id_connected_user = 1
-    id_author_as_user = 1
+    # Initialisation de la recherche, avant de faire le pont avec l'interface web
+    research = {
+        "author_name" : "CIMPAN",
+        "author_forename" : "Sorana",
+        "id_connected_user" : 1,
+        "id_author_as_user" : 1
+    }
+
+    research_temp = str(research['author_name']) + " " + str(research['author_forename'])
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     dataBase = DB()
-    dataBase.setConnectedUserId(id_connected_user)    
+    dataBase.setConnectedUserId(research['id_connected_user'])    
     
-    # Initialisation de la recherche, avant de faire le pont avec l'interface web
-    research = "Kave Salamatian"
-
     # Gestion du pont API openAlex
-    # openAlex(dataBase,research, id_connected_user)
+    openAlex(dataBase,research)
 
     # Gestion du pont API Google Scholar
-    # googleScholar(dataBase,research,1)
+    # googleScholar(dataBase,research_temp,research['id_connected_user'])
 
     # Gestion du pont avec Open Citation
-    # openCitation(dataBase,research, id_connected_user)
+    openCitation(dataBase,research)
 
     # Gestion du pont avec l'API ORCID
-    orcid(dataBase,research, id_connected_user)
+    orcid(dataBase,research)
 
     # Gestion du point avec HAL
-    # hal(dataBase,research, id_connected_user, id_author_as_user)
+    # hal(dataBase,research_temp, research['id_connected_user'], research['id_author_as_user'])
 
     # Creation du graph
-    PowerGraph(dataBase, research)
+    # PowerGraph(dataBase, research_temp)
 
 
 

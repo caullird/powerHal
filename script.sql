@@ -34,7 +34,7 @@ INSERT INTO source (id_source,display_name,website_url, api_url) VALUES
 (2, "GoogleScholar", "https://scholar.google.com/",""),
 (3, "OpenCitation", "https://opencitations.net/","https://opencitations.net/index/api/v1/"),
 (4, "Hal", "https://hal.archives-ouvertes.fr","http://api.archives-ouvertes.fr/search/"),
-(5, "orcid", "https://orcid.org/","https://pub.orcid.org/v3.0/");
+(5, "Orcid", "https://orcid.org/","https://pub.orcid.org/v3.0/");
 
 
 CREATE TABLE IF NOT EXISTS institution (
@@ -145,8 +145,9 @@ CREATE TABLE IF NOT EXISTS sourceConcept(
 CREATE TABLE IF NOT EXISTS author (
     id_author int(11) NOT NULL AUTO_INCREMENT,
     orcid_id varchar(2000),
+    author_name varchar(500),
+    author_forname varchar(500),
     display_name varchar(2000),
-    display_name_alternatives varchar(2000),
     created_at datetime,
     created_by int(11),
     updated_at datetime,

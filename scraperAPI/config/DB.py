@@ -142,7 +142,6 @@ class DB():
             sql = sql[:-2] + ' WHERE id_' + str(className).lower() + ' = ' + str(mySQLObject[0])
             sql += " AND created_by = " + str(self.id_connected_user) 
             self.cursor.execute(sql)
-            #print("INFO | Un(e) " + str(className) + " a été mis à jour sur votre base de données")
 
             self.addActionAt(className, mySQLObject[0], "updated")
 
@@ -170,8 +169,6 @@ class DB():
         sql = 'INSERT INTO ' + str(className) + '(' + ", ".join(fieldsNames) + ') VALUES ("' + '", "'.join(fieldsValues) + '")'
         
         self.cursor.execute(sql)
-
-        #print("INFO | Un(e) nouveau/elle " + str(className) + " a été ajouté sur votre base de données")
         
         insertId = self.cursor.lastrowid
 
