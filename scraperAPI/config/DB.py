@@ -47,6 +47,10 @@ class DB():
         else:
             print("ERROR | Problème avec la connexion de votre base de donnée")
 
+    # Permet de récupérer l'ensemble des éléments d'une classe
+    def getAll(self, className):
+        self.cursor.execute("SELECT * FROM " + str(className))
+        return self.cursor.fetchall()
 
     # Permet de faire un autojoinner sur plusieurs classes
     def autoJoinner(self, relativeID, researchFieldRelativeID, pathEntitiesRelations, fields):
@@ -67,8 +71,6 @@ class DB():
                 isEntity = True
             recentField = entity
         sql += " WHERE " + str(researchFieldRelativeID) + " = " + str(relativeID)
-
-        print(sql)
 
         self.cursor.execute(sql)
         

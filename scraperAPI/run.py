@@ -12,8 +12,8 @@ class Run():
 
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
     research = {
-        "author_name" : "CIMPAN",
-        "author_forename" : "Sorana",
+        "author_name" : "SALAMATIAN",
+        "author_forename" : "Kavé",
         "id_connected_user" : 1,
         "id_author_as_user" : 1
     }
@@ -25,13 +25,13 @@ class Run():
     dataBase.setConnectedUserId(research['id_connected_user'])    
     
     # Gestion du pont API openAlex
-    openAlex(dataBase,research)
+    # openAlex(dataBase,research)
 
     # Gestion du pont API Google Scholar
     # googleScholar(dataBase,research_temp,research['id_connected_user'])
 
     # Gestion du pont avec Open Citation
-    openCitation(dataBase,research)
+    # openCitation(dataBase,research)
 
     # Gestion du pont avec l'API ORCID
     orcid(dataBase,research)
