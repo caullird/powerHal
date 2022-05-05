@@ -36,9 +36,9 @@ class openAlex():
         # ## Récupération des articles en fonction des id AlexAPI & création des liens avec les autres autheurs + création des auteurs dans notre database
         publications = PublicationAPI(authors.getArrayAuthorIDs(), API, self.dataBase, sourceID, authors.getIdAuthor())
 
-        # ## Différentes méthodes d'affichages de donénes
-        # unWordCloud = PowerCloud(self.dataBase, "openAlex")
-        # unWordCloud.generatePublicationConcept(authors.getIdAuthor())
-        # unWordCloud.generatePublicationCoAuthors(authors.getIdAuthor())
+        ## Différentes méthodes d'affichages de donénes
+        unWordCloud = PowerCloud(self.dataBase, "openAlex")
+        unWordCloud.generatePublicationConcept(authors.getIdAuthor())
+        unWordCloud.generatePublicationCoAuthors(authors.getIdAuthor())
 
-        # return authors.getIdAuthor()
+        return authors.getIdAuthor()
