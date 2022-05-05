@@ -33,7 +33,8 @@ INSERT INTO source (id_source,display_name,website_url, api_url) VALUES
 (1, "OpenAlex", "https://openalex.org/","https://openalex.org/api/"),
 (2, "GoogleScholar", "https://scholar.google.com/",""),
 (3, "OpenCitation", "https://opencitations.net/","https://opencitations.net/index/api/v1/"),
-(4, "Hal", "https://hal.archives-ouvertes.fr","http://api.archives-ouvertes.fr/search/");
+(4, "Hal", "https://hal.archives-ouvertes.fr","http://api.archives-ouvertes.fr/search/"),
+(5, "orcid", "https://orcid.org/","https://pub.orcid.org/v3.0/");
 
 
 CREATE TABLE IF NOT EXISTS institution (
