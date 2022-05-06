@@ -51,12 +51,20 @@
                   <span class="sidebar-text">Dashboard</span>
                 </a>
               </li>
+              <li class="nav-item {% if 'scraper' in segment %} active {% endif %}">
+                <a href="/scraper" class="nav-link">
+                  <span class="sidebar-icon">
+                    🔃
+                  </span>
+                  <span class="sidebar-text">ScraperAPI</span>
+                </a>
+              </li>
               <li class="nav-item {% if 'transactions' in segment %} active {% endif %}">
                 <a href="/publication" class="nav-link">
                   <span class="sidebar-icon">
                     📰
                   </span>
-                  <span class="sidebar-text">Publications</span>
+                  <span class="sidebar-text">Mes publications</span>
                 </a>
               </li>
               <li class="nav-item {% if 'account' in segment %} active {% endif %}">

@@ -1,0 +1,118 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} ScraperAPI {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="py-4">
+    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
+            <li class="breadcrumb-item active" aria-current="page">🔃 ScraperAPI</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+        <div class="mb-3 mb-lg-0">
+            <h1 class="h4">🔃 ScraperAPI</h1>
+            <p class="mb-0">Utiliser nos services pour récupérer l'ensemble des vos publications sur les différents services</p>
+        </div>
+    </div>
+</div>
+
+{% if author %}
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">👦🏻 Votre profil d'auteur</h2>
+                <p class="mb-0">Pour information, le scraping va être réalisé avec les données suivantes, si vous souhaitez les modifier merci de vous rendre dans <b>👦🏻  Profil Auteur</b>, si vous souhaitez scraper des données d'un autre auteur, merci de vous rendez sur <b>🔍 Open Research</b> </p>
+                
+                <h2 class="h5 mb-4"></h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="first_name">Prénom</label>
+                                <input class="form-control" id="first_name" type="text" value="{{ author.author_name }}" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="last_name">Nom</label>
+                                <input class="form-control" id="last_name" type="text" value="{{ author.author_forename }}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <div>
+                                <label for="alternatives">Alternatives d'identification</label>
+                                <input class="form-control" id="alternatives" type="text" value="" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <div>
+                                <label for="alternatives">Votre numéro d'identification ORCID</label>
+                                <input class="form-control" id="alternatives" type="text" value="{{ author.orcid_id }}" readonly>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">🔃 ScraperAPI</h2>
+                <p class="mb-0">Vous pouvez choisir vos sources d'informations pour réalisé le scraping 🪠 !</p>
+                
+                <h2 class="h5 mb-4"></h2>
+
+                <div class="col-lg-8 col-sm-6 mt-8 mt-md-0">
+                    <div class="mb-3">
+                        <span class="h6 fw-bold">Vos choix :</span>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="openAlexAPI">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">openAlexAPI</label> - Permet de récupérer une grosse quantité d'information (Auteur, Institutions, Centres d'interêts, co-auteurs...)
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="openCitationAPI">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">openCitationAPI</label> - Permet de récupérer des éléments relatifs aux publications (Nombre de citation, nombre de références ...)
+                    </div>  
+                    <h2 class="h5 mb-4"></h2>
+
+                    <button onclick="window.location.href='/openAlex'" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                        🚀 Lancer le scraping openAlex
+                    </button>   
+                </div>
+                
+                    
+            </div>
+    </div>
+
+{% else %}
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">👦🏻 Votre profil d'auteur</h2>
+                <button class="btn btn-danger col-md-16 col-md-offset-4" type="button">Attention, vous n'avez pas de profil auteur enregistré !</button>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
