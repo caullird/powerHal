@@ -132,14 +132,14 @@ class AuthorAPI():
 
 
         # Formation du display name en fonction de l'ordre alphabétique
-        initialize = ResearchInitializer(str(self.research['author_name'] + " " + self.research['author_forename'])).getSortResearch()
+        display_name = ResearchInitializer(str(self.research['author_name'] + " " + self.research['author_forename'])).getSortResearch()
         
         # Création du modèle et enregistrement dans la base de donnée
         unAuthor = Author(
             resultsValues['orcid_id'],
             self.research['author_name'],
             self.research['author_forename'],
-            initialize
+            display_name
         )
         unAuthor.setDataBase(self.dataBase)
         AuthorID = unAuthor.checkIfExistsOrInsert()

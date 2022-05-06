@@ -34,7 +34,7 @@ class Run():
     # openCitation(dataBase,research)
 
     # Gestion du pont avec l'API ORCID
-    orcid(dataBase,research)
+    # orcid(dataBase,research)
 
     # Gestion du point avec HAL
     # hal(dataBase,research_temp, research['id_connected_user'], research['id_author_as_user'])
