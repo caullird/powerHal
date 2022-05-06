@@ -10,7 +10,7 @@ from flask_login import (
 from apps import db, login_manager
 from apps.section.authentication import blueprint
 from apps.section.authentication.forms import LoginForm, CreateAccountForm
-from apps.models.User import User
+from apps.models.entities.User import User
 
 from apps.section.authentication.util import verify_pass
 

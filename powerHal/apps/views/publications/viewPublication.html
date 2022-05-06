@@ -1,0 +1,193 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Settings {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+        <div class="d-block mb-4 mb-md-0">
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+                <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
+                    <li class="breadcrumb-item"><a href="/publication">Mes publications</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> 📰 En savoir plus #{{ publication.id_publication }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">📰 Informations relative à votre publication</h2>
+                <p class="mb-0">Dans cette premières partie, vous pouvez voir l'ensemble des informations relative à votre publication !</p>
+                
+                <h2 class="h5 mb-4"></h2>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div>
+                            <label>Titre de l'article</label>
+                            <input class="form-control" type="text" value="{{ publication.title }}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div>
+                            <label>Type de publication</label>
+                            <input class="form-control" type="text" value="{{ publication.type_publication }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div>
+                            <label>Année de publication</label>
+                            <input class="form-control" type="text" value="{{ publication.publication_year }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div>
+                            <label>Date de publication</label>
+                            <input class="form-control" type="text" value="{{ publication.publication_date }}" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">🧑🏻‍🤝‍🧑🏼 Les auteurs de ce document</h2>
+                <p class="mb-0">Via les différentes recherches, voici les auteurs et co-auteurs associées à la publication</p>
+                    
+                {% if co_authors %}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-centered table-nowrap mb-0 rounded table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">ORCID - ID de référence de l'auteur</th>
+                                        <th class="border-0">Nom DE L'AUTEUR</th>
+                                        <th class="border-0">Prénom DE L'AUTEUR</th>
+                                        <th class="border-0">🔍 Voir le profil de l'auteur</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for co_author in co_authors %}
+                                        <tr>
+                                            <td>{{ co_author.orcid_id }}</td>
+                                            <td>{{ co_author.author_name }}</td>
+                                            <td>{{ co_author.author_forename }}</td>
+                                            <td>
+                                                <button onclick="window.location.href=''" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                                                    🔍 Voir le profil auteur
+                                                </button>
+                                            </td>  
+                                        </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <b> Aucun co-auteur pour cette publication !</b>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">📚 Informations bibliographiques</h2>
+                <p class="mb-0">Voici l'ensemble des informations relatives aux éléments bibliographiques</p>
+                
+                <h2 class="h5 mb-4"></h2>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Volume bibliographique</label>
+                            <input class="form-control" type="text" value="{{ publication.biblio_volume }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Première page</label>
+                            <input class="form-control" type="text" value="{{ publication.biblio_first_page }}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Dernière page</label>
+                            <input class="form-control" type="text" value="{{ publication.biblio_last_page }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Biblio issue</label>
+                            <input class="form-control" type="text" value="{{ publication.biblio_issue }}" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">📂 Document en relation avec la publication</h2>
+                <p class="mb-0">Via les différentes recherches, voici les documents associées à la publication</p>
+                    
+                {% if documents %}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-centered table-nowrap mb-0 rounded table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">Source du document</th>
+                                        <th class="border-0">Lien vers le document</th>
+                                        <th class="border-0">🔍 Voir le document</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for document in documents %}
+                                        <tr>
+                                            <td>{{ sources[document.id_source - 1] }}</td>
+                                            <td>{{ document.document_url }}</td>
+                                            <td>
+                                                <button onclick="window.location.href='{{document.document_url}}'" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                                                    🔍 Ouvrir le document
+                                                </button>
+                                            </td>  
+                                        </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <b> Aucun document pour cette publication !</b>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

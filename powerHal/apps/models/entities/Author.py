@@ -1,5 +1,4 @@
 from apps import db
-from sqlalchemy import DateTime
 
 class Author(db.Model):
     __tablename__ = 'author'

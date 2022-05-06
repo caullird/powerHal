@@ -5,7 +5,7 @@ from apps.section.profil.forms import ProfilAuthorForm
 from apps.section.home import blueprint
 from flask import render_template
 from flask_login import login_required
-from apps.models.Author import Author
+from apps.models.entities.Author import Author
 from apps import db, login_manager
 
 from flask_login import (

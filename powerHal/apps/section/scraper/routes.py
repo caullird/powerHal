@@ -6,8 +6,8 @@ from threading import Thread
 from apps.section.home import blueprint
 from flask import render_template
 from flask_login import login_required
-from apps.models.Publication import Publication
-from apps.models.Author import Author
+from apps.models.entities.Publication import Publication
+from apps.models.entities.Author import Author
 
 from flask_login import (
     current_user
