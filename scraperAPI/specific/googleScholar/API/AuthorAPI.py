@@ -12,14 +12,16 @@ from model.relations.SourceConcept import SourceConcept
 
 class AuthorAPI():
 
-    def __init__(self,author_name, dataBase,sourceID):
+    def __init__(self,author_name, author_forename, dataBase,sourceID):
 
         self.author_name = author_name
+        self.author_forename = author_forename
+        self.author_display_name = author_name + " " + author_forename
         self.dataBase = dataBase
         self.sourceID = sourceID
 
     def findAuthor(self):
-        search_query = scholarly.search_author(self.author_name)
+        search_query = scholarly.search_author(self.author_display_name)
         try:
             self.author = scholarly.fill(next(search_query))
             return True
@@ -32,7 +34,7 @@ class AuthorAPI():
 
     def addAuthorInformations(self):
 
-        dataAuthor = Author("NULL",self.author["name"],"NULL")
+        dataAuthor = Author("NULL",self.author_name, self.author_forename, self.author_display_name)
         dataAuthor.setDataBase(self.dataBase)
         print(dataAuthor)
         self.AuthorID = dataAuthor.checkIfExistsOrInsert()
