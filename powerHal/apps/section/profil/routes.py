@@ -32,7 +32,7 @@ def account():
         if author:
             author.author_name = author_name
             author.author_forename = author_forename
-            author.display_name = author_name + " " + author_forename
+            author.display_name = str(author_name + " " + author_forename)
             author.orcid_id = orcid_id
             current_user.id_author = author.id_author
             db.session.commit()
@@ -41,6 +41,7 @@ def account():
             author.orcid_id = orcid_id
             author.author_forename = author_forename
             author.author_name = author_name
+            author.display_name = str(author_name + " " + author_forename)
             db.session.add(author)
             db.session.commit()
 
