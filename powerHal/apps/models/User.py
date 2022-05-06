@@ -7,13 +7,13 @@ from flask_login import UserMixin
 
 from apps import db, login_manager
 
-from apps.authentication.util import hash_pass
+from apps.section.authentication.util import hash_pass
 
-class Users(db.Model, UserMixin):
+class User(db.Model, UserMixin):
 
-    __tablename__ = 'Users'
+    __tablename__ = 'User'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id_user = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True)
     email = db.Column(db.String(64), unique=True)
     password = db.Column(db.LargeBinary)
@@ -37,12 +37,12 @@ class Users(db.Model, UserMixin):
 
 
 @login_manager.user_loader
-def user_loader(id):
-    return Users.query.filter_by(id=id).first()
+def user_loader(id_user):
+    return User.query.filter_by(id_user=id_user).first()
 
 
 @login_manager.request_loader
 def request_loader(request):
     username = request.form.get('username')
-    user = Users.query.filter_by(username=username).first()
+    user = User.query.filter_by(username=username).first()
     return user if user else None
