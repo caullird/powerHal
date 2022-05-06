@@ -29,7 +29,7 @@ class Run():
     # openAlex(dataBase,research)
 
     # Gestion du pont API Google Scholar
-    googleScholar(dataBase,research)
+    #googleScholar(dataBase,research)
 
     # Gestion du pont avec Open Citation
     # openCitation(dataBase,research)
@@ -42,6 +42,7 @@ class Run():
 
     # Creation du graph
     PowerGraph(dataBase, research_temp)
+
 
 
 
