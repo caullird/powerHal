@@ -13,7 +13,6 @@ from flask_login import (
     current_user
 )
 
-from apps.section.scraper.util import launch_openAlex
 
 @blueprint.route('/scraper')
 @login_required
@@ -26,7 +25,4 @@ def scraper():
 @blueprint.route('/openAlex')
 @login_required
 def openAlexAPI():
-    
-    launch_openAlex()
-
     return render_template('scraper/openAlex.html', segment='index')
