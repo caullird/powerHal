@@ -218,7 +218,7 @@ class DB():
     # Permet de récupérer le/les résultats d'une requête simple entre deux tables
     def getFieldsWithId(self, id, table, searchField, getField, quantity):
 
-        sql = 'SELECT ' + str(getField) + ' FROM ' + str(table) + ' WHERE ' + str(searchField) + ' = ' + str(id)
+        sql = 'SELECT ' + str(getField) + ' FROM ' + str(table) + ' WHERE ' + str(searchField) + ' = "' + str(id) + '"'
         self.cursor.execute(sql)
 
         if(quantity == "many"):

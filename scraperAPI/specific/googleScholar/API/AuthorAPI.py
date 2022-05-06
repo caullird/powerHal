@@ -10,6 +10,8 @@ from model.relations.SourceAuthor import SourceAuthor
 from model.relations.SourceInstitution import SourceInstitution
 from model.relations.SourceConcept import SourceConcept
 
+from config.ResearchInitializer import ResearchInitializer
+
 class AuthorAPI():
 
     def __init__(self,author_name, author_forename, dataBase,sourceID):
@@ -17,6 +19,8 @@ class AuthorAPI():
         self.author_name = author_name
         self.author_forename = author_forename
         self.author_display_name = author_name + " " + author_forename
+        self.display_name = ResearchInitializer(str(self.author_name + " " + self.author_forename)).getSortResearch()
+        print(self.author_display_name)
         self.dataBase = dataBase
         self.sourceID = sourceID
 

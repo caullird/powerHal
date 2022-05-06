@@ -24,6 +24,6 @@ class googleScholar():
             authorID = author.addAuthorInformations()
             author.addConcepts()
             publicationsAPI = PublicationAPI(publications, self.dataBase, authorID, self.sourceID)
-            publicationsAPI.addPublications()
+            publicationsAPI.addPublications(20)
         else:
             print("Houlala")

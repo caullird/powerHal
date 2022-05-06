@@ -12,6 +12,8 @@ from model.relations.SourcePublication import SourcePublication
 from model.relations.SourceAuthor import SourceAuthor
 from model.relations.SourceConcept import SourceConcept
 
+from config.ResearchInitializer import ResearchInitializer
+
 
 class PublicationAPI:
 
@@ -94,7 +96,8 @@ class PublicationAPI:
         authors = coAuthors.split(" and ")
         print(authors)
         for author in authors:
-            unAuthor = Author("NULL",author,"NULL")
+            display_name = ResearchInitializer(str(author.split(" ")[1] + " " + author.split(" ")[0])).getSortResearch()
+            unAuthor = Author("NULL",author.split(" ")[1], author.split(" ")[0],display_name)
             unAuthor.setDataBase(self.dataBase)
             authorID = unAuthor.checkIfExistsOrInsert()
             

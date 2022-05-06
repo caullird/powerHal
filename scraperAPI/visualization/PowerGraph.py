@@ -7,6 +7,7 @@ class PowerGraph():
 
     def __init__(self, database, author):
         self.database = database
+        print(author)
         self.author = author
         self.authorID = self.database.getFieldsWithId(author, "author", "display_name", "id_author", "one")
         self.graph = nx.Graph()

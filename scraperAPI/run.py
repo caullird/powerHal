@@ -13,13 +13,13 @@ class Run():
 
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
     research = {
-        "author_name" : "SALAMATIAN",
+        "author_name" : "Salamatian",
         "author_forename" : "Kavé",
         "id_connected_user" : 1,
         "id_author_as_user" : 1
     }
 
-    research_temp = str(research['author_name']) + " " + str(research['author_forename'])
+    research_temp = str(research['author_forename']) + " " + str(research['author_name'])
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     dataBase = DB()
@@ -41,7 +41,7 @@ class Run():
     # hal(dataBase,research_temp, research['id_connected_user'], research['id_author_as_user'])
 
     # Creation du graph
-    # PowerGraph(dataBase, research_temp)
+    PowerGraph(dataBase, research_temp)
 
 
 
