@@ -2,6 +2,13 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import numpy as np
+from bokeh.plotting import figure, show, output_file, from_networkx
+from bokeh.models import (
+    BoxSelectTool, Circle, EdgesAndLinkedNodes, HoverTool,
+                          MultiLine, NodesAndLinkedEdges, Plot, Range1d, TapTool)
+from bokeh.palettes import Spectral4
+import io
+
 
 class PowerGraph():
 
@@ -74,19 +81,42 @@ class PowerGraph():
             'trunc({n},{a:.2f},{b:.2f})'.format(n=blue.name, a=0.5, b=1),
             blue(np.linspace(0.5, 1, 100)))
 
-        plt.figure(1, figsize=(20,12))
+        fig = plt.figure(1, figsize=(20,12))
+        """
+        plot = figure(title="Networkx Integration Demonstration",tools="")
 
+        plot.add_tools(HoverTool(tooltips=None), TapTool(), BoxSelectTool())
+        """
         pos = nx.spring_layout(self.graph)
-
+        
         # draw the graph
         nodes = nx.draw_networkx_nodes(self.graph, pos, node_color='white', node_size=node_size_list)
         edges = nx.draw_networkx_edges(self.graph, pos, edge_color=edge_size, width=10.0, edge_cmap=blue_trunc)
         
-        nx.draw_networkx_labels(self.graph, pos, font_size=10)
+        nx.draw_networkx_labels(self.graph, pos, font_size=11)
         nx.draw_networkx_edge_labels(self.graph,pos,edge_labels=edge_labels,font_color='black', font_size=20, rotate=False)
         
         nodes.set_edgecolor('black')
 
+
+        """graph = from_networkx(self.graph, nx.spring_layout, scale=200)
+
+        graph.node_renderer.glyph = Circle(size=15, fill_color=Spectral4[0])
+        graph.node_renderer.selection_glyph = Circle(size=15, fill_color=Spectral4[2])
+        graph.node_renderer.hover_glyph = Circle(size=15, fill_color=Spectral4[1])
+
+        plot.renderers.append(graph)"""
+
+        #output_file('powerHal/media/graphs/image.html')
+        #show(plot)
         plt.show()
+
+        fig.savefig(buf, format='png')
+        plt.close(fig)
+        data=buf.getvalue()
+
+        # In my case I would have used Django for the webpage
+        response = HttpResponse(data, content_type='image/png')
+        return response
 
 
