@@ -58,8 +58,10 @@
               <img class="avatar rounded-circle" alt="Image placeholder" src="/static/assets/img/team/profile-picture-3.jpg">
               <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                 <span class="mb-0 font-small fw-bold text-gray-900">
-                  Utilisateur actuel: <strong>{{ current_user.username }}</strong>
+                  @<strong>{{ current_user.username }}</strong> | <span onclick="window.location.href='/logout';">🚪 Me deconnecter</span>
                 </span>
+                
+          
               </div>
             </div>
           </a>

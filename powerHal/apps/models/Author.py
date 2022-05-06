@@ -8,3 +8,4 @@ class Author(db.Model):
     author_name = db.Column(db.String(500))
     author_forname = db.Column(db.String(500))
     display_name = db.Column(db.String(2000))
+

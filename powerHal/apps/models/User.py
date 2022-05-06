@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
 
     __tablename__ = 'User'
 
-    id_user = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True)
     email = db.Column(db.String(64), unique=True)
     password = db.Column(db.LargeBinary)
@@ -35,8 +35,8 @@ class User(db.Model, UserMixin):
 
 
 @login_manager.user_loader
-def user_loader(id_user):
-    return User.query.filter_by(id_user=id_user).first()
+def user_loader(id):
+    return User.query.filter_by(id=id).first()
 
 
 @login_manager.request_loader
