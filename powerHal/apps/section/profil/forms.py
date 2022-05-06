@@ -11,7 +11,7 @@ class ProfilAuthorForm(FlaskForm):
                          id='author_name',
                          validators=[DataRequired()])
 
-    author_forname = StringField('Nom de famille',
+    author_forename = StringField('Nom de famille',
                              id='author_forname',
                              validators=[DataRequired()])
 

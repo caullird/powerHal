@@ -26,20 +26,20 @@ def account():
     if 'account' in request.form:
         # read form data
         author_name = request.form['author_name']
-        author_forname = request.form['author_forname']
+        author_forename = request.form['author_forename']
         orcid_id = request.form['orcid_id']
 
         if author:
             author.author_name = author_name
-            author.author_forname = author_forname
-            author.display_name = author_name + " " + author_forname
+            author.author_forename = author_forename
+            author.display_name = author_name + " " + author_forename
             author.orcid_id = orcid_id
             current_user.id_author = author.id_author
             db.session.commit()
         else:
             author = Author()
             author.orcid_id = orcid_id
-            author.author_forname = author_forname
+            author.author_forename = author_forename
             author.author_name = author_name
             db.session.add(author)
             db.session.commit()
