@@ -18,14 +18,13 @@ class AuthorAPI():
 
         self.author_name = author_name
         self.author_forename = author_forename
-        self.author_display_name = author_name + " " + author_forename
-        self.display_name = ResearchInitializer(str(self.author_name + " " + self.author_forename)).getSortResearch()
-        print(self.author_display_name)
+        self.display_name = ResearchInitializer(str(self.author_forename + " " + self.author_name)).getSortResearch()
         self.dataBase = dataBase
         self.sourceID = sourceID
 
+
     def findAuthor(self):
-        search_query = scholarly.search_author(self.author_display_name)
+        search_query = scholarly.search_author(self.display_name)
         try:
             self.author = scholarly.fill(next(search_query))
             return True
@@ -38,7 +37,7 @@ class AuthorAPI():
 
     def addAuthorInformations(self):
 
-        dataAuthor = Author("NULL",self.author_name, self.author_forename, self.author_display_name)
+        dataAuthor = Author("NULL",self.author_name, self.author_forename, self.display_name)
         dataAuthor.setDataBase(self.dataBase)
         print(dataAuthor)
         self.AuthorID = dataAuthor.checkIfExistsOrInsert()
