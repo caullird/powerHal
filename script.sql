@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS author (
     id_author int(11) NOT NULL AUTO_INCREMENT,
     orcid_id varchar(2000),
     author_name varchar(500),
-    author_forname varchar(500),
+    author_forename varchar(500),
     display_name varchar(2000),
     created_at datetime,
     created_by int(11),

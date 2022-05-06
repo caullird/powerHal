@@ -1,9 +1,9 @@
 class Author():
 
-    def __init__(self, orcid_id, author_name, author_forname, display_name):
+    def __init__(self, orcid_id, author_name, author_forename, display_name):
         self.orcid_id = orcid_id
         self.author_name = author_name
-        self.author_forname = author_forname
+        self.author_forename = author_forename
         self.display_name = display_name
 
     # Permet d'ajouter l'objet database à l'objet Author
