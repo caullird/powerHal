@@ -16,6 +16,8 @@ from matplotlib.figure import Figure
 import io
 import random
 
+import requests
+
 from flask_login import (
     current_user
 )
@@ -29,18 +31,8 @@ def index():
 
 @blueprint.route('/plot.png')
 def plot_png():
-    fig = create_figure()
-    output = io.BytesIO()
-    FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype='image/png')
-
-def create_figure():
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    xs = range(100)
-    ys = [random.randint(1, 50) for x in xs]
-    axis.plot(xs, ys)
-    return fig
+    img = requests.get("http://localhost:8000/graph/" + str(current_user.id))
+    return Response(img, mimetype='image/png')
 
 @blueprint.route('/<template>')
 @login_required

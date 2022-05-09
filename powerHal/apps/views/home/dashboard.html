@@ -28,39 +28,10 @@
             <div class="card card-body border-0 shadow mb-4">
                 <h2 class="h5 mb-4">👀 Vos statistics</h2>
 
-                <button class="btn btn-success col-md-16 col-md-offset-4">Auteur a rechercher</button>
+                <button class="btn btn-success col-md-16 col-md-offset-4">{{ author.author_forename }} {{ author.author_name }}</button>
                 
-                <h2 class="h5 mb-4"></h2>
-                <form method="post" action="" class="mt-4">
-                    {{ form.hidden_tag() }}
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div>
-                                <label for="first_name">Prénom</label>
-                                {% if author.author_name %}
-                                    {{ form.author_name(placeholder="Votre prénom (Exemple : Michel)", class="form-control", type="text", value=author.author_name) }}
-                                {% else %}
-                                    {{ form.author_name(placeholder="Votre prénom (Exemple : Michel)", class="form-control", type="text") }}
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div>
-                                <label for="last_name">Nom</label>
-                                {% if author.author_forename %}
-                                    {{ form.author_forename(placeholder="Votre nom (Exemple : Dumas)", class="form-control", type="text", value=author.author_forename) }}
-                                {% else %}
-                                    {{ form.author_forename(placeholder="Votre nom (Exemple : Dumas)", class="form-control", type="text") }}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <button class="btn btn-gray-800 mt-2 animate-up-2" name="account" type="submit">Recherche 🔎</button>
-                    </div>
-                </form>
-                <img src="/plot.png" alt="my plot">
+            
+                <img src="/plot.png" alt="my plot" style="width:50%">
             </div>
             
     </div>
