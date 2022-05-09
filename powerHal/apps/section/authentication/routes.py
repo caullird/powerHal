@@ -42,7 +42,7 @@ def login():
 
         # Something (user or pass) is not ok
         return render_template('accounts/login.html',
-                               msg='Wrong user or password',
+                               msg="Mauvais identifiant ou mot de passe",
                                form=login_form)
 
     if not current_user.is_authenticated:
@@ -63,7 +63,7 @@ def register():
         user = User.query.filter_by(username=username).first()
         if user:
             return render_template('accounts/register.html',
-                                   msg='Username already registered',
+                                   msg="Ce nom d'utilisateur est déjà utilisé",
                                    success=False,
                                    form=create_account_form)
 
@@ -71,7 +71,7 @@ def register():
         user = User.query.filter_by(email=email).first()
         if user:
             return render_template('accounts/register.html',
-                                   msg='Email already registered',
+                                   msg="Cette adresse email est déjà utilisée",
                                    success=False,
                                    form=create_account_form)
 
@@ -81,7 +81,7 @@ def register():
         db.session.commit()
 
         return render_template('accounts/register.html',
-                               msg='User created please <a href="/login">login</a>',
+                               msg='Utilisateur créer, merci de vous <a href="/login">connecter</a>',
                                success=True,
                                form=create_account_form)
 
@@ -94,9 +94,7 @@ def logout():
     logout_user()
     return redirect(url_for('authentication_blueprint.login'))
 
-
 # Errors
-
 @login_manager.unauthorized_handler
 def unauthorized_handler():
     return render_template('home/page-403.html'), 403
