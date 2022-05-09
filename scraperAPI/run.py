@@ -25,16 +25,16 @@ class Run():
     # openAlex(research)
 
     # Gestion du pont API Google Scholar
-    googleScholar(research)
+    # googleScholar(research)
 
     # Gestion du pont avec Open Citation
-    # openCitation(dataBase,research)
+    # openCitation(research)
 
     # Gestion du pont avec l'API ORCID
     # orcid(dataBase,research)
 
     # Gestion du point avec HAL
-    # hal(dataBase,research_temp, research['id_connected_user'], research['id_author_as_user'])
+    hal(research)
 
     # Creation du graph
     # PowerGraph(dataBase, research_temp)

@@ -11,13 +11,13 @@ from model.relations.SourcePublication import SourcePublication
 
 class PublicationAPI():
     
-    def __init__(self,dataBase, id_connected_user, id_author_as_user, API, sourceID):
+    def __init__(self,dataBase, research, urlAPI, sourceID):
         self.dataBase = dataBase
-        self.id_connected_user = id_connected_user
-        self.id_author_as_user = id_author_as_user
+        self.id_connected_user = research['id_connected_user']
+        self.id_author_as_user = research['id_author_as_user']
         self.sourceID = sourceID
-        self.API = API
-        self.path = "././scraperAPI/specific/hal/data/"
+        self.urlAPI = urlAPI
+        # self.path = "././scraperAPI/specific/hal/data/"
         
         self.checkIfInsert()
         # self.tryToInsert()
@@ -38,7 +38,7 @@ class PublicationAPI():
             if getPublication[1] not in ["","[]","{}","()","NULL","None"]:
                 
                 #unSourcePublication = SourcePublication(getPublication[0],self.sourceID)
-                result = json.loads(requests.get(self.API.getUrlAPI() + "?q=" + str(getPublication[1])).text)
+                result = json.loads(requests.get(self.urlAPI + "?q=" + str(getPublication[1])).text)
                 
                 # Si il existe un resultat sur Hal
                 if result['response']['numFound'] != 0:
@@ -58,7 +58,7 @@ class PublicationAPI():
                 # self.generateDataFile(getPublication[0])
 
                 # Génération du fichier XML
-                self.generateXML(getPublication)
+                # self.generateXML(getPublication)
 
                 return
 

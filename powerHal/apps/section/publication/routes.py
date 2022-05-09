@@ -9,11 +9,13 @@ from apps.models.entities.Source import Source
 from apps.models.entities.Document import Document
 from apps.models.entities.Author import Author
 from apps.models.relations.AuthorPublication import AuthorPublication
+from apps.models.relations.SourcePublication import SourcePublication
 
 
 from flask_login import (
     current_user
 )
+
 
 
 @blueprint.route('/publication')
@@ -28,7 +30,11 @@ def publication():
     for source in Source.query.all():
         sources.append(source.display_name)
 
-    return render_template('publications/publications.html', publication = publications, sources = sources, segment='index')
+    sourcePublications = []
+    for sourcePublication in SourcePublication.query.filter_by(id_source=4).all():
+        sourcePublications.append(sourcePublication)
+
+    return render_template('publications/publications.html', sourcePublications = sourcePublications, publication = publications, sources = sources, segment='index')
 
 
 @blueprint.route('/viewPublication')

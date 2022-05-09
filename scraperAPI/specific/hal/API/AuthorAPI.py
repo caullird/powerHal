@@ -1,2 +1,0 @@
-class AuthorAPI():
-    pass

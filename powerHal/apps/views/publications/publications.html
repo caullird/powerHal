@@ -38,14 +38,17 @@
   <div class="table-settings mb-4">
       <div class="row align-items-center justify-content-between">
           <div class="col col-md-6 col-lg-3 col-xl-4">
-              <div class="input-group me-2 me-lg-3 fmxw-400">
-                  <span class="input-group-text">
-                      <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                      </svg>
-                  </span>
-                  <input type="text" class="form-control" placeholder="Rechercher une publication (soon)">
-              </div>
+              <div class="input-group me-2 me-lg-6 fmxw-400">
+                    <span class="input-group-text">
+                        <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Rechercher une publication (soon)"> 
+                    <!-- <button onclick="window.location.href=''" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                        🧐 Check HAL
+                    </button>   -->
+                </div>
           </div>
       </div>
   </div>
@@ -60,6 +63,7 @@
                         <th class="border-0">Titre de l'article</th>
                         <th class="border-0">Année de publciation</th>
                         <th class="border-0">Nombre de citation</th>
+                        <th class="border-0">Présence sur HAL ?</th>
                         <th class="border-0">Source</th>
                         <th class="border-0">En savoir plus</th>
                     </tr>
@@ -73,6 +77,19 @@
                             <td>{{pub.title[0:45]}}....</td>
                             <td>{{pub.publication_year}}</td>
                             <td>{{pub.citation_count}}</td>
+                            {% if sourcePublications %} 
+                                {% for sourcepub in sourcePublications %}
+                                    {% if pub.id_publication == sourcepub.id_publication %} 
+                                        <td><img width="100" src="/static/assets/img/logo_hal.png"></td>
+                                    {% else %}
+                                        <td>
+                                            <button onclick="window.location.href='/viewPublication?idPublication={{pub.id_publication}}'" type="button" class="btn btn-dark d-inline-flex align-items-center">
+                                                ➕
+                                            </button>  
+                                        </td>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                             <td>{{sources[pub.id_source - 1]}}</td>
                             <td>
                                 <button onclick="window.location.href='/viewPublication?idPublication={{pub.id_publication}}'" type="button" class="btn btn-primary d-inline-flex align-items-center">

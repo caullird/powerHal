@@ -26,10 +26,7 @@ from flask_login import (
 @blueprint.route('/index')
 @login_required
 def index():
-
     author = Author.query.filter_by(id_author=current_user.id_author).first()
-
-
     return render_template('home/dashboard.html', author = author, segment='index')
 
 
