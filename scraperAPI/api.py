@@ -9,6 +9,9 @@ from specific.hal.hal import hal
 from specific.orcid.orcid import orcid
 from config.DB import DB
 
+from io import BytesIO
+from starlette.responses import StreamingResponse
+
 app = FastAPI()
 
 
@@ -33,3 +36,42 @@ def open_alex(id_connected_user: int):
     openAlex(research)
 
     return {"Hello word !"}
+
+@app.get("/graph/{id_connected_user}")
+def get_graph(id_connected_user: int):
+
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    research = {
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0]
+    }
+
+    PG = PowerGraph(research)
+
+    fig = PG.generatePublicationCoAuthors()
+
+    buf = BytesIO()
+    buf.flush()
+    fig.savefig(buf, format="png")
+    buf.seek(0)
+
+    return StreamingResponse(buf, media_type="image/png")
+
+@app.get("/cloud/{id_connected_user}")
+def get_graph(id_connected_user: int):
+
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    research = {
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0]
+    }
