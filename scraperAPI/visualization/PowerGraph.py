@@ -40,7 +40,6 @@ class PowerGraph():
             else:
                 authors_count[author] = 1
 
-
         top_autors = {}
 
         if len(authors_count)< 15:
@@ -50,7 +49,6 @@ class PowerGraph():
                 max_author = max(authors_count, key=authors_count.get)
                 top_autors[max_author] = authors_count[max_author]
                 authors_count[max_author] = 0
-
 
         # fin the most author in the dictionary
         most_author = max(top_autors, key=top_autors.get)
@@ -71,13 +69,10 @@ class PowerGraph():
             #node_size.append(top_autors[author])
             node_size_list.append(len(author)*600)
 
-        print(node_list)
-
         self.graph.add_nodes_from(node_list)
         self.graph.add_edges_from(edge_list)
 
         blue = plt.cm.get_cmap('Blues')
-        print(blue)
         blue_trunc = colors.LinearSegmentedColormap.from_list(
             'trunc({n},{a:.2f},{b:.2f})'.format(n=blue.name, a=0.5, b=1),
             blue(np.linspace(0.5, 1, 100)))
@@ -99,6 +94,3 @@ class PowerGraph():
 
 
         return fig
-
-
-

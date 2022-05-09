@@ -26,10 +26,10 @@
     <div class="row">
         <div class="col-16 col-xl-12">
             <div class="card card-body border-0 shadow mb-4">
-                <h2 class="h5 mb-4">👀 Vos statistics</h2>
-
-                <button class="btn btn-success col-md-16 col-md-offset-4">{{ author.author_forename }} {{ author.author_name }}</button>
-                
+                <h2 class="h5 mb-4">👀 Vos statistiques</h2>
+                {% if author %}
+                    <button class="btn btn-success col-md-16 col-md-offset-4">{{ author.author_forename }} {{ author.author_name }}</button>
+                {% endif %}
             
                 <img src="/plot.png" alt="my plot" style="width:50%">
             </div>
