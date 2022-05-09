@@ -15,13 +15,13 @@ from model.relations.SourceConcept import SourceConcept
 
 class AuthorAPI():
 
-    def __init__(self,research, API, dataBase, sourceID, filter_by):
+    def __init__(self,research, urlAPI, dataBase, sourceID, filter_by):
         
         # Paramètre de recherche depuis notre solution
         self.research = research
 
         # Lien avec l'API
-        self.API = API 
+        self.urlAPI = urlAPI 
         self.filter_by = filter_by
 
         self.globalResponseAuthor = self.getGlobalResponseAuthor()
@@ -156,7 +156,10 @@ class AuthorAPI():
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
     def getGlobalResponseAuthor(self):
-        return json.loads(requests.get(self.API.getUrlAPI() + 'authors?filter=' + self.filter_by + '.search:' + str(self.research['author_name'] + " " + self.research['author_forename'])).text)
+
+        request = self.urlAPI + 'authors?filter=' + self.filter_by + '.search:' + str(self.research['author_name'] + " " + self.research['author_forename'])
+        print(request)
+        return json.loads(requests.get(self.urlAPI + 'authors?filter=' + self.filter_by + '.search:' + str(self.research['author_name'] + " " + self.research['author_forename'])).text)
 
 
     # Permet de récupérer l'ensemble des IDS relatifs à notre paramètre

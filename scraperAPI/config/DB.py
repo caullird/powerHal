@@ -7,7 +7,6 @@ class DB():
 
     # Initialisation des informations de la base de données
     def __init__(self):
-        self.config = self.getConfig()
         self.connector = self.getConnector()
         self.cursor = self.getCursor()
         self.logConnect()
@@ -21,19 +20,11 @@ class DB():
     # Permet de connecter depuis les informations du fichier de configuration
     def getConnector(self):
         return  mysql.connector.connect(
-            host = self.config['DATABASE']['host'],
-            user = self.config['DATABASE']['user'],
-            password = self.config['DATABASE']['password'],
-            database = self.config['DATABASE']['dbname']
+            host = "127.0.0.1",
+            user = "root",
+            password = "",
+            database = "proj831"
         )
-        
-
-    # Permet de récupérer la configuration du fichier config.ini
-    def getConfig(self):
-        config = configparser.ConfigParser()
-        config.read('./././config.ini')
-        return config
-
 
     # Permet de vérifier la bonne connexion a la base de données
     def logConnect(self):
@@ -200,10 +191,9 @@ class DB():
 
 
     # Permet de récupérer l'ID de la source actuelle
-    def getSourceID(self, className):
-        self.cursor.execute("SELECT DISTINCT id_source FROM source WHERE display_name = '" + str(className) + "'")
-        return self.cursor.fetchone()[0]
-
+    def getSourceInformations(self, className):
+        self.cursor.execute("SELECT * FROM source WHERE display_name = '" + str(className) + "'")
+        return self.cursor.fetchone()
 
     # Permet de fermer la connexion a la base de données
     def close(self):

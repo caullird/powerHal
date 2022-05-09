@@ -19,14 +19,12 @@ class Run():
         "id_author_as_user" : 1
     }
 
-    research_temp = str(research['author_forename']) + " " + str(research['author_name'])
+    # research_temp = str(research['author_forename']) + " " + str(research['author_name'])
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
-    dataBase = DB()
-    dataBase.setConnectedUserId(research['id_connected_user'])    
     
     # Gestion du pont API openAlex
-    # openAlex(dataBase,research)
+    openAlex(research)
 
     # Gestion du pont API Google Scholar
     #googleScholar(dataBase,research)
@@ -41,7 +39,7 @@ class Run():
     # hal(dataBase,research_temp, research['id_connected_user'], research['id_author_as_user'])
 
     # Creation du graph
-    PowerGraph(dataBase, research_temp)
+    # PowerGraph(dataBase, research_temp)
 
 
 
