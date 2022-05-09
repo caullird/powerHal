@@ -31,7 +31,7 @@ def account():
         if author:
             author.author_name = author_name
             author.author_forename = author_forename
-            author.display_name = str(author_name+" "+author_forename)
+            author.display_name = str(sortResearch(author_name+" "+author_forename))
             author.orcid_id = orcid_id
             author.created_by = current_user.id
             current_user.id_author = author.id_author
@@ -41,7 +41,7 @@ def account():
             author.orcid_id = orcid_id
             author.author_forename = author_forename
             author.author_name = author_name
-            author.display_name = str(author_name+" "+author_forename)
+            author.display_name = str(sortResearch(author_name+" "+author_forename))
             author.created_by = current_user.id
             db.session.add(author)
             db.session.commit()
@@ -53,5 +53,10 @@ def account():
         return render_template('profil/account.html', author = author, form = authorForm, message = "Votre profil est maintenant à jour !", segment='index')
 
     return render_template('profil/account.html', author = author, form = authorForm, segment='index')
+
+def sortResearch(display_name):
+        values = display_name.split()
+        values.sort()
+        return ' '.join(values)
 
 

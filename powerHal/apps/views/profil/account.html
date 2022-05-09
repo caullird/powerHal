@@ -45,20 +45,20 @@
                         <div class="col-md-6 mb-3">
                             <div>
                                 <label for="first_name">Prénom</label>
-                                {% if author.author_name %}
-                                    {{ form.author_name(placeholder="Votre prénom (Exemple : Michel)", class="form-control", type="text", value=author.author_name) }}
+                                {% if author.author_forename %}
+                                    {{ form.author_forename(placeholder="Votre prénom (Exemple : Michel)", class="form-control", type="text", value=author.author_forename) }}
                                 {% else %}
-                                    {{ form.author_name(placeholder="Votre prénom (Exemple : Michel)", class="form-control", type="text") }}
+                                    {{ form.author_forename(placeholder="Votre prénom (Exemple : Michel)", class="form-control", type="text") }}
                                 {% endif %}
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div>
                                 <label for="last_name">Nom</label>
-                                {% if author.author_forename %}
-                                    {{ form.author_forename(placeholder="Votre nom (Exemple : Dumas)", class="form-control", type="text", value=author.author_forename) }}
+                                {% if author.author_name %}
+                                    {{ form.author_name(placeholder="Votre nom (Exemple : Dumas)", class="form-control", type="text", value=author.author_name) }}
                                 {% else %}
-                                    {{ form.author_forename(placeholder="Votre nom (Exemple : Dumas)", class="form-control", type="text") }}
+                                    {{ form.author_name(placeholder="Votre nom (Exemple : Dumas)", class="form-control", type="text") }}
                                 {% endif %}
                             </div>
                         </div>

@@ -39,13 +39,13 @@
                         <div class="col-md-6 mb-3">
                             <div>
                                 <label for="first_name">Prénom</label>
-                                <input class="form-control" id="first_name" type="text" value="{{ author.author_name }}" readonly>
+                                <input class="form-control" id="first_name" type="text" value="{{ author.author_forename }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div>
                                 <label for="last_name">Nom</label>
-                                <input class="form-control" id="last_name" type="text" value="{{ author.author_forename }}" readonly>
+                                <input class="form-control" id="last_name" type="text" value="{{ author.author_name }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -66,6 +66,7 @@
                         </div>
                     </div>
             </div>
+        </div>
     </div>
 
     <div class="row">
@@ -76,23 +77,27 @@
                 
                 <h2 class="h5 mb-4"></h2>
 
-                <div class="col-lg-8 col-sm-6 mt-8 mt-md-0">
+                <div class="col-lg-12 col-sm-6 mt-8 mt-md-0">
                     <div class="mb-3">
                         <span class="h6 fw-bold">Vos choix :</span>
                     </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="openAlexAPI">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">openAlexAPI</label> - Permet de récupérer une grosse quantité d'information (Auteur, Institutions, Centres d'interêts, co-auteurs...)
-                    </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="openCitationAPI">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">openCitationAPI</label> - Permet de récupérer des éléments relatifs aux publications (Nombre de citation, nombre de références ...)
-                    </div>  
-                    <h2 class="h5 mb-4"></h2>
-
-                    <button onclick="window.location.href='/openAlex'" type="button" class="btn btn-primary d-inline-flex align-items-center">
-                        🚀 Lancer le scraping openAlex
-                    </button>   
+                    <form method="POST" action ="/scraper">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" name="apiChoise" type="checkbox" value="openAlexAPI">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">openAlex</label> - Permet de récupérer une grosse quantité d'information depuis openAlex (Auteur, Institutions, Centres d'interêts, co-auteurs...)
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" name="apiChoise" type="checkbox" value="googleScholar">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">GoogleScholar</label> - Permet de récupérer une grosse quantité d'information depuis GoogleScholar (Auteur, Institutions, Centres d'interêts, co-auteurs...)
+                        </div>  
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" name="apiChoise" type="checkbox" value="openCitationAPI">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">openCitation</label> - Permet de récupérer des éléments relatifs aux publications (Nombre de citation, nombre de références ...)
+                        </div>
+                        <h2 class="h5 mb-4"></h2>
+                        <input type="submit" class="btn btn-primary" value="🚀 Lancer le scraping ! ">
+                    </form>
+      
                 </div>
                 
                     
