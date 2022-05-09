@@ -18,56 +18,42 @@
                         <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">
-                                    PowerHAL - Sign IN
+                                    PowerHAL - Me connecter
                                 </h1>
                                 <br />
                                 <p>
                                     {% if msg %}
                                         {{ msg | safe }}
                                     {% else %}
-                                        Add your credentials
+                                        Ajouter vos informations de connexion
                                     {% endif %}                                     
                                 </p> 
                             </div>
                             <form method="post" action="" class="mt-4">
                                 
                                 {{ form.hidden_tag() }}
-
-                                <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label for="email">Username</label>
+                                    <label for="email">Nom d'utilisateur</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1">
                                             <span class="fas fa-user-circle"></span>
                                         </span>
-                                        {{ form.username(placeholder="Username", class="form-control") }}
+                                        {{ form.username(placeholder="Nom d'utilisateur", class="form-control") }}
                                     </div>  
                                 </div>
-                                <!-- End of Form -->
                                 <div class="form-group">
-                                    <!-- Form -->
                                     <div class="form-group mb-4">
-                                        <label for="password">Your Password</label>
+                                        <label for="password">Mot de passe</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon2">
                                                 <span class="fas fa-unlock-alt"></span>
                                             </span>
-                                            {{ form.password(placeholder="Password", class="form-control", type="password") }}
+                                            {{ form.password(placeholder="Mot de passe", class="form-control", type="password") }}
                                         </div>  
-                                    </div>
-                                    <!-- End of Form -->
-                                    <div class="d-flex justify-content-between align-items-top mb-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="remember">
-                                            <label class="form-check-label mb-0" for="remember">
-                                              Remember me
-                                            </label>
-                                        </div>
-                                        <div><a href="/page-forgot-password.html" class="small text-right">Lost password?</a></div>
                                     </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" name="login" class="btn btn-gray-800">Sign IN</button>
+                                    <button type="submit" name="login" class="btn btn-gray-800">Me connecter</button>
                                 </div>
                             </form>
                             <br />
@@ -89,8 +75,8 @@
 
                             <div class="d-flex justify-content-center align-items-center mt-4">
                                 <span class="fw-normal">
-                                    Not registered?
-                                    <a href="{{ url_for('authentication_blueprint.register') }}" class="fw-bold">Create account</a>
+                                    Non enregistré ?
+                                    <a href="{{ url_for('authentication_blueprint.register') }}" class="fw-bold">Créer un compte</a>
                                 </span>
                             </div>
                         </div>

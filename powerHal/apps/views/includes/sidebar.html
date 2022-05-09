@@ -43,38 +43,50 @@
                 </a>
               </li>
               <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
-              <li class="nav-item {% if 'dashboard' in segment %} active {% endif %}">
-                <a href="/dashboard.html" class="nav-link">
-                  <span class="sidebar-icon">
-                    👀
-                  </span> 
-                  <span class="sidebar-text">Dashboard</span>
-                </a>
-              </li>
-              <li class="nav-item {% if 'scraper' in segment %} active {% endif %}">
-                <a href="/scraper" class="nav-link">
-                  <span class="sidebar-icon">
-                    🔃
-                  </span>
-                  <span class="sidebar-text">ScraperAPI</span>
-                </a>
-              </li>
-              <li class="nav-item {% if 'transactions' in segment %} active {% endif %}">
-                <a href="/publication" class="nav-link">
-                  <span class="sidebar-icon">
-                    📰
-                  </span>
-                  <span class="sidebar-text">Mes publications</span>
-                </a>
-              </li>
-              <li class="nav-item {% if 'account' in segment %} active {% endif %}">
-                <a href="/account" class="nav-link">
-                  <span class="sidebar-icon">
-                    👦🏻
-                  </span>
-                  <span class="sidebar-text">Profil Auteur</span>
-                </a>
-              </li>
+              {% if current_user.id_author %}
+                <li class="nav-item {% if 'dashboard' in segment %} active {% endif %}">
+                  <a href="/dashboard.html" class="nav-link">
+                    <span class="sidebar-icon">
+                      👀
+                    </span> 
+                    <span class="sidebar-text">Dashboard</span>
+                  </a>
+                </li>
+                <li class="nav-item {% if 'account' in segment %} active {% endif %}">
+                  <a href="/account" class="nav-link">
+                    <span class="sidebar-icon">
+                      👦🏻
+                    </span>
+                    <span class="sidebar-text">Mon profil</span>
+                  </a>
+                </li>
+                <li class="nav-item {% if 'scraper' in segment %} active {% endif %}">
+                  <a href="/scraper" class="nav-link">
+                    <span class="sidebar-icon">
+                      🔃
+                    </span>
+                    <span class="sidebar-text">ScraperAPI</span>
+                  </a>
+                </li>
+                <li class="nav-item {% if 'transactions' in segment %} active {% endif %}">
+                  <a href="/publication" class="nav-link">
+                    <span class="sidebar-icon">
+                      📰
+                    </span>
+                    <span class="sidebar-text">Mes publications</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="nav-item {% if 'account' in segment %} active {% endif %}">
+                  <a href="/account" class="nav-link">
+                    <span class="sidebar-icon">
+                      👦🏻
+                    </span>
+                    
+                    <span class="sidebar-text">⚠️ Mon profil</span>
+                  </a>
+                </li>
+              {% endif %}
               <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
               <li class="nav-item {% if 'open-research' in segment %} active {% endif %}">
                 <a href="" class="nav-link">

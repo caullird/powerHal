@@ -24,7 +24,6 @@ def account():
         author = Author.query.filter_by(id_author=current_user.id_author).first()
 
     if 'account' in request.form:
-        # read form data
         author_name = request.form['author_name']
         author_forename = request.form['author_forename']
         orcid_id = request.form['orcid_id']
@@ -32,8 +31,9 @@ def account():
         if author:
             author.author_name = author_name
             author.author_forename = author_forename
-            author.display_name = str(author_name + " " + author_forename)
+            author.display_name = str(author_name+" "+author_forename)
             author.orcid_id = orcid_id
+            author.created_by = current_user.id
             current_user.id_author = author.id_author
             db.session.commit()
         else:
@@ -41,7 +41,8 @@ def account():
             author.orcid_id = orcid_id
             author.author_forename = author_forename
             author.author_name = author_name
-            author.display_name = str(author_name + " " + author_forename)
+            author.display_name = str(author_name+" "+author_forename)
+            author.created_by = current_user.id
             db.session.add(author)
             db.session.commit()
 

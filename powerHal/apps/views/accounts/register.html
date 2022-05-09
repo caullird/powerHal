@@ -18,14 +18,14 @@
                         <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">
-                                    Power Hal - Sign UP
+                                    Power Hal - Créer un compte
                                 </h1>
                                 <br />
                                 <p>
                                     {% if msg %}
                                         {{ msg | safe }}
                                     {% else %}
-                                        Add your credentials
+                                        Ajouter vos informations
                                     {% endif %}                                     
                                 </p> 
                             </div>
@@ -34,18 +34,18 @@
                                 {{ form.hidden_tag() }}
 
                                 <div class="form-group mb-4">
-                                    <label for="email">Username</label>
+                                    <label for="email">Nom d'utilisateur</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1">
                                             <span class="fas fa-user-circle"></span>
                                         </span>
-                                        {{ form.username(placeholder="Username", class="form-control") }}
+                                        {{ form.username(placeholder="Nom d'utilisateur", class="form-control") }}
                                     </div>  
                                 </div>
 
                                 <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label for="email">Your Email</label>
+                                    <label for="email">Votre e-mail</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1">
                                             <span class="fas fa-envelope"></span>
@@ -57,12 +57,12 @@
                                 <div class="form-group">
                                     <!-- Form -->
                                     <div class="form-group mb-4">
-                                        <label for="password">Your Password</label>
+                                        <label for="password">Votre mot de passe</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon2">
                                                 <span class="fas fa-unlock-alt"></span>
                                             </span>
-                                            {{ form.password(placeholder="Password", class="form-control", type="password") }}
+                                            {{ form.password(placeholder="Mot de passe", class="form-control", type="password") }}
                                         </div>  
                                     </div>
                                     <!-- End of Form -->
@@ -76,7 +76,7 @@
                                     </div> -->
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" name="register" class="btn btn-gray-800">Sign UP</button>
+                                    <button type="submit" name="register" class="btn btn-gray-800">M'inscrire</button>
                                 </div>
                             </form>
                             <br />
@@ -98,8 +98,8 @@
 
                             <div class="d-flex justify-content-center align-items-center mt-4">
                                 <span class="fw-normal">
-                                    Already have an account? 
-                                    <a href="{{ url_for('authentication_blueprint.login') }}" class="fw-bold">Sign IN</a>
+                                    Vous avez déjà un compte ?
+                                    <a href="{{ url_for('authentication_blueprint.login') }}" class="fw-bold">Me connecter</a>
                                 </span>
                             </div>
                         </div>

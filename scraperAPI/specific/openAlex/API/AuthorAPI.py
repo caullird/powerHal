@@ -156,9 +156,6 @@ class AuthorAPI():
 
     # Permet de récupérer l'ensemble des informations sur l'auteur en paramètre
     def getGlobalResponseAuthor(self):
-
-        request = self.urlAPI + 'authors?filter=' + self.filter_by + '.search:' + str(self.research['author_name'] + " " + self.research['author_forename'])
-        print(request)
         return json.loads(requests.get(self.urlAPI + 'authors?filter=' + self.filter_by + '.search:' + str(self.research['author_name'] + " " + self.research['author_forename'])).text)
 
 
@@ -168,7 +165,6 @@ class AuthorAPI():
         for result in self.globalResponseAuthor['results']:
             if(len(result['ids']) > 1):
                 halIDs.append(result['ids']['mag'])
-
         print("INFO | " + str(len(halIDs)) + " profil d'auteur valide trouvé pour le nom " + str(self.research['author_name'] + " " + self.research['author_forename']))
         return halIDs
 

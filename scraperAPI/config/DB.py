@@ -209,6 +209,7 @@ class DB():
     def getFieldsWithId(self, id, table, searchField, getField, quantity):
 
         sql = 'SELECT ' + str(getField) + ' FROM ' + str(table) + ' WHERE ' + str(searchField) + ' = "' + str(id) + '"'
+
         self.cursor.execute(sql)
 
         if(quantity == "many"):
@@ -234,7 +235,3 @@ class DB():
     def setCreatedByInObject(self,object, fields):
         fields.append("created_by")
         object.created_by = self.id_connected_user
-
-
-    
-

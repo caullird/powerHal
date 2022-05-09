@@ -16,22 +16,20 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
+@app.get("/openAlex/{id_connected_user}")
+def open_alex(id_connected_user: int):
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
-
-
-@app.get("/openAlex")
-def read_root():
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
 
     research = {
-        "author_name" : "Salamatian",
-        "author_forename" : "Kavé",
-        "id_connected_user" : 1,
-        "id_author_as_user" : 1
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0]
     }
 
     openAlex(research)
 
-    return {"Hello": "World"}
+    return {"Hello word !"}

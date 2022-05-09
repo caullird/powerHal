@@ -1,7 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 import subprocess
-import pathlib
+import requests
+import json
 from threading import Thread
 from apps.section.home import blueprint
 from flask import render_template
@@ -25,4 +26,10 @@ def scraper():
 @blueprint.route('/openAlex')
 @login_required
 def openAlexAPI():
-    return render_template('scraper/openAlex.html', segment='index')
+
+
+    request = "http://127.0.0.1:8000/openAlex/" + str(current_user.id)
+
+    returns =  json.loads(requests.get("http://127.0.0.1:8000/openAlex/" + str(current_user.id)).text)
+
+    return render_template('scraper/openAlex.html', returns = request , segment='index')

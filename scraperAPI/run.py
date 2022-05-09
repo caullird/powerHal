@@ -23,8 +23,15 @@ class Run():
 
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
     
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(1, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    print(getAuthorProfil)
+
+
     # Gestion du pont API openAlex
-    openAlex(research)
+    # openAlex(research)
 
     # Gestion du pont API Google Scholar
     #googleScholar(dataBase,research)
