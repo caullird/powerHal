@@ -2,15 +2,12 @@ from scholarly import scholarly
 import requests
 
 # Importation des modèles pour la création des objets
-from model.entities.Concept import Concept
 from model.entities.Author import Author
 from model.entities.Publication import Publication
 from model.entities.Document import Document
 from model.relations.AuthorPublication import AuthorPublication
-from model.relations.AuthorPublicationConcept import AuthorPublicationConcept
 from model.relations.SourcePublication import SourcePublication
 from model.relations.SourceAuthor import SourceAuthor
-from model.relations.SourceConcept import SourceConcept
 
 from config.ResearchInitializer import ResearchInitializer
 
@@ -24,12 +21,9 @@ class PublicationAPI:
         self.sourceID = sourceID
 
     def addPublications(self, max = 10000):
-        i=0
         if max>len(self.publications):
             max = len(self.publications)
         for publication in self.publications[:max]:
-            print(i)
-            i+=1
             self.checkIfExistOrAdd(publication)
 
     def checkIfExistOrAdd(self, publication):
@@ -41,7 +35,6 @@ class PublicationAPI:
             url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=" + filledPublication["author_pub_id"].split(":")[0] + "&citation_for_view=" + filledPublication["author_pub_id"]
             html_page = requests.get(url).text
 
-            print(url)
             try:
                 date = html_page.split('<div class="gsc_oci_value">')[2].split("</div>")[0]
                 if len(date) > 10:
@@ -77,7 +70,8 @@ class PublicationAPI:
                 unDocument.setDataBase(self.dataBase)
                 unDocument.checkIfExistsOrInsert()
             except:
-                print("No pdf found")
+                #print("No pdf found")
+                pass
 
             unSourcePublication = SourcePublication(self.publicationID,self.sourceID,filledPublication["author_pub_id"], "NULL")
             unSourcePublication.setDataBase(self.dataBase)
@@ -87,25 +81,25 @@ class PublicationAPI:
             unAuthorPublication.setDataBase(self.dataBase)
             unAuthorPublication.checkIfExistsOrInsert()
 
-
-
             self.addCoAuthors(filledPublication["bib"]["author"])
 
 
     def addCoAuthors(self,coAuthors):
         authors = coAuthors.split(" and ")
-        print(authors)
         for author in authors:
             display_name = ResearchInitializer(str(author.split(" ")[1] + " " + author.split(" ")[0])).getSortResearch()
-            unAuthor = Author("NULL",author.split(" ")[1], author.split(" ")[0],display_name)
+            unAuthor = Author("",author.split(" ")[1], author.split(" ")[0],display_name)
             unAuthor.setDataBase(self.dataBase)
             authorID = unAuthor.checkIfExistsOrInsert()
-            
-            print(author)
-            
+
             unAuthorPublication = AuthorPublication(authorID,self.publicationID,"first")
             unAuthorPublication.setDataBase(self.dataBase)
             unAuthorPublication.checkIfExistsOrInsert()
+
+            # TODO : Gab ajout d'un specifidID pour l'auteur (troisième champ)
+            dataSourceAuthor = SourceAuthor(self.sourceID, authorID,"", {})
+            dataSourceAuthor.setDataBase(self.dataBase)
+            dataSourceAuthor.checkIfExistsOrInsert()
 
 
         

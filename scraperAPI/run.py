@@ -7,8 +7,6 @@ from specific.hal.hal import hal
 from specific.orcid.orcid import orcid
 from config.DB import DB
 
-
-
 class Run():
 
     # Initialisation de la recherche, avant de faire le pont avec l'interface web
@@ -27,7 +25,7 @@ class Run():
     # openAlex(research)
 
     # Gestion du pont API Google Scholar
-    #googleScholar(dataBase,research)
+    googleScholar(research)
 
     # Gestion du pont avec Open Citation
     # openCitation(dataBase,research)

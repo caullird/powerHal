@@ -13,10 +13,10 @@ from model.relations.SourceAuthor import SourceAuthor
 from model.relations.SourceConcept import SourceConcept
 
 class CitationAPI():
-    def __init__(self, API, dataBase, authorID, sourceID):
+    def __init__(self, urlAPI, dataBase, authorID, sourceID):
 
         # Lien avec l'API 
-        self.API = API  
+        self.urlAPI = urlAPI  
 
         # Récupération des champs de recherche
         self.dataBase = dataBase
@@ -45,6 +45,6 @@ class CitationAPI():
 
 
     def getAPIResponse(self, doiId, field):
-        return json.loads(requests.get(self.API.getUrlAPI() + field + '/' + str(doiId) ).text)
+        return json.loads(requests.get(self.urlAPI + field + '/' + str(doiId) ).text)
 
 

@@ -35,7 +35,37 @@ def open_alex(id_connected_user: int):
 
     openAlex(research)
 
-    return {"Hello word !"}
+@app.get("/openCitation/{id_connected_user}")
+def open_alex(id_connected_user: int):
+
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    research = {
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0]
+    }
+
+    openCitation(research)
+
+@app.get("/googleScholar/{id_connected_user}")
+def open_alex(id_connected_user: int):
+
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    research = {
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0]
+    }
+
+    googleScholar(research)
 
 @app.get("/graph/{id_connected_user}")
 def get_graph(id_connected_user: int):
