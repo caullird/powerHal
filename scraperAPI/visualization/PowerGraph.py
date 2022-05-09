@@ -9,22 +9,23 @@ from bokeh.models import (
 from bokeh.palettes import Spectral4
 import io
 
+from config.DB import DB
+
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+
+from flask import Response
 
 class PowerGraph():
 
-    def __init__(self, database, author):
-        self.database = database
-        print(author)
-        self.author = author
-        self.authorID = self.database.getFieldsWithId(author, "author", "display_name", "id_author", "one")
+    def __init__(self, research):
+        self.database = DB()
+        self.database.setConnectedUserId(research['id_connected_user']) 
+        self.authorID = research['id_author_as_user']
         self.graph = nx.Graph()
-        self.generatePublicationCoAuthors(self.authorID)
 
-
-
-    def generatePublicationCoAuthors(self, authorID):
+    def generatePublicationCoAuthors(self):
         authors = []
-        getPublications = self.database.getFieldsWithId(authorID, table = "AuthorPublication",searchField = "id_author", getField = "id_publication", quantity = "many")
+        getPublications = self.database.getFieldsWithId(self.authorID, table = "AuthorPublication",searchField = "id_author", getField = "id_publication", quantity = "many")
         for publication in getPublications:
             getPublicationAuthors = self.database.getFieldsWithId(publication, table = "AuthorPublication",searchField = "id_publication", getField = "id_author", quantity = "many")
             for publicationAuthor in getPublicationAuthors:
@@ -82,11 +83,9 @@ class PowerGraph():
             blue(np.linspace(0.5, 1, 100)))
 
         fig = plt.figure(1, figsize=(20,12))
-        """
-        plot = figure(title="Networkx Integration Demonstration",tools="")
 
-        plot.add_tools(HoverTool(tooltips=None), TapTool(), BoxSelectTool())
-        """
+        fig.clear()
+
         pos = nx.spring_layout(self.graph)
         
         # draw the graph
@@ -99,24 +98,7 @@ class PowerGraph():
         nodes.set_edgecolor('black')
 
 
-        """graph = from_networkx(self.graph, nx.spring_layout, scale=200)
+        return fig
 
-        graph.node_renderer.glyph = Circle(size=15, fill_color=Spectral4[0])
-        graph.node_renderer.selection_glyph = Circle(size=15, fill_color=Spectral4[2])
-        graph.node_renderer.hover_glyph = Circle(size=15, fill_color=Spectral4[1])
-
-        plot.renderers.append(graph)"""
-
-        #output_file('powerHal/media/graphs/image.html')
-        #show(plot)
-        plt.show()
-
-        fig.savefig(buf, format='png')
-        plt.close(fig)
-        data=buf.getvalue()
-
-        # In my case I would have used Django for the webpage
-        response = HttpResponse(data, content_type='image/png')
-        return response
 
 
