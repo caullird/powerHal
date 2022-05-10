@@ -8,34 +8,141 @@
 {% block content %}
 
 
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-        <div class="d-block mb-4 mb-md-0">
-            <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
-                <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
-                    <li class="breadcrumb-item">
-                        <a href="#">
-                            <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> 👀 Vos statistics</li>
-                </ol>
-            </nav>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    <div class="d-block mb-4 mb-md-0">
+        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+            <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </a>
+                </li>
+                <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> 📈 Votre tableau de bord</li>
+            </ol>
+        </nav>
+        <div class="d-flex justify-content-between w-100 flex-wrap">
+            <div class="mb-3 mb-lg-0">
+                <h2 class="h4">📈 Votre tableau de bord</h2>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-16 col-xl-12">
-            <div class="card card-body border-0 shadow mb-4">
-                <h2 class="h5 mb-4">👀 Vos statistiques</h2>
-                {% if author %}
-                    <button class="btn btn-success col-md-16 col-md-offset-4">{{ author.author_forename }} {{ author.author_name }}</button>
-                {% endif %}
-                <img src="/cloud.png" alt="my plot" style="width:45%; text-align:center;">
-                <img src="/graph.png" alt="my plot" style="width:50%; text-align:center;">
-                
+</div>
+
+<div class="row">
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+                            📰                            
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="h5">Vos publications</h2>
+                            <h3 class="fw-extrabold mb-1">{{ countPublication }}</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">Vos publications</h2>
+                            <h3 class="fw-extrabold mb-2">{{ countPublication }}</h3>
+                        </div>
+                        <small class="d-flex align-items-center text-gray-500">
+                            🤔 Il vous manque des publications ?
+                        </small> 
+                        <div class="small d-flex mt-1">                               
+                            <div>Utiliser <b>ScraperAPI</b></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+        </div>
     </div>
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                            🌟
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="fw-extrabold h5">Nombre de citation</h2>
+                            <h3 class="mb-1">$43,594</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">Nombre de citation</h2>
+                            <h3 class="fw-extrabold mb-2">{{ countCitation }}</h3>
+                        </div>
+                        <small class="d-flex align-items-center text-gray-500">
+                            🌟 Vous êtes une star ! 
+                        </small> 
+                        <div class="small d-flex mt-1">                               
+                            <div><b>(et ce n'est que le début) </b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                            ⚡
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="fw-extrabold h5">% de présence sur HAL</h2>
+                            <h3 class="mb-1">TODO</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">% de présence sur HAL</h2>
+                            <h3 class="fw-extrabold mb-2">TODO</h3>
+                        </div>
+                        <small class="text-gray-500">
+                            Ajouter toutes vos publication sur HAL
+                        </small> 
+                        <div class="small d-flex mt-1">                               
+                            <div><b>🚀 PowerHal</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12 col-sm-5 col-xl-6 mb-4">
+        <div class="mb-3 mb-lg-0">
+            <!-- <h2 class="h4">🤲🏻 Vos échanges avec les autres auteurs </h2> -->
+        </div>
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <img src="/cloud.png" alt="my plot" style="width:100%; text-align:center;">
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-7 col-xl-6 mb-4">
+        <div class="mb-3 mb-lg-0">
+            <!-- <h2 class="h4">🤲🏻 Vos échanges avec les autres auteurs </h2> -->
+        </div>
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <img src="/graph.png" alt="my plot" style="width:50%; text-align:center;">
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 

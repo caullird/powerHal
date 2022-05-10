@@ -6,3 +6,4 @@ class Source(db.Model):
     display_name = db.Column(db.String(500))
     website_url = db.Column(db.String(500))
     api_url = db.Column(db.String(500))
+    created_by = db.Column(db.Integer)

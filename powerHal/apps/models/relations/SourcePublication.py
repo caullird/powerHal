@@ -7,4 +7,5 @@ class SourcePublication(db.Model):
     id_publication = db.Column(db.Integer)
     id_source = db.Column(db.Integer)
     specificID = db.Column(db.String(500))
+    created_by = db.Column(db.Integer)
 

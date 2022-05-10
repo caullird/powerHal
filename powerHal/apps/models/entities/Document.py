@@ -7,5 +7,6 @@ class Document(db.Model):
     class_name = db.Column(db.String(500))
     document_url = db.Column(db.String(5000))
     id_source = db.Column(db.Integer)
+    created_by = db.Column(db.Integer)
     
 

@@ -15,3 +15,4 @@ class Publication(db.Model):
     biblio_first_page = db.Column(db.String(500))
     biblio_last_page = db.Column(db.String(500))
     biblio_issue = db.Column(db.String(500))
+    created_by = db.Column(db.Integer)

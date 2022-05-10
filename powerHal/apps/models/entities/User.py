@@ -15,6 +15,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(64), unique=True)
     password = db.Column(db.LargeBinary)
     id_author = db.Column(db.Integer)
+    
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

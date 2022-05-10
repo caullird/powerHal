@@ -7,4 +7,5 @@ class AuthorPublication(db.Model):
     id_author = db.Column(db.Integer)
     id_publication = db.Column(db.Integer)
     author_position = db.Column(db.String(500))
+    created_by = db.Column(db.Integer)
 

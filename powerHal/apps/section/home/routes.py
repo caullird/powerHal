@@ -5,6 +5,8 @@ from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 from apps.models.entities.Author import Author
+from apps.models.entities.Publication import Publication
+from apps.models.relations.AuthorPublication import AuthorPublication
 from apps.section.profil.forms import ProfilAuthorForm
 from apps import db, login_manager
 
@@ -26,8 +28,20 @@ from flask_login import (
 @blueprint.route('/index')
 @login_required
 def index():
-    author = Author.query.filter_by(id_author=current_user.id_author).first()
-    return render_template('home/dashboard.html', author = author, segment='index')
+    author = Author.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).first()
+
+
+    countPublication = AuthorPublication.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).count()
+
+    countCitation = 0
+    for publication in Publication.query.filter_by(created_by=current_user.id).all():
+        authorPublications = AuthorPublication.query.filter_by(id_publication=publication.id_publication,created_by=current_user.id,id_author=current_user.id_author).all()
+        if authorPublications :
+            countCitation += int(publication.citation_count)
+
+
+
+    return render_template('home/dashboard.html', author = author, countPublication = countPublication, countCitation = countCitation, segment='index')
 
 
 @blueprint.route('/graph.png')
