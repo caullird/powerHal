@@ -67,7 +67,11 @@
                         <div class="col-md-12 mb-3">
                             <div>
                                 <label for="alternatives">Alternatives d'identification</label>
-                                <input class="form-control" id="alternatives" type="text" placeholder="TODO : Exemple : micheld, michou ...">
+                                {% if author.alternative_name %}
+                                    {{ form.alternative_name(placeholder="TODO : Exemple : micheld, michou ...", class="form-control", type="text", value=author.alternative_name) }}
+                                {% else %}
+                                    {{ form.alternative_name(placeholder="TODO : Exemple : micheld, michou ...", class="form-control", type="text") }}
+                                {% endif %}
                                 <p><i>Permet d'élargir la recherche en fonction des alternatives, ajouter une virgule entre chaque alternative</i></p>
                             </div>
                         </div>
@@ -75,7 +79,7 @@
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <div>
-                                <label for="alternatives">Votre numéro d'identification ORCID</label>
+                                <label for="orcdi-id">Votre numéro d'identification ORCID</label>
                                 {% if author.orcid_id %}
                                     {{ form.orcid_id(placeholder="Exemple : 0000-0003-0634-3277", class="form-control", type="text", value=author.orcid_id) }}
                                 {% else %}

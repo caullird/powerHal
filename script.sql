@@ -148,6 +148,7 @@ CREATE TABLE IF NOT EXISTS author (
     author_name varchar(500),
     author_forename varchar(500),
     display_name varchar(2000),
+    alternative_name varchar(5000),
     created_at datetime,
     created_by int(11),
     updated_at datetime,

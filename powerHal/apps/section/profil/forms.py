@@ -15,6 +15,9 @@ class ProfilAuthorForm(FlaskForm):
                              id='author_forname',
                              validators=[DataRequired()])
 
+    alternative_name = StringField("Alternative d'identification",
+                        id='alternatives')
+    
     orcid_id = StringField('ORCID ID',
                         id='orcid_id')  
 

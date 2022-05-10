@@ -66,6 +66,22 @@ def open_alex(id_connected_user: int):
     }
 
     googleScholar(research)
+    
+@app.get("/halCompare/{id_connected_user}")
+def hal_compare(id_connected_user: int):
+
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    research = {
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0]
+    }
+
+    hal(research)
 
 @app.get("/graph/{id_connected_user}")
 def get_graph(id_connected_user: int):

@@ -27,6 +27,7 @@ def account():
         author_name = request.form['author_name']
         author_forename = request.form['author_forename']
         orcid_id = request.form['orcid_id']
+        alternative_name = request.form['alternative_name']
 
         if author:
             author.author_name = author_name
@@ -34,6 +35,7 @@ def account():
             author.display_name = str(sortResearch(author_name+" "+author_forename))
             author.orcid_id = orcid_id
             author.created_by = current_user.id
+            author.alternative_name = alternative_name
             current_user.id_author = author.id_author
             db.session.commit()
         else:
@@ -43,6 +45,7 @@ def account():
             author.author_name = author_name
             author.display_name = str(sortResearch(author_name+" "+author_forename))
             author.created_by = current_user.id
+            author.alternative_name = alternative_name
             db.session.add(author)
             db.session.commit()
 

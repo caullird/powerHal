@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-
+import requests, json
 from apps.section.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
@@ -59,3 +59,8 @@ def viewPublication():
 
     return render_template('publications/viewPublication.html', publication = publication, documents = documents, co_authors = co_authors, sources = sources, segment='index')
 
+@blueprint.route('/halCompare')
+@login_required
+def hal():
+    json.loads(requests.get("http://127.0.0.1:8000/halCompare/" + str(current_user.id)).text)
+    return publication()
