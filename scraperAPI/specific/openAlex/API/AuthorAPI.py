@@ -143,7 +143,7 @@ class AuthorAPI():
                 resultsValues['alex_ids'].append(result['id'])
 
             if(result['orcid'] != None): 
-                resultsValues['orcid_id'] = result['orcid']
+                resultsValues['orcid_id'] = result['orcid'].replace("https://orcid.org/","")
 
 
         # Formation du display name en fonction de l'ordre alphabétique

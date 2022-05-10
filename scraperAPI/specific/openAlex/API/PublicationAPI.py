@@ -139,7 +139,7 @@ class PublicationAPI():
             newDisplay = unResearchInitializer.getNameAndForname()
 
             if author['author']['orcid'] != None:
-                orcid_id = author['author']['orcid']
+                orcid_id = author['author']['orcid'].replace("https://orcid.org/","")
             else: 
                 orcid_id = ""
 
