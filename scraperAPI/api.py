@@ -29,6 +29,7 @@ def open_alex(id_connected_user: int):
     research = {
         "author_name" : getAuthorProfil[2],
         "author_forename" : getAuthorProfil[3],
+        "alternative_name" : getAuthorProfil[5],
         "id_connected_user" : getUserProfil[0],
         "id_author_as_user" : getAuthorProfil[0]
     }

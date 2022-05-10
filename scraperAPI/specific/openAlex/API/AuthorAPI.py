@@ -24,22 +24,37 @@ class AuthorAPI():
         self.urlAPI = urlAPI 
         self.filter_by = filter_by
 
-        self.globalResponseAuthor = self.getGlobalResponseAuthor()
-        self.halAuthorIDs = self.getHalAuthorIDs()  
-
         # Lien avec nos données sur la base mysql
         self.dataBase = dataBase
         self.sourceID = sourceID
 
+        self.globalResponseAuthor = self.getGlobalResponseAuthor()
+        self.mainAuthorIDS = self.getHalAuthorIDs(self.globalResponseAuthor)  
+
         # Ajout des informations relative à l'auteur
         self.idAuthor = self.addAuthorInformations()
 
-        # Ajout des informatiosn externes à l'auteur
-        self.addAdditionalAuthorInformations()
+        # # Ajout des informatiosn externes à l'auteur
+        self.addAdditionalAuthorInformations(self.globalResponseAuthor)
+
+        self.checkWithAlternative()
+        clean_list = list(set(self.allAuthorIDS))
+        self.halAuthorIDs = clean_list
+
+    # Permet de récupérer les informations des alternatives
+    def checkWithAlternative(self):
+        self.allAuthorIDS = self.mainAuthorIDS
+        if(self.research['alternative_name']):
+            alternatives = self.research['alternative_name'].split(",")
+            for alternative in alternatives:
+                responseGlobal = self.getGlobalResponseAlternative(alternative)
+                halAuthorIDs = self.getHalAuthorIDs(responseGlobal)
+                self.addAdditionalAuthorInformations(responseGlobal)
+                self.allAuthorIDS = self.allAuthorIDS + halAuthorIDs
 
     # Permet de récupérer et d'ajouter les informations relative a l'auteur (en dehors de lui même)
-    def addAdditionalAuthorInformations(self):
-        for result in self.globalResponseAuthor['results']:
+    def addAdditionalAuthorInformations(self, response):
+        for result in response['results']:
             # Ajout de l'ensemble des institutions
             self.addInstitutions(result) 
 
@@ -159,13 +174,17 @@ class AuthorAPI():
         return json.loads(requests.get(self.urlAPI + 'authors?filter=' + self.filter_by + '.search:' + str(self.research['author_name'] + " " + self.research['author_forename'])).text)
 
 
+    # Permet de récupérer l'ensemble des informations sur les alternatives
+    def getGlobalResponseAlternative(self, alternative):
+        return json.loads(requests.get(self.urlAPI + 'authors?filter=' + self.filter_by + '.search:' + str(alternative)).text)
+
+
     # Permet de récupérer l'ensemble des IDS relatifs à notre paramètre
-    def getHalAuthorIDs(self):
+    def getHalAuthorIDs(self, response):
         halIDs = []
-        for result in self.globalResponseAuthor['results']:
+        for result in response['results']:
             if(len(result['ids']) > 1):
                 halIDs.append(result['ids']['mag'])
-        print("INFO | " + str(len(halIDs)) + " profil d'auteur valide trouvé pour le nom " + str(self.research['author_name'] + " " + self.research['author_forename']))
         return halIDs
 
 
