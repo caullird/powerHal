@@ -3,7 +3,7 @@
 from flask import Blueprint
 
 blueprint = Blueprint(
-    'scraper_blueprint',
+    'publication_blueprint',
     __name__,
     url_prefix=''
 )
