@@ -121,3 +121,14 @@ def get_graph(id_connected_user: int):
         "id_connected_user" : getUserProfil[0],
         "id_author_as_user" : getAuthorProfil[0]
     }
+
+    unWordCloud = PowerCloud(myDB)
+    
+    cloud = unWordCloud.generatePublicationConcept(research["id_author_as_user"])
+
+    buf = BytesIO()
+    buf.flush()
+    cloud.save(buf, format="png")
+    buf.seek(0)
+
+    return StreamingResponse(buf, media_type="image/png")

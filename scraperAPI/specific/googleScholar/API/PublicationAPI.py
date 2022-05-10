@@ -23,7 +23,10 @@ class PublicationAPI:
     def addPublications(self, max = 10000):
         if max>len(self.publications):
             max = len(self.publications)
+        i = 0
         for publication in self.publications[:max]:
+            print(i)
+            i+=1
             self.checkIfExistOrAdd(publication)
 
     def checkIfExistOrAdd(self, publication):

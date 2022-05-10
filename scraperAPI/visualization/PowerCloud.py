@@ -1,4 +1,5 @@
 # Importation de librairies pour la gestion des PowerCloud
+from sqlalchemy import null
 from wordcloud import WordCloud
 from PIL import Image
 
@@ -7,14 +8,14 @@ import inspect
 import os
 from collections import Counter
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 class PowerCloud():
 
-    def __init__(self, DB, fileName):
+    def __init__(self, DB):
         self.DB = DB
-        self.url = "././scraperAPI/specific/" +  fileName + "/data/"
-        self.mask = self.url + "cloud.PNG"
+        self.mask = null
 
 
     # Permet de générer le nuage de mots pour les concept des publications d'un auteur en général
@@ -28,9 +29,7 @@ class PowerCloud():
                 getConcept = self.DB.getFieldsWithId(publicationConcept, table = "Concept",searchField = "id_concept", getField = "display_name", quantity = "one")
                 concepts.append(str(getConcept))
 
-        path = "author" + str(authorID) + "/" + str(inspect.currentframe().f_code.co_name)
-
-        return self.savePowerCloud(concepts, path)
+        return self.savePowerCloud(concepts)
 
     # Permet de générer le nuage de mot pour le lien entre les auteur et les co-auteurs
     def generatePublicationCoAuthors(self, authorID):
@@ -49,12 +48,16 @@ class PowerCloud():
         return self.savePowerCloud(authors, path)
 
     # Permet d'enregistrer les nuages de mots dans l'arborescence
-    def savePowerCloud(self, concepts, path):
-        maskArray = np.array(Image.open(self.mask))
+    def savePowerCloud(self, concepts):
+        #maskArray = np.array(Image.open(self.mask))
         word_could_dict = Counter(concepts)
-        wordcloud = WordCloud(background_color = "white",max_words = len(word_could_dict), mask = maskArray).generate_from_frequencies(word_could_dict)
+        #wordcloud = WordCloud(background_color = "white",max_words = len(word_could_dict), mask = maskArray).generate_from_frequencies(word_could_dict)
+        wordcloud = WordCloud(background_color = "white",max_words = len(word_could_dict)).generate_from_frequencies(word_could_dict)
 
-        if not os.path.exists(self.url + path): os.makedirs(self.url + path)
-        wordcloud.to_file(self.url + path + "/result.png")
+        img = wordcloud.to_image()
+
+        print(type(img))
+
+        return img
 
 

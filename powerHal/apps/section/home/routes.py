@@ -30,11 +30,15 @@ def index():
     return render_template('home/dashboard.html', author = author, segment='index')
 
 
-@blueprint.route('/plot.png')
-def plot_png():
+@blueprint.route('/graph.png')
+def graph_png():
     img = requests.get("http://localhost:8000/graph/" + str(current_user.id))
     return Response(img, mimetype='image/png')
 
+@blueprint.route('/cloud.png')
+def cloud_png():
+    img = requests.get("http://localhost:8000/cloud/" + str(current_user.id))
+    return Response(img, mimetype='image/png')
 
 # Helper - Extract current page name from request
 def get_segment(request):
