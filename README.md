@@ -1,2 +1,2 @@
-# 🦸🏽‍♂️ PowerHAL
+# ⚡ PowerHAL
 
