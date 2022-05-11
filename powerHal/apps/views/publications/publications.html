@@ -43,9 +43,6 @@
                         </svg>
                     </span>
                     <input type="text" class="form-control" placeholder="Rechercher une publication (soon)"> 
-                    <!-- <button onclick="window.location.href=''" type="button" class="btn btn-primary d-inline-flex align-items-center">
-                        🧐 Check HAL
-                    </button>   -->
                 </div>
           </div>
       </div>
@@ -72,32 +69,27 @@
 
                         <tr>
                             <td><a href="#" class="text-primary fw-bold">{{pub.id_publication}}</a> </td>
-                            <td>{{pub.title[0:45]}}....</td>
+                            <td>{{pub.title[0:50]}}....</td>
                             <td>{{pub.publication_year}}</td>
                             <td>{{pub.citation_count}}</td>
-                            {% if sourcePublications %} 
-                                {% for sourcepub in sourcePublications %}
-                                    {% if pub.id_publication == sourcepub.id_publication %} 
-                                        <td>
-                                            <button onclick="window.location.href='/viewPublication?idPublication={{pub.id_publication}}'" type="button" class="btn btn-dark d-inline-flex align-items-center">
-                                                ✅
-                                            </button>
-                                        </td>
-                                    {% else %}
-                                        <td>
-                                            <button onclick="window.location.href='/viewPublication?idPublication={{pub.id_publication}}'" type="button" class="btn btn-dark d-inline-flex align-items-center">
-                                                ❌
-                                            </button>  
-                                        </td>
+                            
+                            <td>
+                                <button type="button" class="btn btn-dark d-inline-flex align-items-center">
+                                    {% if sourcePublications %} 
+                                        {% for sourcepub in sourcePublications %}
+                                            {% if pub.id_publication == sourcepub.id_publication %}
+                                                {% for document in documents %} 
+                                                    {% if document.id_object == pub.id_publication %}
+                                                        <a target="_blank" style="width:100px; text-align:center;" href="{{document.document_url}}">
+                                                            <img  src="/static/assets/img/logo_hal.png">
+                                                        </a>
+                                                    {% endif %}
+                                                {% endfor %} 
+                                            {% endif %}
+                                        {% endfor %}   
                                     {% endif %}
-                                {% endfor %}
-                            {% else %}
-                                <td>
-                                    <button onclick="window.location.href='/viewPublication?idPublication={{pub.id_publication}}'" type="button" class="btn btn-dark d-inline-flex align-items-center">
-                                        ❌
-                                    </button>  
-                                </td>
-                            {% endif %}
+                                </button>  
+                            </td>
                             <td>{{sources[pub.id_source - 1]}}</td>
                             <td>
                                 <button onclick="window.location.href='/viewPublication?idPublication={{pub.id_publication}}'" type="button" class="btn btn-primary d-inline-flex align-items-center">

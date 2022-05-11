@@ -1,170 +1,92 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
-        <text>
-            <body>
-                <listBibl>
-                    <biblFull>
-                        <titleStmt><title xml:lang="en">On Detecting Hidden Third-Party Web Trackers with a Wide Dependency Chain Graph: A Representation Learning Approach</title>             
-            <author role="first">
-                <persName>
-                    <forename type="first">Kave</forename>
-                    <surname>Salamatian</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="first">
-                <persName>
-                    <forename type="first">Amir</forename>
-                    <surname>Hossein</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Akhondzadeh</forename>
-                    <surname>Mohammad</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Heidarpour</forename>
-                    <surname>Mohammad</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Hossein</forename>
-                    <surname>Manshaei</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Masoud</forename>
-                    <surname>Nejad</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author></titleStmt>
-        <editionStmt>
-            <edition>
-                <ref type="src" target="paper.zip" subtype="author" n="1"/>
-            </edition>
-        </editionStmt>
-        <seriesStmt>
-            <idno type="stamp" n="LKB"/>
-        </seriesStmt>
-        <sourceDesc>         
-            <biblStruct>
-                <analytic>
-        <title xml:lang="en">On Detecting Hidden Third-Party Web Trackers with a Wide Dependency Chain Graph: A Representation Learning Approach</title>             
-            <author role="first">
-                <persName>
-                    <forename type="first">Kave</forename>
-                    <surname>Salamatian</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="first">
-                <persName>
-                    <forename type="first">Amir</forename>
-                    <surname>Hossein</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Akhondzadeh</forename>
-                    <surname>Mohammad</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Heidarpour</forename>
-                    <surname>Mohammad</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Hossein</forename>
-                    <surname>Manshaei</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author>             
-            <author role="middle">
-                <persName>
-                    <forename type="first">Masoud</forename>
-                    <surname>Nejad</surname>
-                </persName>
-                <email>mail@gmail.com</email>
-                <ptr type="url" target="http://lkb.cnrs.fr"/>
-                <affiliation ref="#struct-1"/>
-            </author></analytic>
-        <monogr>
-            <idno type="localRef"></idno>
-            <idno type="halJournalId">2872</idno>
-            <imprint>
-                <biblScope unit="volume">None</biblScope>
-                <biblScope unit="pp">None - None</biblScope>
-                <date type="datePub">2020</date>
-            </imprint>
-        </monogr>
-        
-            </biblStruct>
-        </sourceDesc>
-        
-        <profileDesc>
-            <langUsage>
-                <language ident="en"/>
-            </langUsage>
-            <textClass>
-                <keywords scheme="author">
-        
-            <term xml:lang="en">Engineering</term>
-            <term xml:lang="en">Artificial intelligence</term>
-            <term xml:lang="en">Wireless network</term>
-            <term xml:lang="en">Electronic engineering</term>
-            <term xml:lang="en">Programming language</term>
-                </keywords>
-                <classCode scheme="classification">03.65.Ta, 03.65.ud, 03.67.a</classCode>
-                <classCode scheme="halDomain" n="phys.qphy"/>
-                <classCode scheme="halDomain" n="shs.hisphilso"/>
-                <classCode scheme="halTypology" n="ART"/>
-            </textClass>
-            <abstract xml:lang="en">No abstract for this document</abstract>
-        </profileDesc>
-                    </biblFull>
-                </listBibl>
-            </body>
-            <back>
-                <listOrg type="structures">
-                    <org type="laboratory" xml:id="struct-1"/>
-                </listOrg>
-            </back>
-        </text>
-        </TEI>
+["<?xml version= \"1.0\" encoding= \"UTF-8\"?>
+<TEI xmlns= \"http://www.tei-c.org/ns/1.0\" xmlns:hal= \"http://hal.archives-ouvertes.fr/\">
+    <text>
+        <body>
+            <listBibl>
+                <biblFull>
+                    <titleStmt>
+                        <title xml:lang= \"en\">L'Internet : domination impériale ou balkanisation ? – INSTITUT FRANCAIS D'ANALYSE STRATEGIQUE</title>
+                        <author role= \"middle\">
+                            <persName>
+                                <forename type= \"first\">Kavé</forename>
+                                <surname>Salamatian</surname>
+                            </persName>
+                            <email>mail@gmail.com</email>
+                            <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
+                            <affiliation ref= \"#struct-1\" />
+                        </author>
+                        <author role= \"middle\">
+                            <persName>
+                                <forename type= \"first\">Laurent</forename>
+                                <surname>Bloch</surname>
+                            </persName>
+                            <email>mail@gmail.com</email>
+                            <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
+                            <affiliation ref= \"#struct-1\" />
+                        </author>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>
+                            <ref type= \"src\" target= \"paper.zip\" subtype= \"author\" n= \"1\" />
+                        </edition>
+                    </editionStmt>
+                    <seriesStmt>
+                        <idno type= \"stamp\" n= \"LKB\" />
+                    </seriesStmt>
+                    <sourceDesc>
+                        <biblStruct>
+                            <analytic>
+                                <title xml:lang= \"en\">L'Internet : domination impériale ou balkanisation ? – INSTITUT FRANCAIS D'ANALYSE STRATEGIQUE</title>
+                                <author role= \"middle\">
+                                    <persName>
+                                        <forename type= \"first\">Kavé</forename>
+                                        <surname>Salamatian</surname>
+                                    </persName>
+                                    <email>mail@gmail.com</email>
+                                    <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
+                                    <affiliation ref= \"#struct-1\" />
+                                </author>
+                                <author role= \"middle\">
+                                    <persName>
+                                        <forename type= \"first\">Laurent</forename>
+                                        <surname>Bloch</surname>
+                                    </persName>
+                                    <email>mail@gmail.com</email>
+                                    <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
+                                    <affiliation ref= \"#struct-1\" />
+                                </author>
+                            </analytic>
+                            <monogr>
+                                <idno type= \"localRef\"></idno>
+                                <idno type= \"halJournalId\">2872</idno>
+                                <imprint>
+                                    <biblScope unit= \"volume\">None</biblScope>
+                                    <biblScope unit= \"pp\">None - None</biblScope>
+                                    <date type= \"datePub\">2021</date>
+                                </imprint>
+                            </monogr>
+                        </biblStruct>
+                    </sourceDesc>
+                    <profileDesc>
+                        <langUsage>
+                            <language ident= \"en\" />
+                        </langUsage>
+                        <textClass>
+                            <keywords scheme= \"author\"></keywords>
+                            <classCode scheme= \"classification\">03.65.Ta, 03.65.ud, 03.67.a</classCode>
+                            <classCode scheme= \"halDomain\" n= \"phys.qphy\" />
+                            <classCode scheme= \"halDomain\" n= \"shs.hisphilso\" />
+                            <classCode scheme= \"halTypology\" n= \"ART\" />
+                        </textClass>
+                        <abstract xml:lang= \"en\">No abstract for this document</abstract>
+                    </profileDesc>
+                </biblFull>
+            </listBibl>
+        </body>
+        <back>
+            <listOrg type= \"structures\">
+                <org type= \"laboratory\" xml:id= \"struct-1\" />
+            </listOrg>
+        </back>
+    </text>
+</TEI>"]
