@@ -1,34 +1,50 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Settings {% endblock %} 
+{% block title %} Détails de la publication {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
-
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-        <div class="d-block mb-4 mb-md-0">
-            <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
-                <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
-                    <li class="breadcrumb-item">
-                        <a href="#">
-                            <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
-                    <li class="breadcrumb-item"><a href="/publication">Mes publications</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> 📰 En savoir plus #{{ publication.id_publication }}</li>
-                </ol>
-            </nav>
+    <div class="py-4">
+        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+            <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </a>
+                </li>
+                <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
+                <li class="breadcrumb-item"><a href="/publication">Mes publications</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> 📰 En savoir plus #{{ publication.id_publication }}</li>
+            </ol>
+        </nav>
+        <div class="d-flex justify-content-between w-100 flex-wrap">
+            <div class="mb-3 mb-lg-0">
+                <h2 class="h4"></h2>
+            </div>
+            <div>
+                {% if existHal %}
+                    <a href="" class="btn btn-success d-inline-flex align-items-center">
+                        👌🏻 Votre publication est déjà dans HAL
+                    </a>
+                {% else %}
+                    <a href='/export?idPublication={{publication.id_publication}}' class="btn btn-warning d-inline-flex align-items-center">
+                        📤 Importer votre publication dans HAL
+                    </a>
+                {% endif %}
+                </a>
+            </div>
         </div>
     </div>
+
+
     <div class="row">
         <div class="col-16 col-xl-12">
             <div class="card card-body border-0 shadow mb-4">
-                <h2 class="h5 mb-4">📰 Informations relative à votre publication</h2>
-                <p class="mb-0">Dans cette premières partie, vous pouvez voir l'ensemble des informations relative à votre publication !</p>
+                <h2 class="h5 mb-4">📰 Informations relatives à votre publication</h2>
+                <p class="mb-0">Dans cette premières partie, vous pouvez voir l'ensemble des informations relatives à votre publication !</p>
                 
                 <h2 class="h5 mb-4"></h2>
                 <div class="row">
@@ -88,7 +104,7 @@
                                             <td>{{ co_author.author_name }}</td>
                                             <td>{{ co_author.author_forename }}</td>
                                             <td>
-                                                <button onclick="window.location.href=''" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                                                <button target="_blank" onclick="window.location.href=''" type="button" class="btn btn-primary d-inline-flex align-items-center">
                                                     🔍 Voir le profil auteur
                                                 </button>
                                             </td>  
@@ -168,7 +184,7 @@
                                             <td>{{ sources[document.id_source - 1] }}</td>
                                             <td>{{ document.document_url }}</td>
                                             <td>
-                                                <button onclick="window.location.href='{{document.document_url}}'" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                                                <button target="_blank" onclick="window.location.href='{{document.document_url}}'" type="button" class="btn btn-primary d-inline-flex align-items-center">
                                                     🔍 Ouvrir le document
                                                 </button>
                                             </td>  
@@ -182,6 +198,26 @@
                 {% else %}
                     <b> Aucun document pour cette publication !</b>
                 {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="py-4">
+        <div class="d-flex justify-content-between w-100 flex-wrap">
+            <div class="mb-3 mb-lg-0">
+                <h2 class="h4"></h2>
+            </div>
+            <div>
+                {% if existHal %}
+                    <a class="btn btn-success d-inline-flex align-items-center">
+                        👌🏻 Votre publication est déjà dans HAL
+                    </a>
+                {% else %}
+                    <a href='/export?idPublication={{publication.id_publication}}' class="btn btn-warning d-inline-flex align-items-center">
+                        📤 Importer votre publication dans HAL
+                    </a>
+                {% endif %}
+                </a>
             </div>
         </div>
     </div>

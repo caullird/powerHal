@@ -1,0 +1,267 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Settings {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="py-4">
+    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">PowerHall</a></li>
+            <li class="breadcrumb-item">📰 Mes publications</li>
+            <li class="breadcrumb-item">📰 Publication #{{ publication.id_publication }}</li>
+            <li class="breadcrumb-item active" aria-current="page">🔃 Préparation à l'exportation</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+        <div class="mb-3 mb-lg-0">
+            <h1 class="h4">🔃 Préparation à l'exportation vers HAL</h1>
+            <p class="mb-0">L'objectif est de vérifier et completer l'ensemble des information avant l'exportation de la publication</p>
+        </div>
+    </div>
+</div>
+
+
+<form method="post" action="" class="mt-4">
+{{ form.hidden_tag() }}
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4"> 1️⃣<b> Etape 1 :</b> Informations relatives à votre publication 📰</h2>
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div>
+                            <label>Titre de l'article</label>
+                            {% if publication.title %}
+                                {{ form.publication_title(placeholder="Le titre de votre publication", class="form-control", type="text", value=publication.title) }}
+                            {% else %}
+                                {{ form.publication_title(placeholder="Le titre de votre publication", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div>
+                            <label>Type de publication</label>
+                            {% if publication.title %}
+                                {{ form.publication_type(placeholder="Le type de votre publication", class="form-control", type="text", value=publication.type_publication) }}
+                            {% else %}
+                                {{ form.publication_type(placeholder="Le type de votre publication", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div>
+                            <label>Année de publication</label>
+                            {% if publication.publication_year %}
+                                {{ form.publication_year(placeholder="L'année de publication", class="form-control", type="text", value=publication.publication_year) }}
+                            {% else %}
+                                {{ form.publication_year(placeholder="L'année de publication", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div>
+                            <label>Date de publication</label>
+                            {% if publication.publication_date %}
+                                {{ form.publication_date(placeholder="La date de la publication", class="form-control", type="text", value=publication.publication_date) }}
+                            {% else %}
+                                {{ form.publication_date(placeholder="La date de la publication", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">2️⃣<b> Etape 2 :</b> Informations relatives aux auteurs et co-auteurs 🧑🏻‍🤝‍🧑🏼</h2>     
+                {% if co_authors %}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-centered table-nowrap mb-0 rounded table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <!-- <th class="border-0">ORCID - ID de référence de l'auteur</th> -->
+                                        <th class="border-0">Nom DE L'AUTEUR</th>
+                                        <th class="border-0">Prénom DE L'AUTEUR</th>
+                                        <th class="border-0">Position</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for co_author in co_authors %}
+                                        <tr>
+                                            <!-- <td>{{ co_author.orcid_id }}</td> -->
+                                            <td>{{ co_author[0].author_name }}</td>
+                                            <td>{{ co_author[0].author_forename }}</td> 
+                                            <td>{{ co_author[1] }}</td> 
+                                        </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <b> Aucun co-auteur pour cette publication !</b>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">3️⃣<b> Etape 3 :</b> Informations bibliographique 📚</h2>     
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Volume bibliographique</label>
+                            {% if publication.biblio_volume %}
+                                {{ form.biblio_volume(placeholder="Volume bibliographe", class="form-control", type="text", value=publication.biblio_volume) }}
+                            {% else %}
+                                {{ form.biblio_volume(placeholder="Volume bibliographe", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Première page</label>
+                            {% if publication.biblio_first_page %}
+                                {{ form.biblio_first_page(placeholder="Première page", class="form-control", type="text", value=publication.biblio_first_page) }}
+                            {% else %}
+                                {{ form.biblio_first_page(placeholder="Première page", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Dernière page</label>
+                            {% if publication.biblio_last_page %}
+                                {{ form.biblio_last_page(placeholder="Dernière page", class="form-control", type="text", value=publication.biblio_last_page) }}
+                            {% else %}
+                                {{ form.biblio_last_page(placeholder="Dernière page", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label>Biblio issue</label>
+                            {% if publication.biblio_issue %}
+                                {{ form.biblio_issue(placeholder="Dernière page", class="form-control", type="text", value=publication.biblio_issue) }}
+                            {% else %}
+                                {{ form.biblio_issue(placeholder="Dernière page", class="form-control", type="text") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4"> 4️⃣ <b> Etape 4 :</b> Choisir les concepts relatifs à la publication 📂</h2> 
+                {% if concepts %}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-centered table-nowrap mb-0 rounded table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">Nom du concept</th>
+                                        <th class="border-0">Lien wikidata vers le concept</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for concept in concepts %}
+                                        <tr>
+                                            <td>{{ concept.display_name }}</td>
+                                            <td>{{ concept.wikidata }}</td>
+                                        </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <b> Aucun concept pour cette publication !</b>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-16 col-xl-12">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4"> 5️⃣ <b> Etape 5 :</b> Chosir le document en rapport avec la publication 📂</h2> 
+                {% if documents %}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-centered table-nowrap mb-0 rounded table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">Source du document</th>
+                                        <th class="border-0">Lien vers le document</th>
+                                        <th class="border-0">🔍 Voir le document</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for document in documents %}
+                                        <tr>
+                                            <td>{{ sources[document.id_source - 1] }}</td>
+                                            <td>{{ document.document_url }}</td>
+                                            <td>
+                                                <button target="_blank" onclick="window.location.href='{{document.document_url}}'" type="button" class="btn btn-primary d-inline-flex align-items-center">
+                                                    🔍 Ouvrir le document
+                                                </button>
+                                            </td>  
+                                        </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <b> Aucun document pour cette publication !</b>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="py-4">
+        <div class="d-flex justify-content-between w-100 flex-wrap">
+            <div class="mb-3 mb-lg-0">
+            </div>
+            <div>
+                <div class="mt-3">
+                    <button class="btn btn-gray-800 mt-2 animate-up-2" name="export" type="submit">Démarer l'exportation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

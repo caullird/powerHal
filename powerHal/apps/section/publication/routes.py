@@ -33,7 +33,6 @@ def publication():
     sourcePublications = SourcePublication.query.filter_by(id_source=4,created_by=current_user.id).all()
     documents =  Document.query.filter_by(id_source=4,created_by=current_user.id, class_name = "Publication").all()
 
-
     return render_template('publications/publications.html', sourcePublications = sourcePublications, publication = publications, documents = documents, sources = sources, segment='index')
 
 
@@ -50,6 +49,10 @@ def viewPublication():
     for source in Source.query.all():
         sources.append(source.display_name)
 
+    existHal = False
+    for sourcePublication in SourcePublication.query.filter_by(id_publication=page).all():
+        if sourcePublication.id_source == 4:
+            existHal = True
 
     co_authors = []
     authorPublication = AuthorPublication.query.filter_by(id_publication=page).all()
@@ -57,7 +60,7 @@ def viewPublication():
         co_authors.append(Author.query.filter_by(id_author=author.id_author).first())
 
 
-    return render_template('publications/viewPublication.html', publication = publication, documents = documents, co_authors = co_authors, sources = sources, segment='index')
+    return render_template('publications/viewPublication.html', publication = publication, documents = documents, co_authors = co_authors, sources = sources, existHal = existHal, segment='index')
 
 @blueprint.route('/halCompare')
 @login_required
