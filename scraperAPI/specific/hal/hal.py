@@ -1,6 +1,5 @@
 # Importation des classes pour la configuration globale au projet
 from config.DB import DB
-from config.ResearchInitializer import ResearchInitializer
 from config.ResearchSource import ResearchSource
 
 # Importation des configurations propre à l'API

@@ -1,12 +1,15 @@
-from typing import Optional
 from fastapi import FastAPI
+
+# Partie visualisation
 from visualization.PowerCloud import PowerCloud
 from visualization.PowerGraph import PowerGraph
+
+# Partie scraper
 from specific.openAlex.openAlex import openAlex
 from specific.openCitation.openCitation import openCitation
 from specific.googleScholar.googleScholar import googleScholar
 from specific.hal.hal import hal
-from specific.orcid.orcid import orcid
+from specific.hal.API.FileGenerateAPI import FileGenerateAPI
 from config.DB import DB
 
 from io import BytesIO
@@ -83,6 +86,29 @@ def hal_compare(id_connected_user: int):
     }
 
     hal(research)
+
+@app.get("/generateFile/{id_connected_user}/{idPublication}")
+def generate_file(id_connected_user: int, idPublication: int):
+
+    myDB = DB()
+    getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+
+    research = {
+        "author_name" : getAuthorProfil[2],
+        "author_forename" : getAuthorProfil[3],
+        "id_connected_user" : getUserProfil[0],
+        "id_author_as_user" : getAuthorProfil[0],
+        "id_publication" : idPublication
+    }
+
+    publication, authors, concepts  = FileGenerateAPI(research).generateXML()
+
+
+    return {"publication" : publication, 
+            "authors" : authors,
+            "concepts" :  concepts}
+
 
 @app.get("/graph/{id_connected_user}")
 def get_graph(id_connected_user: int):
