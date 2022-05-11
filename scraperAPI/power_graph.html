@@ -1,0 +1,114 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    async function drawGraph(id) {
+        var container = document.getElementById('mynetwork');
+
+        var data_nodes
+        var data_edges
+
+        await $.getJSON('http://localhost:8000/graph/1/'+id, function(data) {
+            data_nodes = data["nodes"];
+            data_edges = data["edges"];
+    
+        });
+
+
+        console.log(data_nodes, data_edges)
+        nodes = new vis.DataSet(data_nodes);
+        edges = new vis.DataSet(data_edges);
+
+        data = {nodes: nodes, edges: edges};
+
+    
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+        network = new vis.Network(container, data, options);
+
+        network.on("click", function(properties){
+            console.log('I\'m clicked');
+            var ids = properties.nodes;
+            var clickedNodes = nodes.get(ids);
+            console.log('clicked nodes:');
+            console.log(clickedNodes[0]["idAuthor"]);
+            drawGraph(clickedNodes[0]["idAuthor"]);
+        });
+	 
+        
+        return network;
+
+    }
+
+    drawGraph(1);
+
+</script>
+</body>
+</html>
