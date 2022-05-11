@@ -23,7 +23,7 @@ class Run():
     ## Connexion avec la base de donnée, récupération du curseur pour avoir l'accès à l'ensemble des informations 
 
     # Gestion du pont API openAlex
-    openAlex(research)
+    # openAlex(research)
 
     # Gestion du pont API Google Scholar
     # googleScholar(research)

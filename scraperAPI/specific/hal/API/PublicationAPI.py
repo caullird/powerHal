@@ -36,40 +36,54 @@ class PublicationAPI():
             
             # Verification si présence d'un doi
             if getPublication[1] not in ["","[]","{}","()","NULL","None"]:
-                
-                #unSourcePublication = SourcePublication(getPublication[0],self.sourceID)
-                result = json.loads(requests.get(self.urlAPI + "?q=" + str(getPublication[1])).text)
-                
-                # Si il existe un resultat sur Hal
-                if result['response']['numFound'] != 0:
-                    for element in result['response']['docs']:
-                        
-                        # Ajoute un lien entre une source et une publication
-                        unSourcePublication = SourcePublication(getPublication[0],self.sourceID,element['docid'], "{}")
-                        unSourcePublication.setDataBase(self.dataBase)
-                        unSourcePublication.checkIfExistsOrInsert()
+                request = self.urlAPI + "?q=" + str(getPublication[1])
+                result = json.loads(requests.get(request).text)
+                isInsert = self.addInDataBase(result, getPublication)
 
-                        # Ajoute un document
-                        unDocument = Document(getPublication[0],"Publication",element['uri_s'], self.sourceID)
-                        unDocument.setDataBase(self.dataBase)
-                        unDocument.checkIfExistsOrInsert()
-            else : 
+            
+            request = self.urlAPI + '?q=title_t:"' + str(getPublication[3]) + '"'
+            result = json.loads(requests.get(request).text)
+            self.addInDataBase(result, getPublication)
+         
+    def addInDataBase(self, result, getPublication):   
+        # Si il existe un resultat sur Hal
+        if result['response']['numFound'] != 0:
+            for element in result['response']['docs']:
+                
+                # Ajoute un lien entre une source et une publication
+                unSourcePublication = SourcePublication(getPublication[0],self.sourceID,element['docid'], "{}")
+                unSourcePublication.setDataBase(self.dataBase)
+                idSourcePublication = unSourcePublication.checkIfExistsOrInsert()
+
+                # Ajoute un document
+                unDocument = Document(getPublication[0],"Publication",element['uri_s'], self.sourceID)
+                unDocument.setDataBase(self.dataBase)
+                unDocument.checkIfExistsOrInsert()
+
+                #  id, table, field, value
+                self.dataBase.updateOneField(getPublication[0],"Publication","id_doi",element['docid'])
+
+                return
+
+            # else : 
+            #     pass
                 # Generate dataFile 
                 # self.generateDataFile(getPublication[0])
 
                 # Génération du fichier XML
                 # self.generateXML(getPublication)
 
-                return
+                
 
                 # Verfication si présence de PDF
-                self.getPublicationPDF()
+                # self.getPublicationPDF()
                  
                 # Génération de l'archive zip
-                self.generateZIP()
+                # self.generateZIP()
 
                 # Importation du document dans hal
-                self.importDocument()
+                # self.importDocument()
+
 
     # Fonction qui permet de générer les fichiers de données
     def generateDataFile(self, id_publication):
