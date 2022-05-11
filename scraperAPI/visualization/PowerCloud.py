@@ -52,11 +52,9 @@ class PowerCloud():
         #maskArray = np.array(Image.open(self.mask))
         word_could_dict = Counter(concepts)
         #wordcloud = WordCloud(background_color = "white",max_words = len(word_could_dict), mask = maskArray).generate_from_frequencies(word_could_dict)
-        wordcloud = WordCloud(background_color = "white",max_words = len(word_could_dict)).generate_from_frequencies(word_could_dict)
+        wordcloud = WordCloud(background_color = "white",max_words = len(word_could_dict), width=1920, height=1080).generate_from_frequencies(word_could_dict)
 
         img = wordcloud.to_image()
-
-        print(type(img))
 
         return img
 
