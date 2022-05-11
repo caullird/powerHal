@@ -30,11 +30,11 @@ def publication():
     for source in Source.query.all():
         sources.append(source.display_name)
 
-    sourcePublications = []
-    for sourcePublication in SourcePublication.query.filter_by(id_source=4).all():
-        sourcePublications.append(sourcePublication)
+    sourcePublications = SourcePublication.query.filter_by(id_source=4,created_by=current_user.id).all()
+    documents =  Document.query.filter_by(id_source=4,created_by=current_user.id, class_name = "Publication").all()
 
-    return render_template('publications/publications.html', sourcePublications = sourcePublications, publication = publications, sources = sources, segment='index')
+
+    return render_template('publications/publications.html', sourcePublications = sourcePublications, publication = publications, documents = documents, sources = sources, segment='index')
 
 
 @blueprint.route('/viewPublication')
