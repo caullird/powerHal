@@ -15,12 +15,16 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 from flask import Response
 
+from pyvis.network import Network
+
 class PowerGraph():
 
     def __init__(self, research):
         self.database = DB()
-        self.database.setConnectedUserId(research['id_connected_user']) 
+        self.database.setConnectedUserId(research['id_author_as_user']) 
         self.authorID = research['id_author_as_user']
+        self.author = self.database.getFieldsWithId(self.authorID, table = "Author",searchField = "id_author", getField = "display_name", quantity = "one")
+        print(self.author)
         self.graph = nx.Graph()
 
     def generatePublicationCoAuthors(self):
@@ -29,29 +33,35 @@ class PowerGraph():
         for publication in getPublications:
             getPublicationAuthors = self.database.getFieldsWithId(publication, table = "AuthorPublication",searchField = "id_publication", getField = "id_author", quantity = "many")
             for publicationAuthor in getPublicationAuthors:
+                getAuthorID = self.database.getFieldsWithId(publicationAuthor, table = "Author",searchField = "id_author", getField = "id_author", quantity = "one")
                 getAuthor = self.database.getFieldsWithId(publicationAuthor, table = "Author",searchField = "id_author", getField = "display_name", quantity = "one")
-                authors.append(str(getAuthor))
+                authors.append([str(getAuthor),getAuthorID])
+
 
         # count the number of authors in the dictionary
         authors_count = {}
         for author in authors:
-            if author in authors_count:
-                authors_count[author] += 1
+            if author[0] in authors_count:
+                authors_count[author[0]] += 1
             else:
-                authors_count[author] = 1
+                authors_count[author[0]] = 1
 
         top_autors = {}
+        author_count2 = {}
 
-        if len(authors_count)< 15:
+        for i in authors_count:
+            author_count2[i] = authors_count[i]
+
+        if len(authors_count)< 100:
             top_autors = authors_count
         else:
-            for i in range(15):
+            for i in range(100):
                 max_author = max(authors_count, key=authors_count.get)
                 top_autors[max_author] = authors_count[max_author]
                 authors_count[max_author] = 0
 
         # fin the most author in the dictionary
-        most_author = max(top_autors, key=top_autors.get)
+        most_author = self.author
 
         node_list = []
         node_size_list = []
@@ -66,10 +76,12 @@ class PowerGraph():
                 edge_size.append(top_autors[author])
                 edge_labels[(author, most_author)] = top_autors[author]
             node_list.append(author)
+            self.graph.add_node(author, idAUTHOR=2)
             #node_size.append(top_autors[author])
             node_size_list.append(len(author)*600)
 
-        self.graph.add_nodes_from(node_list)
+
+
         self.graph.add_edges_from(edge_list)
 
         blue = plt.cm.get_cmap('Blues')
@@ -92,5 +104,20 @@ class PowerGraph():
         
         nodes.set_edgecolor('black')
 
+        net = Network()
 
-        return fig
+        net.from_nx(self.graph)       
+
+        #net.show("power_graph.html")
+
+        print(author_count2)
+
+        list_node = []
+        for node in net.get_nodes():
+            print(node, author_count2[node])
+            getAuthorID = self.database.getFieldsWithId(node, table = "Author",searchField = "display_name", getField = "id_author", quantity = "one")
+            list_node.append({"id": node, "label": node, "idAuthor":getAuthorID ,"shape": "dot", "size": 2*author_count2[node]})
+
+        return {"edges": net.get_edges(), "nodes": list_node}
+
+

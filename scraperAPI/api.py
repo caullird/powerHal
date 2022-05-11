@@ -12,6 +12,7 @@ from config.DB import DB
 from io import BytesIO
 from starlette.responses import StreamingResponse
 
+
 app = FastAPI()
 
 
@@ -84,12 +85,12 @@ def hal_compare(id_connected_user: int):
 
     hal(research)
 
-@app.get("/graph/{id_connected_user}")
-def get_graph(id_connected_user: int):
+@app.get("/graph/{id_connected_user}/{id_graph_user}")
+def get_graph(id_connected_user: int, id_graph_user: int):
 
     myDB = DB()
     getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
-    getAuthorProfil = myDB.getFieldsWithId(getUserProfil[4], "author","id_author","*","one")
+    getAuthorProfil = myDB.getFieldsWithId(id_graph_user, "author","id_author","*","one")
 
     research = {
         "author_name" : getAuthorProfil[2],
@@ -102,12 +103,7 @@ def get_graph(id_connected_user: int):
 
     fig = PG.generatePublicationCoAuthors()
 
-    buf = BytesIO()
-    buf.flush()
-    fig.savefig(buf, format="png")
-    buf.seek(0)
-
-    return StreamingResponse(buf, media_type="image/png")
+    return fig
 
 @app.get("/cloud/{id_connected_user}")
 def get_graph(id_connected_user: int):
