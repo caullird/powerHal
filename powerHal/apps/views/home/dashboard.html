@@ -7,6 +7,10 @@
 
 {% block content %}
 
+<div>
+    
+
+</div>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
     <div class="d-block mb-4 mb-md-0">
@@ -137,8 +141,88 @@
             <!-- <h2 class="h4">🤲🏻 Vos échanges avec les autres auteurs </h2> -->
         </div>
         <div class="card border-0 shadow">
-            <div class="card-body">
-                <img src="/graph.png" alt="my plot" style="width:100%; text-align:center;">
+            <div class="card-body" id= "mynetwork" >
+                <script type="text/javascript">
+
+                    // initialize global variables.
+                    var edges;
+                    var nodes;
+                    var network; 
+                    var container;
+                    var options, data;
+
+                    var id_user = "{{ current_user.id }}";
+                    
+                    // This method is responsible for drawing the graph, returns the drawn network
+                    async function drawGraph(id) {
+                        
+                        var container = document.getElementById('mynetwork');
+
+                        var data_nodes
+                        var data_edges
+                
+                        await $.getJSON('http://localhost:8000/graph/' + id_user +'/'+id, function(data) {
+                            data_nodes = data["nodes"];
+                            data_edges = data["edges"];
+                    
+                        });
+
+                        for (node of data_nodes) {
+                            if (node["idAuthor"] == id_user) {
+                                node["color"] = 'red';
+                            }
+                            console.log(node["idAuthor"]);
+                        }
+                
+                        nodes = new vis.DataSet(data_nodes);
+                        edges = new vis.DataSet(data_edges);
+                
+                        data = {nodes: nodes, edges: edges};
+                
+                    
+                        var options = {
+                            "configure": {
+                                "enabled": false
+                            },
+                            "edges": {
+                                "color": {
+                                    "inherit": false
+                                },
+                                "smooth": {
+                                    "enabled": true,
+                                    "type": "dynamic"
+                                }
+                            },
+                            "interaction": {
+                                "dragNodes": true,
+                                "hideEdgesOnDrag": false,
+                                "hideNodesOnDrag": false
+                            },
+                            "physics": {
+                                "enabled": true,
+                                "stabilization": {
+                                    "enabled": true,
+                                    "fit": true,
+                                    "iterations": 1000,
+                                    "onlyDynamicEdges": false,
+                                    "updateInterval": 50
+                                }
+                    }
+                };
+                        
+                        network = new vis.Network(container, data, options);
+                
+                        network.on("click", function(properties){
+                            var ids = properties.nodes;
+                            var clickedNodes = nodes.get(ids);
+                            drawGraph(clickedNodes[0]["idAuthor"]);
+                        });
+                        return network;
+                    }
+                
+                    drawGraph(id_user);
+                
+                </script>
             </div>
         </div>
     </div>

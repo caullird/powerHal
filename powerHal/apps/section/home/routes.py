@@ -40,7 +40,7 @@ def index():
             countCitation += int(publication.citation_count)
 
 
-
+    print(current_user.id)
     return render_template('home/dashboard.html', author = author, countPublication = countPublication, countCitation = countCitation, segment='index')
 
 

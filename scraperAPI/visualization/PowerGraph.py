@@ -106,7 +106,7 @@ class PowerGraph():
 
         net = Network()
 
-        net.from_nx(self.graph)       
+        net.from_nx(self.graph)     
 
         #net.show("power_graph.html")
 
@@ -114,9 +114,13 @@ class PowerGraph():
 
         list_node = []
         for node in net.get_nodes():
-            print(node, author_count2[node])
             getAuthorID = self.database.getFieldsWithId(node, table = "Author",searchField = "display_name", getField = "id_author", quantity = "one")
-            list_node.append({"id": node, "label": node, "idAuthor":getAuthorID ,"shape": "dot", "size": 2*author_count2[node]})
+            
+            if node == self.author:
+                list_node.append({"id": node, "label": node, "idAuthor":getAuthorID ,"shape": "dot", "size": 2*author_count2[node], "color":"green"})
+            else:
+                list_node.append({"id": node, "label": node, "idAuthor":getAuthorID ,"shape": "dot", "size": 5*author_count2[node], "color":"blue"})
+            
 
         return {"edges": net.get_edges(), "nodes": list_node}
 
