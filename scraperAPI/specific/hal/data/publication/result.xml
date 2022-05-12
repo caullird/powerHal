@@ -1,92 +1,75 @@
-["<?xml version= \"1.0\" encoding= \"UTF-8\"?>
-<TEI xmlns= \"http://www.tei-c.org/ns/1.0\" xmlns:hal= \"http://hal.archives-ouvertes.fr/\">
-    <text>
-        <body>
-            <listBibl>
-                <biblFull>
-                    <titleStmt>
-                        <title xml:lang= \"en\">L'Internet : domination impériale ou balkanisation ? – INSTITUT FRANCAIS D'ANALYSE STRATEGIQUE</title>
-                        <author role= \"middle\">
-                            <persName>
-                                <forename type= \"first\">Kavé</forename>
-                                <surname>Salamatian</surname>
-                            </persName>
-                            <email>mail@gmail.com</email>
-                            <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
-                            <affiliation ref= \"#struct-1\" />
-                        </author>
-                        <author role= \"middle\">
-                            <persName>
-                                <forename type= \"first\">Laurent</forename>
-                                <surname>Bloch</surname>
-                            </persName>
-                            <email>mail@gmail.com</email>
-                            <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
-                            <affiliation ref= \"#struct-1\" />
-                        </author>
-                    </titleStmt>
-                    <editionStmt>
-                        <edition>
-                            <ref type= \"src\" target= \"paper.zip\" subtype= \"author\" n= \"1\" />
-                        </edition>
-                    </editionStmt>
-                    <seriesStmt>
-                        <idno type= \"stamp\" n= \"LKB\" />
-                    </seriesStmt>
-                    <sourceDesc>
-                        <biblStruct>
-                            <analytic>
-                                <title xml:lang= \"en\">L'Internet : domination impériale ou balkanisation ? – INSTITUT FRANCAIS D'ANALYSE STRATEGIQUE</title>
-                                <author role= \"middle\">
-                                    <persName>
-                                        <forename type= \"first\">Kavé</forename>
-                                        <surname>Salamatian</surname>
-                                    </persName>
-                                    <email>mail@gmail.com</email>
-                                    <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
-                                    <affiliation ref= \"#struct-1\" />
-                                </author>
-                                <author role= \"middle\">
-                                    <persName>
-                                        <forename type= \"first\">Laurent</forename>
-                                        <surname>Bloch</surname>
-                                    </persName>
-                                    <email>mail@gmail.com</email>
-                                    <ptr type= \"url\" target= \"http://lkb.cnrs.fr\" />
-                                    <affiliation ref= \"#struct-1\" />
-                                </author>
-                            </analytic>
-                            <monogr>
-                                <idno type= \"localRef\"></idno>
-                                <idno type= \"halJournalId\">2872</idno>
-                                <imprint>
-                                    <biblScope unit= \"volume\">None</biblScope>
-                                    <biblScope unit= \"pp\">None - None</biblScope>
-                                    <date type= \"datePub\">2021</date>
-                                </imprint>
-                            </monogr>
-                        </biblStruct>
-                    </sourceDesc>
-                    <profileDesc>
-                        <langUsage>
-                            <language ident= \"en\" />
-                        </langUsage>
-                        <textClass>
-                            <keywords scheme= \"author\"></keywords>
-                            <classCode scheme= \"classification\">03.65.Ta, 03.65.ud, 03.67.a</classCode>
-                            <classCode scheme= \"halDomain\" n= \"phys.qphy\" />
-                            <classCode scheme= \"halDomain\" n= \"shs.hisphilso\" />
-                            <classCode scheme= \"halTypology\" n= \"ART\" />
-                        </textClass>
-                        <abstract xml:lang= \"en\">No abstract for this document</abstract>
-                    </profileDesc>
+<?xml version="1.0" encoding="UTF-8"?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+            <text>
+                <body>
+                    <listBibl>
+                        <biblFull>
+                            <titleStmt><title xml:lang="en">Computing and the Temptation of Babel</title>
+            <author role="first">
+                <persName>
+                    <forename type="first">Kavé</forename>
+                    <surname>Salamatian</surname>
+                </persName>
+                <email>mail@gmail.com</email>
+                <ptr type="url" target="https://www.univ-smb.fr/listic/"/>
+                <affiliation ref="#struct-1"/>
+            </author></titleStmt>
+    <editionStmt>
+        <edition>
+            <ref type="src" target="paper.zip" subtype="author" n="1"/>
+        </edition>
+    </editionStmt>
+    <seriesStmt>
+        <idno type="stamp" n="LKB"/>
+    </seriesStmt>
+    <sourceDesc>
+        <biblStruct>
+            <analytic>
+    <title xml:lang="en">Computing and the Temptation of Babel</title>
+            <author role="first">
+                <persName>
+                    <forename type="first">Kavé</forename>
+                    <surname>Salamatian</surname>
+                </persName>
+                <email>mail@gmail.com</email>
+                <ptr type="url" target="http://lkb.cnrs.fr"/>
+                <affiliation ref="#struct-1"/>
+            </author></analytic>
+        <monogr>
+            <idno type="localRef"></idno>
+            <idno type="halJournalId">2872</idno>
+            <imprint>
+                <biblScope unit="volume">None</biblScope>
+                <biblScope unit="pp">231 - 241</biblScope>
+                <date type="datePub">2018</date>
+            </imprint>
+        </monogr>
+
+            </biblStruct>
+        </sourceDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language ident="en"/>
+            </langUsage>
+            <textClass>
+                <keywords scheme="author">
+
+            <term xml:lang="en">The Internet</term>
+            </keywords>
+            <classCode scheme="classification">03.65.Ta, 03.65.ud, 03.67.a</classCode>
+            <classCode scheme="halDomain" n="phys.qphy"/>
+            <classCode scheme="halDomain" n="shs.hisphilso"/>
+            <classCode scheme="halTypology" n="ART"/>
+        </textClass>
+        <abstract xml:lang="en">No abstract for this document</abstract>
+    </profileDesc>
                 </biblFull>
             </listBibl>
         </body>
         <back>
-            <listOrg type= \"structures\">
-                <org type= \"laboratory\" xml:id= \"struct-1\" />
+            <listOrg type="structures">
+                <org type="laboratory" xml:id="struct-1"/>
             </listOrg>
         </back>
-    </text>
-</TEI>"]
+    </text></TEI>
