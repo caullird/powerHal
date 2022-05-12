@@ -24,23 +24,23 @@ TODO
 4. Lancement du server Web
 Dans le dossier powerHal :
     - Pour windows :
-        ```ps
-        set FLASK_APP=run.py
-        set FLASK_ENV=development
-        python -m flask run --host=0.0.0.0 --port=5000
-        ```
+    ```ps
+    set FLASK_APP=run.py
+    set FLASK_ENV=development
+    python -m flask run --host=0.0.0.0 --port=5000
+    ```
     - Pour Unix/MacOS :
-        ```ps
-        export FLASK_APP=run.py
-        export FLASK_ENV=development
-        python -m flask run --host=0.0.0.0 --port=5000
-        ```
+    ```ps
+    export FLASK_APP=run.py
+    export FLASK_ENV=development
+    python -m flask run --host=0.0.0.0 --port=5000
+    ```
     - Dans un PowwerShell :
-        ```ps
-        $env:FLASK_APP = ".\run.py"
-        $env:FLASK_ENV = "development"
-        python -m flask run --host=0.0.0.0 --port=5000
-        ```
+    ```ps
+    $env:FLASK_APP = ".\run.py"
+    $env:FLASK_ENV = "development"
+    python -m flask run --host=0.0.0.0 --port=5000
+    ```
 
 5. Accès à l'interface
 
