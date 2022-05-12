@@ -152,6 +152,9 @@
                     var options, data;
 
                     var id_user = "{{ current_user.id }}";
+                    var id_author = "{{ current_user.id_author}}"
+
+                    console.log(id_user);
                     
                     // This method is responsible for drawing the graph, returns the drawn network
                     async function drawGraph(id) {
@@ -161,7 +164,7 @@
                         var data_nodes
                         var data_edges
                 
-                        await $.getJSON('http://localhost:8000/graph/' + id_user +'/'+id, function(data) {
+                        await $.getJSON('http://localhost:8000/graph/' + id_user +'/' + id, function(data) {
                             data_nodes = data["nodes"];
                             data_edges = data["edges"];
                     
@@ -220,7 +223,7 @@
                         return network;
                     }
                 
-                    drawGraph(id_user);
+                    drawGraph(id_author);
                 
                 </script>
             </div>

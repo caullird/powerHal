@@ -30,10 +30,10 @@ from flask_login import (
 def index():
     author = Author.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).first()
 
-
     countPublication = AuthorPublication.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).count()
 
     countCitation = 0
+    
     for publication in Publication.query.filter_by(created_by=current_user.id).all():
         authorPublications = AuthorPublication.query.filter_by(id_publication=publication.id_publication,created_by=current_user.id,id_author=current_user.id_author).all()
         if authorPublications :

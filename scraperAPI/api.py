@@ -89,7 +89,12 @@ def hal_compare(id_connected_user: int):
 def get_graph(id_connected_user: int, id_graph_user: int):
 
     myDB = DB()
+    print("\n\n\n\n\n\n\n")
     getUserProfil = myDB.getFieldsWithId(id_connected_user, "user","id","*","one")
+
+    
+    print(getUserProfil)
+
     getAuthorProfil = myDB.getFieldsWithId(id_graph_user, "author","id_author","*","one")
 
     research = {
