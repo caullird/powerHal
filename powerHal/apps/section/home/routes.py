@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from apps.section.home import blueprint
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 from apps.models.entities.Author import Author
@@ -16,9 +16,6 @@ from flask import Response
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-import io
-import random
-
 import requests
 
 from flask_login import (
@@ -30,7 +27,10 @@ from flask_login import (
 @login_required
 def index():
 
-    # Permet de récupérer les informations de l'auteur
+
+    if current_user.id_author is None:
+        return redirect(url_for('home_blueprint.account'))
+
     author = Author.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).first()
 
 

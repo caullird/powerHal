@@ -11,7 +11,6 @@ from apps import db, login_manager
 from apps.section.authentication import blueprint
 from apps.section.authentication.forms import LoginForm, CreateAccountForm
 from apps.models.entities.User import User
-
 from apps.section.authentication.util import verify_pass
 
 
@@ -21,7 +20,6 @@ def route_default():
 
 
 # Login & Registration
-
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)
