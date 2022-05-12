@@ -7,6 +7,7 @@ from jinja2 import TemplateNotFound
 from apps.models.entities.Author import Author
 from apps.models.entities.Publication import Publication
 from apps.models.relations.AuthorPublication import AuthorPublication
+from apps.models.relations.SourcePublication import SourcePublication
 from apps.section.profil.forms import ProfilAuthorForm
 from apps import db, login_manager
 
@@ -29,18 +30,41 @@ from flask_login import (
 @login_required
 def index():
 
+    # Permet de récupérer les informations de l'auteur
     author = Author.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).first()
 
+
+    # Permet de récupérer le nombre de publication
     countPublication = AuthorPublication.query.filter_by(id_author=current_user.id_author,created_by=current_user.id).count()
 
+    # Permet de récupérer le nombre de citation globale
     countCitation = 0
-
     for publication in Publication.query.filter_by(created_by=current_user.id).all():
         authorPublications = AuthorPublication.query.filter_by(id_publication=publication.id_publication,created_by=current_user.id,id_author=current_user.id_author).all()
         if authorPublications :
             countCitation += int(publication.citation_count)
 
-    return render_template('home/dashboard.html', author = author, countPublication = countPublication, countCitation = countCitation, segment='index')
+
+    # Permet de récupérer le % de publication sur HAL
+    # TODO : update dans le cas ou les publications ne sont pas forcément écrite par lui mais importé par lui (lui = curent_user)
+
+    publications = Publication.query.filter_by(created_by=current_user.id).all()
+    sumHal = 0
+    sumPub = 0
+    for publication in publications:
+        sumPub += 1
+        publicationSource = SourcePublication.query.filter_by(id_publication=publication.id_publication,created_by=current_user.id, id_source = 4).first()
+        if publicationSource :
+            sumHal += 1
+
+    if sumPub > 0 :
+        ratio = round((sumHal / sumPub)*100,2)
+    else: 
+        ratio = 0
+
+    
+
+    return render_template('home/dashboard.html', author = author, countPublication = countPublication, countCitation = countCitation, ratio = ratio, segment='index')
 
 @blueprint.route('/cloud.png')
 def cloud_png():
